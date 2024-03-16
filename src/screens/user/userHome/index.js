@@ -7,15 +7,16 @@ import {
   ImageBackground,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './styles';
-import {colors} from '../../../services/utilities/colors';
-import {images} from '../../../services/utilities/images';
+import React, { useState } from 'react';
+import { styles } from './styles';
+import { colors } from '../../../services/utilities/colors';
+import { images } from '../../../services/utilities/images';
 import Like from '../../../components/Like';
 import AddToCartBig from '../../../components/AddToCartBig';
 import AddToCartSmall from '../../../components/AddToCartSmall';
+import Notification from '../../../components/Notification';
 
-export default function UserHome({navigation}) {
+export default function UserHome({ navigation }) {
   const navigateProductDetails = () => {
     navigation.navigate("ProductDetails")
   }
@@ -74,7 +75,11 @@ export default function UserHome({navigation}) {
           <Image source={images.profileTop} />
         </TouchableOpacity>
         <Text style={styles.nameText}>{userName}</Text>
-        <AddToCartBig />
+        <View style={styles.topIconsContainer}>
+          <Notification/>
+          <AddToCartBig/>
+        </View>
+
       </View>
       <View style={styles.searchContainer}>
         <Image source={images.search} />
@@ -98,7 +103,7 @@ export default function UserHome({navigation}) {
                     <ImageBackground
                       style={styles.salonImage}
                       source={service.image}
-                      >
+                    >
                       <View style={styles.serviceContainerMain}>
                         <View>
                           <Text style={styles.salonName}>{service.name}</Text>
@@ -160,7 +165,7 @@ export default function UserHome({navigation}) {
                         </Text>
                       </View>
                       <TouchableOpacity>
-                        <AddToCartSmall/>
+                        <AddToCartSmall />
                       </TouchableOpacity>
                     </View>
                   </View>

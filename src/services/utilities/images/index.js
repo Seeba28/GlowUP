@@ -27,6 +27,8 @@ import color2Before from '../../../asset/color2Before.png'
 import color2After from '../../../asset/color2After.png'
 import color3Before from '../../../asset/color3Before.png'
 import color3After from '../../../asset/color3After.png'
+import notification from '../../../asset/notification.png'
+
 
 export const images = {
     profileTop,
@@ -57,7 +59,8 @@ export const images = {
     color2Before,
     color2After,
     color3Before,
-    color3After
+    color3After,
+    notification
     
 
 

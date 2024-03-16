@@ -1,25 +1,31 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../../services/utilities/colors';
-import {sizes} from '../../../services/utilities/sizes';
-import {fontSize} from '../../../services/utilities/fonts';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../services/utilities/colors';
+import { sizes } from '../../../services/utilities/sizes';
+import { fontSize } from '../../../services/utilities/fonts';
 
 export const styles = StyleSheet.create({
   homeBackgroud: {
     backgroundColor: colors.background,
-    height:sizes.screenHeight
+    height: sizes.screenHeight
   },
   topContainer: {
     marginTop: sizes.screenHeight * 0.03,
     paddingHorizontal: sizes.screenWidth * 0.05,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
   },
   nameText: {
-    marginEnd: sizes.screenWidth * 0.35,
+    marginStart: sizes.screenWidth * 0.01,
     color: colors.black,
     fontSize: fontSize.large,
     fontWeight: '500',
+  },
+  topIconsContainer: {
+    marginStart:sizes.screenWidth * 0.23,
+    width:sizes.screenWidth * 0.27,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems:'center',
   },
   searchContainer: {
     paddingHorizontal: sizes.screenWidth * 0.04,
@@ -95,7 +101,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginHorizontal: sizes.screenWidth * -0.03,
-    marginEnd:sizes.screenWidth * 0.03,
+    marginEnd: sizes.screenWidth * 0.03,
   },
   contianerThreeRow: {
     flexDirection: 'row',
@@ -119,15 +125,15 @@ export const styles = StyleSheet.create({
   productImageContianer: {
     height: sizes.screenHeight * 0.3,
     width: sizes.screenWidth * 0.44,
-    backgroundColor:colors.mediumPurple,
-    borderRadius:sizes.screenWidth * 0.02,
-    justifyContent:'center',
-    overflow:'hidden'
+    backgroundColor: colors.mediumPurple,
+    borderRadius: sizes.screenWidth * 0.02,
+    justifyContent: 'center',
+    overflow: 'hidden'
   },
-  productImage:{
+  productImage: {
     height: sizes.screenHeight * 0.3,
     width: sizes.screenWidth * 0.44,
-    resizeMode:'contain',
+    resizeMode: 'contain',
   },
   likeContainer: {
     alignSelf: 'flex-start',
@@ -137,18 +143,18 @@ export const styles = StyleSheet.create({
   productsNameText: {
     fontSize: fontSize.medium,
     color: colors.black,
-    fontWeight:'500'
+    fontWeight: '500'
   },
-  productPriceText:{
+  productPriceText: {
     fontSize: fontSize.smallM,
     color: colors.gray,
-    fontWeight:'500'
+    fontWeight: '500'
   },
-  productsDetailRow:{
-    marginTop:sizes.screenHeight * 0.01,
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center'
+  productsDetailRow: {
+    marginTop: sizes.screenHeight * 0.01,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   allProduts: {
     justifyContent: 'space-between',
