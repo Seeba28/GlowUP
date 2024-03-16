@@ -10,5 +10,6 @@ export const colors = {
     lightPurple: '#E6DDE8',
     mediumPurple: '#D1C3D7',
     darkPurple: '#9D8AAE',
+    textFeildBg: '#EEEBEE'
   };
   

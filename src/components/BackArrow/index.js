@@ -8,7 +8,6 @@ export default function BackArrow() {
     <TouchableOpacity style={styles.container}>
       <Image 
       source={images.leftArrow}/>
-      
     </TouchableOpacity>
   )
 }

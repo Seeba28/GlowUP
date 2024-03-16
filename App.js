@@ -10,6 +10,7 @@ import AllProducts from './src/screens/user/allProducts';
 import ProductDetails from './src/screens/user/productDetails';
 import BackArrow from './src/components/BackArrow';
 import Button from './src/components/Button';
+import SignIn from './src/screens/SignIn';
 
 
 export default function App() {

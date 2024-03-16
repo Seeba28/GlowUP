@@ -28,6 +28,15 @@ import color2After from '../../../asset/color2After.png'
 import color3Before from '../../../asset/color3Before.png'
 import color3After from '../../../asset/color3After.png'
 import notification from '../../../asset/notification.png'
+import phone from '../../../asset/phone.png'
+import eyeOpen from '../../../asset/eyeOpen.png'
+import profile from '../../../asset/profile.png'
+import email from '../../../asset/email.png'
+import password from '../../../asset/password.png'
+import eyeClosed from '../../../asset/eyeClosed.png'
+import google from '../../../asset/google.png'
+
+
 
 
 export const images = {
@@ -60,7 +69,14 @@ export const images = {
     color2After,
     color3Before,
     color3After,
-    notification
+    notification,
+    phone,
+    eyeOpen,
+    profile,
+    email,
+    password,
+    eyeClosed,
+    google
     
 
 
