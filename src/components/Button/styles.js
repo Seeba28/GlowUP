@@ -16,6 +16,6 @@ export const styles = StyleSheet.create({
   btnText:{
     color:colors.white,
     fontSize:fontSize.medium,
-    fontWeight:'bold'
+    fontWeight:'500'
   }
 });

@@ -82,12 +82,13 @@ export const styles = StyleSheet.create({
   colorRow:{
     flexDirection:'row',
     height:sizes.screenHeight* 0.06,
-    width:sizes.screenWidth* 0.26,
+    width:sizes.screenWidth* 0.3,
     justifyContent:'space-between',
-    alignItems:'center'
+    alignItems:'center',
   },
   button:{
     marginTop:sizes.screenHeight* 0.06
-  }
+  },
+  
   
 });

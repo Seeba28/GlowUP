@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../services/utilities/colors";
 import { sizes } from "../../services/utilities/sizes";
 import { fontSize } from "../../services/utilities/fonts";
-import { screensEnabled } from "react-native-screens";
 
 export const styles = StyleSheet.create({
     homeBackgroud: {

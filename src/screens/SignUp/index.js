@@ -39,34 +39,28 @@ export default function SignUp({navigation}) {
 
 
         if (emailValid && passwordValid && phoneValidate && userNameValidate) {
+            navigation.navigate("UserHome")
+
             // Proceed with login
             // Example: call an API to authenticate the user
         }
     };
-
-    const feildEmail = text => {
-        setEmail(text);
-    };
-    const feildPassword = text => {
-        setPassword(text)
-    };
     const feildShowPassword = () => {
         setShowPassword(!showPassword)
-    }
-    const feildUserName = text => {
-        setUserName(text)
-    }
-    const feildPhone = number => {
-        setPhone(number)
     }
 
     const handlePress = () =>{
         navigation.navigate("SignIn")
     }
+    const handleGoBack = () => {
+        navigation.goBack()
+    }
     return (
         <View style={styles.homeBackgroud}>
             <View style={styles.backArrow}>
-                <BackArrow />
+                <BackArrow 
+                onPress={handleGoBack}
+                />
             </View>
             <Text style={styles.headText}>Sign Up</Text>
             <View style={styles.contianerTwo}>

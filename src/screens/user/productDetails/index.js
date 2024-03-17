@@ -21,17 +21,11 @@ export default function ProductDetails({navigation}) {
     'Indulge in the ultimate lip-enhancing experience with our Lip Gloss. Formulated with a nourishing blend of hydrating oils and vitamin E, this lip gloss delivers a luscious, high-shine finish.',
   );
   const [rating, setRating] = useState('3.5/5');
-  const [selectIndex, setSelectIndex] = useState(null);
   const [imageSwipe, setImageSwipe] = useState([
-    {
-      image: images.lipstick,
-    },
-    {
-      image: images.lipstick,
-    },
-    {
-      image: images.lipstick,
-    },
+
+    {image: images.lipstick},
+    {image: images.lipstick},
+    {image: images.lipstick},
   ]);
   const [colorSelection, setColorSelection] = useState([
     {image: images.color1Before},
@@ -40,56 +34,42 @@ export default function ProductDetails({navigation}) {
   ]);
 
   
-  
- 
-  
   const handleColorSelection = index => {
     setColorSelection(prevColorSelection => {
-      const newColorSelection = [...prevColorSelection];
-
-      const currentColor = newColorSelection[index].image;
-      newColorSelection[index].image =
-        currentColor == images.color1Before
-          ? images.color1After
-          : currentColor === images.color1After
-          ? images.color1Before
-          : currentColor === images.color2Before
-          ? images.color2After
-          : currentColor === images.color2After
-          ? images.color2Before
-          : currentColor === images.color3Before
-          ? images.color3After
-          : images.color3Before;
-
+      const newColorSelection = prevColorSelection.map((color, i) => {
+        if (i === index) {
+          return {
+            ...color,
+            image:
+              color.image === images.color1Before
+                ? images.color1After
+                : color.image === images.color1After
+                ? images.color1Before
+                : color.image === images.color2Before
+                ? images.color2After
+                : color.image === images.color2After
+                ? images.color2Before
+                : color.image === images.color3Before
+                ? images.color3After
+                : images.color3Before,
+          };
+        } else {
+          return {
+            ...color,
+            image:
+              color.image === images.color1After
+                ? images.color1Before
+                : color.image === images.color2After
+                ? images.color2Before
+                : color.image === images.color3After
+                ? images.color3Before
+                : color.image,
+          };
+        }
+      });
       return newColorSelection;
     });
   };
- 
-  //   newColorSelection[selectIndex].image =
-  // }
-
-  // const handleColorSelection1 = index => {
-  //   setColorSelection(prevColorSelection => {
-  //     const newColorSelection = [...prevColorSelection];
-
-  //     if (prevSelectedIndex !== null) {
-  //       // Revert the previously selected image back to its original state
-  //       newColorSelection[prevSelectedIndex].image = toggleImage(
-  //         newColorSelection[prevSelectedIndex].image,
-  //       );
-  //     }
-
-  //     // Toggle the clicked image
-  //     newColorSelection[index].image = toggleImage(
-  //       newColorSelection[index].image,
-  //     );
-
-  //     // Update the previously selected index
-  //     setPrevSelectedIndex(index === prevSelectedIndex ? null : index);
-
-  //     return newColorSelection;
-  //   });
-  // };
 
   return (
     <View style={styles.productBakcground}>
@@ -128,9 +108,10 @@ export default function ProductDetails({navigation}) {
         <Text style={styles.colorTxt}>Color</Text>
         <View style={styles.colorRow}>
           {colorSelection.map((color, index) => (
-            <TouchableOpacity
+            <TouchableOpacity 
               key={index}
-              onPress={() => handleColorSelection(index)}>
+              onPress={() => handleColorSelection(index)}
+              >
               <Image source={color.image} />
             </TouchableOpacity>
           ))}

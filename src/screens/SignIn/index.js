@@ -29,6 +29,8 @@ export default function SignIn({navigation}) {
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
 
         if (emailValid && passwordValid) {
+            navigation.navigate("UserHome")
+            
             // Proceed with login
             // Example: call an API to authenticate the user
         }
@@ -37,10 +39,18 @@ export default function SignIn({navigation}) {
     const handlePress = () =>{
         navigation.navigate("SignUp")
     }
+    const handleGoBack = () =>{
+        navigation.goBack()
+    }
+    const handleForgotPass = () => {
+        navigation.navigate("ForgotPassword")
+    }
     return (
         <View style={styles.homeBackgroud}>
             <View style={styles.backArrow}>
-                <BackArrow />
+                <BackArrow 
+                // onPress={handleGoBack}
+                />
             </View>
             <Text style={styles.headText}>Sign In</Text>
             <View style={styles.contianerTwo}>
@@ -70,7 +80,8 @@ export default function SignIn({navigation}) {
                 </View>
                 {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={handleForgotPass}>
                 <Text style={styles.forgotPassTxt}>Forgot Password?</Text>
             </TouchableOpacity>
             <View style={styles.containerThree}>
