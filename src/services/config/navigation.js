@@ -7,6 +7,8 @@ import SignUp from "../../screens/SignUp";
 import ForgotPassword from "../../screens/ForgotPassword";
 import OTPPassword from "../../screens/OTPPassword";
 import ResetPassword from "../../screens/ResetPassword";
+import ProfilePicture from "../../screens/ProfilePicture";
+import Cart from "../../screens/user/Cart";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -20,8 +22,10 @@ export default function Navigation() {
                 <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
                 <Stack.Screen name="OTPPassword" component={OTPPassword} />
                 <Stack.Screen name="ResetPassword" component={ResetPassword} />
-                <Stack.Screen name="ProductDetails" component={ProductDetails} />
+                <Stack.Screen name="ProfilePicture" component={ProfilePicture} />
                 <Stack.Screen name="UserHome" component={UserHome} />
+                <Stack.Screen name="Cart" component={Cart} />
+                <Stack.Screen name="ProductDetails" component={ProductDetails} />
                 <Stack.Screen name="Products" component={Products} />
             </Stack.Navigator>
         </NavigationContainer>

@@ -35,6 +35,9 @@ import email from '../../../asset/email.png'
 import password from '../../../asset/password.png'
 import eyeClosed from '../../../asset/eyeClosed.png'
 import google from '../../../asset/google.png'
+import profilePic from '../../../asset/profilePic.png'
+import camera from '../../../asset/camera.png'
+import gallery from '../../../asset/gallery.png'
 
 
 
@@ -76,7 +79,11 @@ export const images = {
     email,
     password,
     eyeClosed,
-    google
+    google,
+    profilePic,
+    camera,
+    gallery
+
     
 
 

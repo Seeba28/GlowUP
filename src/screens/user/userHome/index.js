@@ -11,16 +11,19 @@ import React, { useState } from 'react';
 import { styles } from './styles';
 import { colors } from '../../../services/utilities/colors';
 import { images } from '../../../services/utilities/images';
+import { useRoute } from '@react-navigation/native';
 import Like from '../../../components/Like';
 import AddToCartBig from '../../../components/AddToCartBig';
 import AddToCartSmall from '../../../components/AddToCartSmall';
 import Notification from '../../../components/Notification';
 
-export default function UserHome({ navigation }) {
+export default function UserHome({ navigation, route }) {
   const navigateProductDetails = () => {
     navigation.navigate("ProductDetails")
   }
-  const [userName, setUserName] = useState('Hi, Yasmine!');
+  const { userName } = route.params
+
+  // const [userName, setUserName] = useState('Hi, Yasmine!');
   const [search, setSearch] = useState('');
 
   const feildSearch = text => {
@@ -71,13 +74,15 @@ export default function UserHome({ navigation }) {
   return (
     <View style={styles.homeBackgroud}>
       <View style={styles.topContainer}>
-        <TouchableOpacity>
-          <Image source={images.profileTop} />
-        </TouchableOpacity>
-        <Text style={styles.nameText}>{userName}</Text>
+        <View style={styles.topProfileRow}>
+          <TouchableOpacity>
+            <Image source={images.profileTop} />
+          </TouchableOpacity>
+          <Text style={styles.nameText}>Hi, {userName}</Text>
+        </View>
         <View style={styles.topIconsContainer}>
-          <Notification/>
-          <AddToCartBig/>
+          <Notification />
+          <AddToCartBig />
         </View>
 
       </View>

@@ -39,7 +39,7 @@ export default function SignUp({navigation}) {
 
 
         if (emailValid && passwordValid && phoneValidate && userNameValidate) {
-            navigation.navigate("UserHome")
+            navigation.navigate("UserHome",{userName: userName})
 
             // Proceed with login
             // Example: call an API to authenticate the user

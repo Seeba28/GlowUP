@@ -13,15 +13,19 @@ export const styles = StyleSheet.create({
     paddingHorizontal: sizes.screenWidth * 0.05,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent:'space-between'
   },
   nameText: {
-    marginStart: sizes.screenWidth * 0.01,
+    marginStart: sizes.screenWidth * 0.02,
     color: colors.black,
     fontSize: fontSize.large,
     fontWeight: '500',
   },
+  topProfileRow:{
+    flexDirection: 'row',
+    alignItems:'center',
+  },
   topIconsContainer: {
-    marginStart:sizes.screenWidth * 0.23,
     width:sizes.screenWidth * 0.27,
     flexDirection: 'row',
     justifyContent: 'space-between',

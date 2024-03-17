@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems:'center',
     height: sizes.screenHeight * 0.06,
     width: sizes.screenWidth * 0.91,
-    borderRadius:sizes.screenWidth * 0.035
+    borderRadius:sizes.screenWidth * 0.035,
   },
   btnText:{
     color:colors.white,
