@@ -3,12 +3,12 @@ import React from 'react';
 import { styles } from './styles';
 import { images } from '../../services/utilities/images';
 
-export default function AddToCartBig({ onPress }) {
+export default function NotificationIcon({ onPress }) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={styles.container}>
-      <Image source={images.addToCart} />
+      <Image source={images.notification} />
     </TouchableOpacity>
   );
 }

@@ -15,15 +15,15 @@ import { useRoute } from '@react-navigation/native';
 import Like from '../../../components/Like';
 import AddToCartBig from '../../../components/AddToCartBig';
 import AddToCartSmall from '../../../components/AddToCartSmall';
-import Notification from '../../../components/Notification';
+import NotificationIcon from '../../../components/NotificationIcon';
 
 export default function UserHome({ navigation, route }) {
   const navigateProductDetails = () => {
     navigation.navigate("ProductDetails")
   }
   const { userName } = route.params
+  const { profileImageUri } = route.params
 
-  // const [userName, setUserName] = useState('Hi, Yasmine!');
   const [search, setSearch] = useState('');
 
   const feildSearch = text => {
@@ -71,18 +71,31 @@ export default function UserHome({ navigation, route }) {
   ]);
   const [productSelected, setProductSelected] = useState('')
 
+  const handleViewAll = () => {
+    navigation.navigate("Products")
+  }
+
+  const handleCart = () => {
+    navigation.navigate("Cart")
+  }
+
   return (
     <View style={styles.homeBackgroud}>
       <View style={styles.topContainer}>
         <View style={styles.topProfileRow}>
-          <TouchableOpacity>
-            <Image source={images.profileTop} />
+          <TouchableOpacity style={styles.profileContainer}>
+            <Image
+              style={styles.profileImg}
+              source={{ uri: profileImageUri }}
+            // source={images.profileTop}
+            />
           </TouchableOpacity>
           <Text style={styles.nameText}>Hi, {userName}</Text>
         </View>
         <View style={styles.topIconsContainer}>
-          <Notification />
-          <AddToCartBig />
+          <NotificationIcon />
+          <AddToCartBig
+          onPress={handleCart}/>
         </View>
 
       </View>
@@ -137,7 +150,8 @@ export default function UserHome({ navigation, route }) {
         <View style={styles.containerThree}>
           <View style={styles.contianerThreeRow}>
             <Text style={styles.subContainerHeading}>Popular Products</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={handleViewAll}>
               <Text style={styles.viewAll}>View All</Text>
             </TouchableOpacity>
           </View>
@@ -170,7 +184,7 @@ export default function UserHome({ navigation, route }) {
                         </Text>
                       </View>
                       <TouchableOpacity>
-                        <AddToCartSmall />
+                        <AddToCartSmall onPress={handleCart} />
                       </TouchableOpacity>
                     </View>
                   </View>

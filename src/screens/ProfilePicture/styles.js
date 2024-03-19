@@ -22,10 +22,8 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         justifyContent: 'center',
-        width: sizes.screenWidth * 0.9,
-        height: sizes.screenHeight * 0.22,
-        borderWidth: sizes.screenWidth * 0.002,
-        borderRadius: sizes.screenWidth * 0.04
+        width: sizes.screenWidth * 0.913,
+        height: sizes.screenHeight * 0.221,
     },
     takePicBtn: {
         marginTop: sizes.screenHeight * 0.1,
@@ -64,4 +62,14 @@ export const styles = StyleSheet.create({
         fontSize:fontSize.medium,
         fontWeight:'500'
       },
+      profileImage:{
+        width: sizes.screenWidth * 0.913,
+        height: sizes.screenHeight * 0.221,
+        borderRadius:sizes.screenWidth * 0.04,
+
+      },
+     
+    
+    
+    
 })

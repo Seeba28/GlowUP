@@ -52,6 +52,9 @@ export default function SignUp({navigation}) {
     const handlePress = () =>{
         navigation.navigate("SignIn")
     }
+    const handleProfilePic = () =>{
+        navigation.navigate("ProfilePicture")
+    }
     const handleGoBack = () => {
         navigation.goBack()
     }
@@ -114,7 +117,7 @@ export default function SignUp({navigation}) {
 
             <View style={styles.containerThree}>
                 <Button title={'Sign Up'}
-                onPress={handleLogin} />
+                onPress={handleProfilePic} />
                 <Text style={styles.continueTxt}>or continue with</Text>
                 <TouchableOpacity style={styles.otherButton}>
                     <Image source={images.google} />

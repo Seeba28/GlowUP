@@ -38,6 +38,8 @@ import google from '../../../asset/google.png'
 import profilePic from '../../../asset/profilePic.png'
 import camera from '../../../asset/camera.png'
 import gallery from '../../../asset/gallery.png'
+import add from '../../../asset/add.png'
+import subtract from '../../../asset/subtract.png'
 
 
 
@@ -82,7 +84,9 @@ export const images = {
     google,
     profilePic,
     camera,
-    gallery
+    gallery,
+    add,
+    subtract
 
     
 

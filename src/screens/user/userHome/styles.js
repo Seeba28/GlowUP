@@ -13,7 +13,20 @@ export const styles = StyleSheet.create({
     paddingHorizontal: sizes.screenWidth * 0.05,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:'space-between'
+    justifyContent: 'space-between'
+  },
+  profileContainer: {
+    justifyContent: 'center', 
+    alignItems: 'center',
+    width:sizes.screenWidth * 0.145,
+    height:sizes.screenHeight* 0.07,
+    borderRadius:sizes.screenWidth *0.7,
+    borderWidth:sizes.screenWidth * 0.002
+  },
+  profileImg: {
+    width: sizes.screenWidth * 0.145,
+    height: sizes.screenHeight * 0.07,
+    borderRadius: sizes.screenWidth * 0.7,
   },
   nameText: {
     marginStart: sizes.screenWidth * 0.02,
@@ -21,15 +34,15 @@ export const styles = StyleSheet.create({
     fontSize: fontSize.large,
     fontWeight: '500',
   },
-  topProfileRow:{
+  topProfileRow: {
     flexDirection: 'row',
-    alignItems:'center',
+    alignItems: 'center',
   },
   topIconsContainer: {
-    width:sizes.screenWidth * 0.27,
+    width: sizes.screenWidth * 0.27,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems:'center',
+    alignItems: 'center',
   },
   searchContainer: {
     paddingHorizontal: sizes.screenWidth * 0.04,

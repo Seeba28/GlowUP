@@ -3,9 +3,11 @@ import React from 'react';
 import {styles} from './styles';
 import {images} from '../../services/utilities/images';
 
-export default function AddToCartSmall() {
+export default function AddToCartSmall({onPress}) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity 
+    onPress={onPress}
+    style={styles.container}>
       <Image source={images.addToCart} />
     </TouchableOpacity>
   );
