@@ -7,13 +7,13 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
-import React, {useState} from 'react';
-import {images} from '../../../services/utilities/images';
+import React, { useState } from 'react';
+import { images } from '../../../services/utilities/images';
 
-import {colors} from '../../../services/utilities/colors';
-import {styles} from './styles';
+import { colors } from '../../../services/utilities/colors';
+import { styles } from './styles';
 
-export default function Products({navigation}) {
+export default function Products({ navigation }) {
   const [search, setSearch] = useState('');
 
   const feildSearch = text => {
@@ -37,7 +37,15 @@ export default function Products({navigation}) {
       image: images.Henna,
       name: 'Eye Products',
     },
+    {
+      image: images.Henna,
+      name: 'Eye Products',
+    },
   ]);
+
+  const handleProducts = () => {
+    navigation.navigate("AllProducts")
+  }
 
   return (
     <View style={styles.productBakcground}>
@@ -57,11 +65,13 @@ export default function Products({navigation}) {
           onChangeText={feildSearch}
           value={search}></TextInput>
       </View>
-      <View style={styles.containerTwo}>
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.containerTwo}>
           <View style={styles.allProducts}>
             {allProducts.map((service, index) => {
               return (
-                <TouchableOpacity key={index}>
+                <TouchableOpacity key={index}
+                onPress={handleProducts}>
                   <ImageBackground
                     style={styles.productContainer}
                     source={service.image}>
@@ -72,6 +82,8 @@ export default function Products({navigation}) {
             })}
           </View>
         </View>
+      </ScrollView>
+
     </View>
   );
 }

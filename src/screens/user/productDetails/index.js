@@ -71,11 +71,16 @@ export default function ProductDetails({navigation}) {
     });
   };
 
+  const handleBack = () => {
+    navigation.goBack()
+  }
+
   return (
     <View style={styles.productBakcground}>
       <View style={styles.topContainer}>
         <View style={styles.backArrow}>
-          <BackArrow />
+          <BackArrow
+          onPress={handleBack} />
         </View>
         <Swiper style={styles.wrapper} paginationStyle={styles.sliderCircle}>
           {imageSwipe.map((swipeImage, index) => {

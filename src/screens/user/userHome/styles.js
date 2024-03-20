@@ -16,12 +16,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   profileContainer: {
-    justifyContent: 'center', 
+    justifyContent: 'center',
     alignItems: 'center',
-    width:sizes.screenWidth * 0.145,
-    height:sizes.screenHeight* 0.07,
-    borderRadius:sizes.screenWidth *0.7,
-    borderWidth:sizes.screenWidth * 0.002
+    width: sizes.screenWidth * 0.145,
+    height: sizes.screenHeight * 0.07,
+    borderRadius: sizes.screenWidth * 0.7,
+    borderWidth: sizes.screenWidth * 0.002
   },
   profileImg: {
     width: sizes.screenWidth * 0.145,
@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
     marginStart: sizes.screenWidth * 0.02,
   },
   containerTwo: {
-    marginTop: sizes.screenHeight * 0.02,
+    // marginTop: sizes.screenHeight * 0.02,
     paddingStart: sizes.screenWidth * 0.05,
   },
   containerThree: {
@@ -178,4 +178,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     // marginHorizontal: sizes.screenWidth * -0.03,
   },
+  scrollContainer:{
+    marginTop:sizes.screenHeight* 0.02,
+    marginBottom: sizes.screenHeight* 0.11
+  }
 });

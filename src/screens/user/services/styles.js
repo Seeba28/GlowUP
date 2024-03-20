@@ -40,8 +40,7 @@ export const styles = StyleSheet.create({
         marginStart: sizes.screenWidth * 0.02,
       },
       containerTwo: {
-        marginTop: sizes.screenHeight * 0.05,
-        paddingHorizontal: sizes.screenWidth * 0.03,
+        paddingHorizontal: sizes.screenWidth * 0.05,
       },
       servicesContainer:{
         height: sizes.screenHeight * 0.158,
@@ -59,5 +58,9 @@ export const styles = StyleSheet.create({
       allServices:{
         justifyContent: 'space-between',
         flexDirection: 'column',
+      },
+      scrollContainer:{
+        marginTop:sizes.screenHeight* 0.03,
+        marginBottom:sizes.screenHeight* 0.1,
       }
 })

@@ -8,14 +8,14 @@ import {
   ImageBackground,
   FlatList,
 } from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './styles';
-import {images} from '../../../services/utilities/images';
-import {colors} from '../../../services/utilities/colors';
+import React, { useState } from 'react';
+import { styles } from './styles';
+import { images } from '../../../services/utilities/images';
+import { colors } from '../../../services/utilities/colors';
 import Like from '../../../components/Like';
 import AddToCartSmall from '../../../components/AddToCartSmall';
 
-export default function AllProducts() {
+export default function AllProducts({ navigation }) {
   const [search, setSearch] = useState('');
 
   const feildSearch = text => {
@@ -43,8 +43,16 @@ export default function AllProducts() {
       name: 'Mascara',
       price: 'Rs. 800',
     },
-    
+
   ]);
+
+  const handleCart = () => {
+    navigation.navigate("Cart")
+  }
+
+  const handleProductDescription = () => {
+    navigation.navigate("ProductDetails")
+  }
 
   return (
     <View style={styles.productBakcground}>
@@ -63,72 +71,45 @@ export default function AllProducts() {
           onChangeText={feildSearch}
           value={search}></TextInput>
       </View>
-      <View style={styles.containerTwo}>
-        <FlatList
-          data={allProducts}
-          numColumns={2}
-          columnWrapperStyle={{justifyContent:'space-between'}}
-          renderItem={({item}) => (
-            <View style={styles.productRow}>
-              <View style={styles.productContainer}>
-                <TouchableOpacity>
-                  <View style={styles.productImageContainer}>
-                    <ImageBackground
-                      style={styles.productImage}
-                      source={item.image}>
-                      <TouchableOpacity style={styles.likeContainer}>
-                        <Like />
-                      </TouchableOpacity>
-                    </ImageBackground>
-                  </View>
-                </TouchableOpacity>
-                <View style={styles.productsDetailRow}>
-                  <View>
-                    <Text style={styles.productsNameText}>{item.name}</Text>
-                    <Text style={styles.productPriceText}>{item.price}</Text>
-                  </View>
-                  <TouchableOpacity>
-                    <AddToCartSmall />
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.containerTwo}>
+          <FlatList
+            data={allProducts}
+            numColumns={2}
+            columnWrapperStyle={{ justifyContent: 'space-between' }}
+            renderItem={({ item }) => (
+              <View style={styles.productRow}>
+                <View style={styles.productContainer}>
+                  <TouchableOpacity onPress={handleProductDescription}>
+                    <View style={styles.productImageContainer}>
+                      <ImageBackground
+                        style={styles.productImage}
+                        source={item.image}>
+                        <TouchableOpacity style={styles.likeContainer}>
+                          <Like />
+                        </TouchableOpacity>
+                      </ImageBackground>
+                    </View>
                   </TouchableOpacity>
+                  <View style={styles.productsDetailRow}>
+                    <View>
+                      <Text style={styles.productsNameText}>{item.name}</Text>
+                      <Text style={styles.productPriceText}>{item.price}</Text>
+                    </View>
+                    <TouchableOpacity>
+                      <AddToCartSmall onPress={handleCart}/>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               </View>
-            </View>
-          )}
-          keyExtractor={(item, index) => index.toString()}
-        />
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
 
-        {/* <View style={styles.allProduts}>
-            {allProducts.map((products, index) => {
-              return (
-                <View key={index} style={styles.productRow}>
-                  <View style={styles.productContainer}>
-                    <TouchableOpacity>
-                      <View style={styles.productImageContainer}>
-                        <ImageBackground
-                          style={styles.productImage}
-                          source={products.image}>
-                          <TouchableOpacity style={styles.likeContainer}>
-                            <Like />
-                          </TouchableOpacity>
-                        </ImageBackground>
-                      </View>
-                    </TouchableOpacity>
-                    <View style={styles.productsDetailRow}>
-                      <View>
-                        <Text style={styles.productsNameText}>{products.name}</Text>
-                        <Text style={styles.productPriceText}>{products.price}</Text>
-                      </View>
-                      <TouchableOpacity>
-                        <AddToCartSmall/>
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                  
-                </View>
-              );
-            })}
-          </View> */}
-      </View>
+
+        </View>
+      </ScrollView>
+
     </View>
   );
 }

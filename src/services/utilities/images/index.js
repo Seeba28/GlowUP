@@ -40,7 +40,12 @@ import camera from '../../../asset/camera.png'
 import gallery from '../../../asset/gallery.png'
 import add from '../../../asset/add.png'
 import subtract from '../../../asset/subtract.png'
-
+import serviceTabAfter from '../../../asset/serviceTabAfter.png'
+import homeTabAfter from '../../../asset/homeTabAfter.png'
+import productTabAfter from '../../../asset/productTabAfter.png'
+import profileTabAfter from '../../../asset/profileTabAfter.png'
+import cashDelivery from '../../../asset/cashDelivery.png'
+import thankyou from '../../../asset/thankyou.png'
 
 
 
@@ -86,7 +91,13 @@ export const images = {
     camera,
     gallery,
     add,
-    subtract
+    subtract,
+    serviceTabAfter,
+    homeTabAfter,
+    productTabAfter,
+    profileTabAfter,
+    cashDelivery,
+    thankyou,
 
     
 

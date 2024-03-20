@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
         paddingStart: sizes.screenWidth * 0.05,
     },
     body: {
-        top: sizes.screenHeight * 0.04,
         paddingVertical: sizes.screenHeight * 0.01,
     },
     heading: {
@@ -30,7 +29,7 @@ export const styles = StyleSheet.create({
     },
     textFeildContainer: {
         paddingHorizontal: sizes.screenWidth * 0.02,
-        paddingVertical: sizes.screenHeight * 0.02,
+        paddingVertical: sizes.screenHeight * 0.01,
         // height: sizes.screenHeight * 0.13,
         width: sizes.screenWidth * 0.91,
         backgroundColor: colors.lightPurple,
@@ -64,7 +63,7 @@ export const styles = StyleSheet.create({
     itemName: {
         fontSize: fontSize.large,
         color: colors.textColor,
-        fontWeight: '500'
+        fontWeight: '500',
     },
     itemPrice: {
         fontSize: fontSize.medium,
@@ -72,7 +71,6 @@ export const styles = StyleSheet.create({
         fontWeight: '500'
     },
     feildContainer: {
-        marginTop: sizes.screenHeight * 0.06,
         paddingHorizontal: sizes.screenWidth * 0.02,
         height: sizes.screenHeight * 0.215,
         width: sizes.screenWidth * 0.91,
@@ -81,6 +79,7 @@ export const styles = StyleSheet.create({
         borderRadius: sizes.screenWidth * 0.04,
         flexDirection: 'column',
         alignItems: 'center',
+        marginBottom:sizes.screenHeight* 0.02
         
     },
     feildRow1: {
@@ -107,7 +106,14 @@ export const styles = StyleSheet.create({
         color: colors.text,
         fontWeight: '500'
     },
-    
+    buttonTop:{
+        marginBottom:sizes.screenHeight* 0.03
+    },
+    scrollContainer:{
+        marginTop:sizes.screenHeight* 0.02,
+        marginBottom:sizes.screenHeight* 0.02,
+    }
 
+    
 
 })

@@ -7,12 +7,12 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './styles';
-import {images} from '../../../services/utilities/images';
-import {colors} from '../../../services/utilities/colors';
+import React, { useState } from 'react';
+import { styles } from './styles';
+import { images } from '../../../services/utilities/images';
+import { colors } from '../../../services/utilities/colors';
 
-export default function Services({navigation}) {
+export default function Services({ navigation }) {
   const [search, setSearch] = useState('');
 
   const feildSearch = text => {
@@ -56,6 +56,7 @@ export default function Services({navigation}) {
           onChangeText={feildSearch}
           value={search}></TextInput>
       </View>
+      <ScrollView style={styles.scrollContainer}>
       <View style={styles.containerTwo}>
           <View style={styles.allServices}>
             {allServices.map((service, index) => {
@@ -71,6 +72,9 @@ export default function Services({navigation}) {
             })}
           </View>
         </View>
+      </ScrollView>
+      
+
     </View>
   );
 }
