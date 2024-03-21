@@ -14,34 +14,6 @@ import { colors } from '../../../services/utilities/colors';
 import { styles } from './styles';
 
 export default function Products({ navigation }) {
-  const [search, setSearch] = useState('');
-
-  const feildSearch = text => {
-    setSearch(text);
-  };
-
-  const [allProducts, setAllProducts] = useState([
-    {
-      image: images.facials,
-      name: 'Skin Products',
-    },
-    {
-      image: images.nailTreatment,
-      name: 'Nail Products',
-    },
-    {
-      image: images.HairService,
-      name: 'Lip Products',
-    },
-    {
-      image: images.Henna,
-      name: 'Eye Products',
-    },
-    {
-      image: images.Henna,
-      name: 'Eye Products',
-    },
-  ]);
 
   const handleProducts = () => {
     navigation.navigate("AllProducts")
@@ -55,34 +27,44 @@ export default function Products({ navigation }) {
         </TouchableOpacity>
         <Text style={styles.productText}>Products</Text>
       </View>
-      <View style={styles.searchContainer}>
-        <Image source={images.search} />
 
-        <TextInput
-          style={styles.searchTextInput}
-          placeholder="Search..."
-          placeholderTextColor={colors.darkPurple}
-          onChangeText={feildSearch}
-          value={search}></TextInput>
-      </View>
-      <ScrollView style={styles.scrollContainer}>
-        <View style={styles.containerTwo}>
-          <View style={styles.allProducts}>
-            {allProducts.map((service, index) => {
-              return (
-                <TouchableOpacity key={index}
-                onPress={handleProducts}>
-                  <ImageBackground
-                    style={styles.productContainer}
-                    source={service.image}>
-                    <Text style={styles.servicesNameText}>{service.name}</Text>
-                  </ImageBackground>
-                </TouchableOpacity>
-              );
-            })}
+      <View style={styles.body}>
+        <TouchableOpacity>
+          <ImageBackground
+            style={styles.contianerOne}
+            source={images.TopMakeup}
+            resizeMode='stretch'
+          >
+            <Text style={styles.headingOne}>Top Makeups</Text>
+            <Text style={styles.detailTxt}>Elevate Your Beauty Routine with Our Exclusive Collection</Text>
+          </ImageBackground>
+        </TouchableOpacity>
+
+        <View style={styles.productCategory}>
+          <View>
+            <TouchableOpacity style={styles.productContainerOne}>
+              <Text style={styles.headingTwo}>Eyes Product</Text>
+              <Image
+                style={styles.picOne}
+                source={images.eyeProduct} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.productContainerTwo}>
+              <Text style={styles.headingTwo}>Face Product</Text>
+              <Image
+                style={styles.picOne}
+                source={images.foundation} />
+            </TouchableOpacity>
           </View>
+          <TouchableOpacity style={styles.productContainerThree}>
+            <Image
+              style={styles.picTwo}
+              source={images.lipProduct} />
+            <Text style={styles.headingThree}>Lips Product</Text>
+          </TouchableOpacity>
+
         </View>
-      </ScrollView>
+      </View>
+
 
     </View>
   );

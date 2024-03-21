@@ -86,8 +86,8 @@ const MyTabs = () => {
                 tabBarStyle: {
                     backgroundColor: colors.darkPurple,
                     height: sizes.screenHeight * 0.09,
-                    borderTopLeftRadius: sizes.screenWidth * 0.06,
-                    borderTopRightRadius: sizes.screenWidth * 0.06,
+                    borderTopLeftRadius: sizes.screenWidth * 0.09,
+                    borderTopRightRadius: sizes.screenWidth * 0.09,
                     position: 'absolute'
                 },
             }}>

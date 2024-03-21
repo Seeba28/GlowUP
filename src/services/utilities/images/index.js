@@ -46,6 +46,9 @@ import productTabAfter from '../../../asset/productTabAfter.png'
 import profileTabAfter from '../../../asset/profileTabAfter.png'
 import cashDelivery from '../../../asset/cashDelivery.png'
 import thankyou from '../../../asset/thankyou.png'
+import eyeProduct from '../../../asset/eyeProduct.png'
+import lipProduct from '../../../asset/lipProduct.png'
+import TopMakeup from '../../../asset/TopMakeup.png'
 
 
 
@@ -98,7 +101,9 @@ export const images = {
     profileTabAfter,
     cashDelivery,
     thankyou,
-
+    TopMakeup,
+    lipProduct,
+    eyeProduct
     
 
 

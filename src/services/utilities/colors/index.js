@@ -13,6 +13,9 @@ export const colors = {
     textFeildBg: '#EEEBEE',
     textFeildBg2: '#EFEFEF',
     textColor:'#482629',
-    lineOpacity: 'rgba(72,38,41,0.2)'
+    lineOpacity: 'rgba(72,38,41,0.2)',
+    purpleOne:'#785494',
+    prupleTwo:'#BA8DDE',
+    prupleThree:'#985DC2'
   };
   

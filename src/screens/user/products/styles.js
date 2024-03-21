@@ -1,14 +1,14 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../../services/utilities/colors';
-import {sizes} from '../../../services/utilities/sizes';
-import {fontSize} from '../../../services/utilities/fonts';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../services/utilities/colors';
+import { sizes } from '../../../services/utilities/sizes';
+import { fontSize } from '../../../services/utilities/fonts';
 
 export const styles = StyleSheet.create({
-  productBakcground:{
+  productBakcground: {
     backgroundColor: colors.background,
-    height:sizes.screenHeight
+    height: sizes.screenHeight
   },
-  
+
   topContainer: {
     marginTop: sizes.screenHeight * 0.03,
     paddingHorizontal: sizes.screenWidth * 0.05,
@@ -22,46 +22,70 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginStart: sizes.screenWidth * 0.25,
   },
-  searchContainer: {
-    paddingHorizontal: sizes.screenWidth * 0.04,
-    marginTop: sizes.screenHeight * 0.04,
-    height: sizes.screenHeight * 0.06,
-    width: sizes.screenWidth * 0.91,
-    backgroundColor: colors.lightPurple,
-    alignSelf: 'center',
-    borderRadius: sizes.screenWidth * 0.02,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  contianerOne: {
+    paddingHorizontal: sizes.screenWidth * 0.06,
+    width: sizes.screenWidth,
+    height: sizes.screenHeight * 0.3,
+    borderBottomRightRadius:sizes.screenWidth* 0.13,
   },
-  searchTextInput: {
+  headingOne: {
     color: colors.black,
-    flex: 1,
-    marginStart: sizes.screenWidth * 0.02,
-  },
-  containerTwo: {
-    // marginTop: sizes.screenHeight * 0.03,
-    paddingHorizontal: sizes.screenWidth * 0.05,
-  },
-
-  productContainer: {
-    height: sizes.screenHeight * 0.158,
-    width: sizes.screenWidth * 0.9,
-    marginBottom: sizes.screenHeight * 0.02,
-  },
-  servicesNameText: {
-    color: colors.white,
     fontSize: fontSize.large,
     fontWeight: '500',
-    marginTop: sizes.screenHeight * 0.01,
-    marginStart: sizes.screenWidth * 0.02,
+    marginTop: sizes.screenWidth * 0.35,
   },
-  allProducts: {
-    justifyContent: 'space-between',
-    flexDirection: 'column',
+  headingTwo: {
+    color: colors.white,
+    fontSize: fontSize.medium,
+    fontWeight: '400',
+    marginTop: sizes.screenHeight * 0.02,
+    marginStart: sizes.screenWidth * 0.05
   },
-  scrollContainer:{
-    marginTop:sizes.screenHeight* 0.03,
-    marginBottom:sizes.screenHeight* 0.1,
+  headingThree: {
+    color: colors.white,
+    fontSize: fontSize.medium,
+    fontWeight: '400',
+    marginStart: sizes.screenWidth * 0.12
+  },
+  detailTxt: {
+    marginTop: sizes.screenWidth * 0.01,
+    color: colors.gray,
+    fontSize: fontSize.smallM,
+    width: sizes.screenWidth * 0.5,
+  },
+  productContainerOne: {
+    width: sizes.screenWidth / 2,
+    backgroundColor: colors.purpleOne,
+    height: sizes.screenHeight * 0.26,
+  },
+  productContainerTwo: {
+    width: sizes.screenWidth / 2,
+    backgroundColor: colors.prupleTwo,
+    height: sizes.screenHeight * 0.28,
+  },
+  productCategory: {
+    flexDirection: 'row'
+  },
+  productContainerThree: {
+    width: sizes.screenWidth / 2,
+    backgroundColor: colors.prupleThree,
+    height: sizes.screenHeight * 0.58,
+  },
+  picOne: {
+    width: sizes.screenWidth * 0.3,
+    height: sizes.screenHeight * 0.23,
+    alignSelf: 'center',
+    resizeMode: 'contain'
+  },
+  picTwo: {
+    width: sizes.screenWidth * 0.3,
+    height: sizes.screenHeight * 0.4,
+    alignSelf: 'center',
+    resizeMode: 'contain',
+  },
+  body:{
+    backgroundColor:colors.prupleThree,
+    marginTop:sizes.screenHeight* 0.02
   }
+  
 });
