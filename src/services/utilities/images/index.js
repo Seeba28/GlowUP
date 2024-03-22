@@ -49,6 +49,18 @@ import thankyou from '../../../asset/thankyou.png'
 import eyeProduct from '../../../asset/eyeProduct.png'
 import lipProduct from '../../../asset/lipProduct.png'
 import TopMakeup from '../../../asset/TopMakeup.png'
+import history from '../../../asset/history.png'
+import nextArrow from '../../../asset/nextArrow.png'
+import rewards from '../../../asset/rewards.png'
+import signout from '../../../asset/signout.png'
+import editProfile from '../../../asset/editProfile.png'
+import security from '../../../asset/security.png'
+import ranking from '../../../asset/ranking.png'
+import gift from '../../../asset/gift.png'
+import giftBig from '../../../asset/giftBig.png'
+import faceProduct from '../../../asset/faceProduct.png'
+import lipProductBlack from '../../../asset/lipProductBlack.png'
+import eyeProductBlack from '../../../asset/eyeProductBlack.png'
 
 
 
@@ -103,7 +115,19 @@ export const images = {
     thankyou,
     TopMakeup,
     lipProduct,
-    eyeProduct
+    eyeProduct,
+    history,
+    nextArrow,
+    rewards,
+    signout,
+    editProfile,
+    security,
+    gift,
+    ranking,
+    giftBig,
+    lipProductBlack,
+    eyeProductBlack,
+    faceProduct
     
 
 

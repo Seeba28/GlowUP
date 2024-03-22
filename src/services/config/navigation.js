@@ -20,6 +20,10 @@ import { useEffect, useState } from "react";
 import AllProducts from "../../screens/user/allProducts";
 import CheckOut from "../../screens/user/CheckOut";
 import Shipping from "../../screens/user/Shipping";
+import UserProfile from "../../screens/user/UserProfile";
+import Rewards from "../../screens/user/Rewards";
+import SellerProducts from "../../screens/ProductSeller/SellerProducts";
+import UploadProducts from "../../screens/ProductSeller/UploadProducts";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -30,7 +34,8 @@ export default function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="UserStack" component={UserStack} />
+            <Stack.Screen name="ProductSellerStack" component={ProductSellerStack} />
+                {/* <Stack.Screen name="UserStack" component={UserStack} /> */}
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -53,8 +58,17 @@ const UserStack = () => {
             <Stack.Screen name="AllProducts" component={AllProducts} />
             <Stack.Screen name="CheckOut" component={CheckOut}/>
             <Stack.Screen name="Shipping" component={Shipping}/>
+            <Stack.Screen name="UserProfile" component={UserProfile}/>
+            <Stack.Screen name="Rewards" component={Rewards}/>
+        </Stack.Navigator>
+    )
+}
 
-
+const ProductSellerStack = () => {
+    return(
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="UploadProducts" component={UploadProducts} />
+            <Stack.Screen name="SellerProducts" component={SellerProducts} />
         </Stack.Navigator>
     )
 }
@@ -84,11 +98,12 @@ const MyTabs = () => {
                 tabBarHideOnKeyboard: true,
                 headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: colors.darkPurple,
+                    backgroundColor: colors.background,
                     height: sizes.screenHeight * 0.09,
                     borderTopLeftRadius: sizes.screenWidth * 0.09,
                     borderTopRightRadius: sizes.screenWidth * 0.09,
-                    position: 'absolute'
+                    position: 'absolute',
+                    
                 },
             }}>
             <Tab.Screen
@@ -98,7 +113,6 @@ const MyTabs = () => {
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>
                         focused ? (
-
                             <Image source={images.homeTabAfter}
                             />
                         ) : (
@@ -135,8 +149,8 @@ const MyTabs = () => {
                 }} />
 
             <Tab.Screen
-                name="AllProducts"
-                component={AllProducts}
+                name="UserProfile"
+                component={UserProfile}
                 options={{
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>

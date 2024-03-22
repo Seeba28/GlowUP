@@ -12,10 +12,15 @@ export const colors = {
     darkPurple: '#9D8AAE',
     textFeildBg: '#EEEBEE',
     textFeildBg2: '#EFEFEF',
+    textFeildBG3:'#EDE8F1',
     textColor:'#482629',
     lineOpacity: 'rgba(72,38,41,0.2)',
     purpleOne:'#785494',
     prupleTwo:'#BA8DDE',
-    prupleThree:'#985DC2'
+    prupleThree:'#985DC2',
+    redemPurple:'#C8AEDE',
+    rewardTxtBtn:'#9E30FB',
+    modalOverlay:'rgba(0,0,0, 0.5)',
+    lightGray:'#E5E2E2'
   };
   
