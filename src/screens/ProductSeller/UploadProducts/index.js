@@ -16,7 +16,7 @@ export default function UploadProducts({ navigation }) {
     const [selectedCategory, setSelectedCategory] = useState({ label: 'Eyes Products', value: 'Eyes Products' });
     const [selectedShade, setSelectedShade] = useState(null)
     const [error, setError] = useState('');
-    const [modalVisible2, setModalVisible2] = useState(true)
+    const [modalVisible2, setModalVisible2] = useState(false)
     const [category, setCategory] = useState([
         { label: 'Eyes Products' },
         { label: 'Face Products' },
