@@ -61,7 +61,36 @@ import giftBig from '../../../asset/giftBig.png'
 import faceProduct from '../../../asset/faceProduct.png'
 import lipProductBlack from '../../../asset/lipProductBlack.png'
 import eyeProductBlack from '../../../asset/eyeProductBlack.png'
-
+import uploadProductImg from '../../../asset/uploadProductImg.png'
+import FairSkin from '../../../asset/FairSkin.png'
+import lightSkin from '../../../asset/lightSkin.png'
+import mediumSkin from '../../../asset/mediumSkin.png'
+import OliveSkin from '../../../asset/OliveSkin.png'
+import tanSkin from '../../../asset/tanSkin.png'
+import deepTanSkin from '../../../asset/deepTanSkin.png'
+import darkSkin from '../../../asset/darkSkin.png'
+import veryDarkSkin from '../../../asset/veryDarkSkin.png'
+import dropDown from '../../../asset/dropDown.png'
+import userBefore from '../../../asset/userBefore.png'
+import userAfter from '../../../asset/userAfter.png'
+import beauticianAfter from '../../../asset/beauticianAfter.png'
+import beauticianBefore from '../../../asset/beauticianBefore.png'
+import productSellerAfter from '../../../asset/productSellerAfter.png'
+import productSellerBefore from '../../../asset/productSellerBefore.png'
+import salonBefore from '../../../asset/salonBefore.png'
+import salonAfter from '../../../asset/salonAfter.png'
+import shipping from '../../../asset/shipping.png'
+import oderedBefore from '../../../asset/oderedBefore.png'
+import orderedAfter from '../../../asset/orderedAfter.png'
+import packedAfter from '../../../asset/packedAfter.png'
+import packedBefore from '../../../asset/packedBefore.png'
+import reviewBefore from '../../../asset/reviewBefore.png'
+import reviewsAfter from '../../../asset/reviewsAfter.png'
+import addProductAfter from '../../../asset/addProductAfter.png'
+import addProductBefore from '../../../asset/addProductBefore.png'
+import deliveredAfter from '../../../asset/deliveredAfter.png'
+import deliveredBefore from '../../../asset/deliveredBefore.png'
+import Checkmark from '../../../asset/Checkmark.png'
 
 
 export const images = {
@@ -127,8 +156,37 @@ export const images = {
     giftBig,
     lipProductBlack,
     eyeProductBlack,
-    faceProduct
-    
+    faceProduct,
+    uploadProductImg,
+    FairSkin,
+    lightSkin,
+    mediumSkin,
+    OliveSkin,
+    tanSkin,
+    deepTanSkin,
+    darkSkin,
+    veryDarkSkin,
+    dropDown,
+    userAfter,
+    userBefore,
+    beauticianAfter,
+    beauticianBefore,
+    salonAfter,
+    salonBefore,
+    productSellerAfter,
+    productSellerBefore,
+    shipping,
+    oderedBefore,
+    orderedAfter,
+    packedAfter,
+    packedBefore,
+    reviewBefore,
+    reviewsAfter,
+    addProductAfter,
+    addProductBefore,
+    deliveredAfter,
+    deliveredBefore,
+    Checkmark
 
 
 

@@ -13,7 +13,7 @@ export default function Shipping({ navigation }) {
     const [address, setAddress] = useState('79 Streets,ABC Area')
     const [city, setCity] = useState('Karachi')
     const [totalAmount, setTotalAmount] = useState('900')
-    const [productImage, setProductImage] = useState(images.lipstick)
+    const [productImage, setProductImage] = useState(images.shipping)
 
     const handleShopping = () => {
         navigation.navigate("MyTabs")

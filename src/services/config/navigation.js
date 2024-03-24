@@ -24,6 +24,8 @@ import UserProfile from "../../screens/user/UserProfile";
 import Rewards from "../../screens/user/Rewards";
 import SellerProducts from "../../screens/ProductSeller/SellerProducts";
 import UploadProducts from "../../screens/ProductSeller/UploadProducts";
+import SelectRole from "../../screens/SelectRole";
+import SellerHome from "../../screens/ProductSeller/SellerHome";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -34,7 +36,7 @@ export default function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="ProductSellerStack" component={ProductSellerStack} />
+                <Stack.Screen name="ProductSellerStack" component={ProductSellerStack} />
                 {/* <Stack.Screen name="UserStack" component={UserStack} /> */}
             </Stack.Navigator>
         </NavigationContainer>
@@ -56,19 +58,22 @@ const UserStack = () => {
             <Stack.Screen name="ProductDetails" component={ProductDetails} />
             <Stack.Screen name="Products" component={Products} />
             <Stack.Screen name="AllProducts" component={AllProducts} />
-            <Stack.Screen name="CheckOut" component={CheckOut}/>
-            <Stack.Screen name="Shipping" component={Shipping}/>
-            <Stack.Screen name="UserProfile" component={UserProfile}/>
-            <Stack.Screen name="Rewards" component={Rewards}/>
+            <Stack.Screen name="CheckOut" component={CheckOut} />
+            <Stack.Screen name="Shipping" component={Shipping} />
+            <Stack.Screen name="UserProfile" component={UserProfile} />
+            <Stack.Screen name="Rewards" component={Rewards} />
+            <Stack.Screen name="SelectRole" component={SelectRole} />
         </Stack.Navigator>
     )
 }
 
 const ProductSellerStack = () => {
-    return(
+    return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="SellerHome" component={SellerHome} />
             <Stack.Screen name="UploadProducts" component={UploadProducts} />
             <Stack.Screen name="SellerProducts" component={SellerProducts} />
+
         </Stack.Navigator>
     )
 }
@@ -103,7 +108,7 @@ const MyTabs = () => {
                     borderTopLeftRadius: sizes.screenWidth * 0.09,
                     borderTopRightRadius: sizes.screenWidth * 0.09,
                     position: 'absolute',
-                    
+
                 },
             }}>
             <Tab.Screen

@@ -21,6 +21,10 @@ export const colors = {
     redemPurple:'#C8AEDE',
     rewardTxtBtn:'#9E30FB',
     modalOverlay:'rgba(0,0,0, 0.5)',
-    lightGray:'#E5E2E2'
+    lightGray:'#E5E2E2',
+    outlinePurple:'#674783',
+    grayThree:'#ECECEC',
+    barGray:'#C6C6C6',
+    puprleOpacity:'rgba(157,138,174,0.2)'
   };
   

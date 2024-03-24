@@ -64,7 +64,7 @@ export const styles = StyleSheet.create({
     productImage: {
         width: sizes.screenWidth * 0.38,
         height: sizes.screenHeight * 0.2,
-        backgroundColor: colors.darkPurple,
+        // backgroundColor: colors.darkPurple,
         borderRadius: sizes.screenWidth * 0.03,
         right: sizes.screenWidth * 0.32
     },
