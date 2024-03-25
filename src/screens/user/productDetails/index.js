@@ -75,6 +75,14 @@ export default function ProductDetails({navigation}) {
     navigation.goBack()
   }
 
+  const handleRatings = () => {
+    navigation.navigate("Ratings")
+  }
+
+  const handleCart = () => {
+    navigation.navigate("Cart")
+  }
+
   return (
     <View style={styles.productBakcground}>
       <View style={styles.topContainer}>
@@ -96,17 +104,19 @@ export default function ProductDetails({navigation}) {
         </Swiper>
       </View>
       <TouchableOpacity style={styles.containerTwo}>
-        <AddToCartBig />
+        <AddToCartBig
+        onPress={handleCart} />
       </TouchableOpacity>
       <View style={styles.containerProductDetails}>
         <View style={styles.productRow}>
           <Text style={styles.productName}>{productName}</Text>
-          <View style={styles.ratingsContainer}>
-            <TouchableOpacity>
-              <Image source={images.star} />
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.ratingsContainer}
+          onPress={handleRatings}>          
+              <Image 
+              style={styles.star}
+              source={images.ratings} />
             <Text style={styles.ratingTxt}>{rating}</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <Text style={styles.productPrice}>{productPrice}</Text>
         <Text style={styles.productDetailsTxt}>{productDetails}</Text>
@@ -124,7 +134,8 @@ export default function ProductDetails({navigation}) {
       </View>
 
       <View style={styles.button}>
-        <Button title={'Buy Now'} />
+        <Button title={'Buy Now'}
+        onPress={handleCart} />
       </View>
     </View>
   );

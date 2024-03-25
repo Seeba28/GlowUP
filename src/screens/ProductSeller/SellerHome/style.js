@@ -10,14 +10,15 @@ export const styles = StyleSheet.create({
     },
     heading: {
         color: colors.black,
-        fontSize: fontSize.h4,
+        fontSize: fontSize.extraLarge,
         fontWeight: '600',
+        marginStart: sizes.screenWidth * 0.02
     },
     topRowContainer: {
+        marginTop: sizes.screenHeight * 0.05,
         paddingHorizontal: sizes.screenWidth * 0.05,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
     },
     scrollContainer: {
         marginTop: sizes.screenHeight * 0.01,
@@ -37,7 +38,7 @@ export const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         color: colors.black,
         fontSize: fontSize.medium,
-        fontWeight: '400',
+        fontWeight: '500',
     },
     subHeadingThree: {
         marginStart: sizes.screenWidth * 0.06,
@@ -47,7 +48,7 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     optionView: {
-        // marginBottom:sizes.screenHeight* 0.1,
+        marginBottom: sizes.screenHeight * 0.02,
         marginTop: sizes.screenHeight * 0.01,
         height: sizes.screenHeight * 0.1,
         width: sizes.screenWidth * 0.9,
@@ -121,6 +122,111 @@ export const styles = StyleSheet.create({
         fontSize: fontSize.smallM,
         color: colors.gray,
         fontWeight: '400'
+    },
+    profileContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: sizes.screenWidth * 0.145,
+        height: sizes.screenHeight * 0.07,
+        borderRadius: sizes.screenWidth * 0.7,
+        borderWidth: sizes.screenWidth * 0.002
+    },
+    profileImg: {
+        width: sizes.screenWidth * 0.145,
+        height: sizes.screenHeight * 0.07,
+        borderRadius: sizes.screenWidth * 0.7,
+    },
+    margin: {
+        marginStart: sizes.screenWidth * 0.34
+    },
+    modalOverlay: {
+        flex: 1,
+        backgroundColor: colors.modalOverlay,
+        justifyContent: 'center',
+        alignItems: "center"
+    },
+    modalContainer: {
+        backgroundColor: colors.white,
+        justifyContent: 'center',
+        width: sizes.screenWidth * 0.6,
+        borderRadius: sizes.screenWidth * 0.06,
+        alignItems: 'center',
+        paddingVertical: sizes.screenHeight * 0.03,
+        paddingHorizontal: sizes.screenWidth * 0.07,
+        alignSelf: 'center',
+        height:sizes.screenHeight* 0.3
+    },
+    modalTxt1: {
+        marginTop: sizes.screenHeight * 0.01,
+        color: colors.gray,
+        fontSize: fontSize.medium,
+        alignSelf: 'center',
+        fontWeight: '500',
+        textAlign:'center',
+        width:sizes.screenWidth * 0.3,
+    },
+    modalTxt2: {
+        marginTop: sizes.screenHeight * 0.02,
+        color: colors.darkPurple,
+        fontSize: fontSize.medium,
+        alignSelf: 'center',
+        fontWeight:'600',
+        lineHeight:sizes.screenHeight* 0.03
+    },
+    modalTxt3: {
+        marginTop: sizes.screenHeight * 0.01,
+        color: colors.gray,
+        fontSize: fontSize.medium,
+        alignSelf: 'center',
+        fontWeight: '500',
+        textAlign:'center',
+    },
+    modalButton: {
+        marginTop:sizes.screenHeight* 0.04,
+        backgroundColor: colors.darkPurple,
+        marginHorizontal: sizes.screenWidth * 0.05,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: sizes.screenHeight * 0.06,
+        width: sizes.screenWidth * 0.4,
+        borderRadius: sizes.screenWidth * 0.04,
+        
+    },
+    modalBtnTxt: {
+        color: colors.white,
+        fontSize: fontSize.medium,
+        fontWeight: '500'
+    },
+    reviewRow:{
+        paddingVertical:sizes.screenHeight* 0.01,
+        paddingHorizontal:sizes.screenWidth* 0.02,
+        flexDirection:'row',
+        alignItems:'center',
+        borderRadius:sizes.screenWidth* 0.02,
+        backgroundColor:colors.puprleOpacity,
+        marginBottom:sizes.screenHeight* 0.02
+    },
+    profileCircle:{
+        height:sizes.screenHeight* 0.06,
+        width:sizes.screenWidth* 0.12,
+        borderRadius:sizes.screenWidth* 0.1,
+    },
+    reviewName:{
+        color:colors.black,
+        fontSize:fontSize.medium,
+        fontWeight:'500'
+    },
+    reviewTxt:{
+        color:colors.black,
+        fontSize:fontSize.smallM,
+    },
+    reviewCOlumn:{
+        marginStart:sizes.screenHeight* 0.02
+    },
+    optionBottomContainerThree:{
+        // marginTop:sizes.screenHeight * 0.04,
+        paddingStart: sizes.screenWidth * 0.05,
+        paddingEnd: sizes.screenWidth * 0.05,
     }
 
 })

@@ -91,6 +91,30 @@ import addProductBefore from '../../../asset/addProductBefore.png'
 import deliveredAfter from '../../../asset/deliveredAfter.png'
 import deliveredBefore from '../../../asset/deliveredBefore.png'
 import Checkmark from '../../../asset/Checkmark.png'
+import orderConfirm from '../../../asset/orderConfirm.png'
+import packedConfrim from '../../../asset/packedConfrim.png'
+import salonImg4 from '../../../asset/salonImg4.png'
+import haircutPic from '../../../asset/haircutPic.png'
+import FacialPic from '../../../asset/FacialPic.png'
+import hennaPic from '../../../asset/hennaPic.png'
+import nailPaintPic from '../../../asset/nailPaintPic.png'
+import salonImg2 from '../../../asset/salonImg2.png'
+import salonImg3 from '../../../asset/salonImg3.png'
+import profileLarge from '../../../asset/profileLarge.png'
+import hairCut1 from '../../../asset/hairCut1.png'
+import face1 from '../../../asset/face1.png'
+import nailPaint1 from '../../../asset/nailPaint1.png'
+import acneIcon from '../../../asset/acneIcon.png'
+import hairCuttingIcon from '../../../asset/hairCuttingIcon.png'
+import hairColoringIcon from '../../../asset/hairColoringIcon.png'
+import nailTreatmentIcon from '../../../asset/nailTreatmentIcon.png'
+import makeoverIcon from '../../../asset/makeoverIcon.png'
+import userProfile2 from '../../../asset/userProfile2.png'
+
+
+
+
+
 
 
 export const images = {
@@ -186,7 +210,26 @@ export const images = {
     addProductBefore,
     deliveredAfter,
     deliveredBefore,
-    Checkmark
+    Checkmark,
+    orderConfirm,
+    packedConfrim,
+    salonImg2,
+    salonImg3,
+    salonImg4,
+    haircutPic,
+    hennaPic,
+    FacialPic,
+    nailPaintPic,
+    profileLarge,
+    hairCut1,
+    nailPaint1,
+    face1,
+    acneIcon,
+    nailTreatmentIcon,
+    hairColoringIcon,
+    hairCuttingIcon,
+    makeoverIcon,
+    userProfile2
 
 
 

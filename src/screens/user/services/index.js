@@ -38,6 +38,10 @@ export default function Services({ navigation }) {
     },
   ]);
 
+  const handleAllService = () => {
+    navigation.navigate("AllServices")
+  }
+
   return (
     <View style={styles.serviceBackgroud}>
       <View style={styles.topContainer}>
@@ -61,7 +65,8 @@ export default function Services({ navigation }) {
           <View style={styles.allServices}>
             {allServices.map((service, index) => {
               return (
-                <TouchableOpacity key={index}>
+                <TouchableOpacity key={index}
+                onPress={handleAllService}>
                   <ImageBackground
                     style={styles.servicesContainer}
                     source={service.image}>

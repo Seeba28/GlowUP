@@ -169,7 +169,8 @@ export const styles = StyleSheet.create({
         fontSize: fontSize.medium,
         alignSelf: 'center',
         fontWeight: '500',
-        lineHeight:sizes.screenHeight* 0.03
+        lineHeight:sizes.screenHeight* 0.03,
+        textAlign:'center'
     },
     modalTxt2: {
         marginTop: sizes.screenHeight * 0.02,

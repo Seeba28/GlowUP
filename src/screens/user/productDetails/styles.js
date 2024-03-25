@@ -59,7 +59,8 @@ export const styles = StyleSheet.create({
   ratingsContainer: {
     flexDirection: 'row',
     width:sizes.screenWidth*0.16,
-    justifyContent:'space-between',
+    justifyContent:'space-evenly',
+    alignItems:'center'
   },
   ratingTxt: {
     fontSize: fontSize.medium,
@@ -89,6 +90,12 @@ export const styles = StyleSheet.create({
   button:{
     marginTop:sizes.screenHeight* 0.06
   },
+  star:{
+    height:sizes.screenHeight* 0.025,
+    width:sizes.screenWidth* 0.045,
+    alignSelf:'center',
+    resizeMode:'contain'
+  }
   
   
 });

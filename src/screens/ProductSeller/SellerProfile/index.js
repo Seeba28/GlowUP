@@ -1,32 +1,26 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
-import { styles } from "./style";
 import { images } from "../../../services/utilities/images";
+import { styles } from "./style";
 
-export default function UserProfile({ navigation }) {
+export default function SellerProfile({ navigation }) {
     const [profileImage, setProfileImage] = useState(images.profileTop);
     const [userName, setUserName] = useState('Seeba')
     const [userEmail, setUserEmail] = useState('seeba.mubarak.gmail')
 
-    const handleRewards = () => {
-        navigation.navigate("Rewards")
-    }
+    
 
     const handleEditProfile = () =>{
-        navigation.navigate("EditProfile")
+        navigation.navigate("SellerEditProfile")
     }
     
     const handleSecurity = () =>{
-        navigation.navigate('UserSecurity')
+        navigation.navigate('SellerSecurity')
     }
     
-    const handleSignout = () => {
-        navigation.navigate('SignIn')
-    }
     
-    const handleHistory = () =>{
-        navigation.navigate('UserHistory')
-    }
+    
+    
     return (
         <View style={styles.serviceBackgroud}>
             <View style={styles.topContainer}>
@@ -40,7 +34,9 @@ export default function UserProfile({ navigation }) {
                         <Text style={styles.emailTxt}>{userEmail}</Text>
                     </View>
                 </View>
-                <TouchableOpacity onPress={handleSignout}>
+                <TouchableOpacity 
+                // onPress={handleSignout}
+                >
                     <Image
                         style={styles.signOutContianer}
                         source={images.signout} />
@@ -48,7 +44,8 @@ export default function UserProfile({ navigation }) {
             </View>
             <View style={styles.containerThree}>
                 <TouchableOpacity style={styles.feildsContianer}
-                onPress={handleEditProfile}>
+                onPress={handleEditProfile}
+                >
                     <View style={styles.feilds}>
                         <Image source={images.editProfile} />
                         <Text style={styles.feildsName}>Edit Profile</Text>
@@ -68,26 +65,7 @@ export default function UserProfile({ navigation }) {
                         style={styles.next}
                         source={images.nextArrow} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.feildsContianer}
-                onPress={handleRewards}>
-                    <View style={styles.feilds}>
-                        <Image source={images.rewards} />
-                        <Text style={styles.feildsName}>Rewards</Text>
-                    </View>
-                    <Image
-                        style={styles.next}
-                        source={images.nextArrow} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.feildsContianer}
-                onPress={handleHistory}>
-                    <View style={styles.feilds}>
-                        <Image source={images.history} />
-                        <Text style={styles.feildsName}>History</Text>
-                    </View>
-                    <Image
-                        style={styles.next}
-                        source={images.nextArrow} />
-                </TouchableOpacity>
+                
             </View>
         </View>
     )

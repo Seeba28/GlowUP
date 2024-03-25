@@ -255,11 +255,7 @@ export default function UploadProducts({ navigation }) {
                         <View style={styles.modalOverlay}>
                             <View style={styles.modalContainer}>
                                 <Image source={images.Checkmark} />
-                                <Text style={styles.modalTxt2}>
-                                    Congrats!
-                                    <Text style={styles.modalTxt1}> your rating
-                                        has been submitted</Text>
-                                </Text>
+                                    <Text style={styles.modalTxt1}>Product added successfully</Text>
                                 <TouchableOpacity style={styles.modalButton}
                                     onPress={handlePress}>
                                     <Text style={styles.modalBtnTxt}>Done</Text>

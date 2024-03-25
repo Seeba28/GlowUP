@@ -16,7 +16,6 @@ import { Screen } from "react-native-screens";
 import { Image } from "react-native";
 import { images } from "../utilities/images";
 import Services from "../../screens/user/services";
-import { useEffect, useState } from "react";
 import AllProducts from "../../screens/user/allProducts";
 import CheckOut from "../../screens/user/CheckOut";
 import Shipping from "../../screens/user/Shipping";
@@ -26,6 +25,19 @@ import SellerProducts from "../../screens/ProductSeller/SellerProducts";
 import UploadProducts from "../../screens/ProductSeller/UploadProducts";
 import SelectRole from "../../screens/SelectRole";
 import SellerHome from "../../screens/ProductSeller/SellerHome";
+import AllServices from "../../screens/user/AllServices";
+import Ratings from "../../screens/user/Ratings";
+import SalonDetails from "../../screens/user/SalonDetails";
+import UserReview from "../../screens/user/UserReview";
+import AppointmentBooking from "../../screens/user/AppointmentBooking";
+import EditProfile from "../../screens/user/EditProfile";
+import UserSecurity from "../../screens/user/UserSecurity";
+import UserNotification from "../../screens/user/UserNotification";
+import UserHistory from "../../screens/user/UserHistory";
+import SellerNotification from "../../screens/ProductSeller/SellerNotification";
+import SellerProfile from "../../screens/ProductSeller/SellerProfile";
+import SellerEditProfile from "../../screens/ProductSeller/SellerEditProfile";
+import SellerSecurity from "../../screens/ProductSeller/SellerSecurity";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -63,6 +75,15 @@ const UserStack = () => {
             <Stack.Screen name="UserProfile" component={UserProfile} />
             <Stack.Screen name="Rewards" component={Rewards} />
             <Stack.Screen name="SelectRole" component={SelectRole} />
+            <Stack.Screen name="AllServices" component={AllServices} />
+            <Stack.Screen name="Ratings" component={Ratings}/>
+            <Stack.Screen name="SalonDetails" component={SalonDetails}/>
+            <Stack.Screen name="UserReview" component={UserReview}/>
+            <Stack.Screen name="AppointmentBooking" component={AppointmentBooking}/>
+            <Stack.Screen name="EditProfile" component={EditProfile}/>
+            <Stack.Screen name="UserSecurity" component={UserSecurity}/>
+            <Stack.Screen name="UserNotification" component={UserNotification}/>
+            <Stack.Screen name="UserHistory" component={UserHistory}/>
         </Stack.Navigator>
     )
 }
@@ -73,7 +94,11 @@ const ProductSellerStack = () => {
             <Stack.Screen name="SellerHome" component={SellerHome} />
             <Stack.Screen name="UploadProducts" component={UploadProducts} />
             <Stack.Screen name="SellerProducts" component={SellerProducts} />
-
+            <Stack.Screen name="SellerNotification" component={SellerNotification} />
+            <Stack.Screen name="SellerProfile" component={SellerProfile} />
+            <Stack.Screen name="SellerEditProfile" component={SellerEditProfile} />
+            <Stack.Screen name="SellerSecurity" component={SellerSecurity} />
+        
         </Stack.Navigator>
     )
 }

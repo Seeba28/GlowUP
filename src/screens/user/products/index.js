@@ -29,7 +29,7 @@ export default function Products({ navigation }) {
       </View>
 
       <View style={styles.body}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleProducts}>
           <ImageBackground
             style={styles.contianerOne}
             source={images.TopMakeup}
@@ -42,20 +42,23 @@ export default function Products({ navigation }) {
 
         <View style={styles.productCategory}>
           <View>
-            <TouchableOpacity style={styles.productContainerOne}>
+            <TouchableOpacity style={styles.productContainerOne}
+            onPress={handleProducts}>
               <Text style={styles.headingTwo}>Eyes Product</Text>
               <Image
                 style={styles.picOne}
                 source={images.eyeProduct} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.productContainerTwo}>
+            <TouchableOpacity style={styles.productContainerTwo}
+            onPress={handleProducts}>
               <Text style={styles.headingTwo}>Face Product</Text>
               <Image
                 style={styles.picOne}
                 source={images.foundation} />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.productContainerThree}>
+          <TouchableOpacity style={styles.productContainerThree}
+          onPress={handleProducts}>
             <Image
               style={styles.picTwo}
               source={images.lipProduct} />
