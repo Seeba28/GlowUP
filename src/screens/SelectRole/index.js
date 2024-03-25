@@ -14,14 +14,16 @@ export default function SelectRole({ navigation }) {
     }
 
     const handleNext = () => {
-        if(selectedRole){
-            navigation.navigate('SignUp')
-        }else{
-            setError('*Please select a role')
+        if (selectedRole === 'customer') {
+            navigation.navigate('SignUp');
+        } else if (selectedRole === 'ProductSeller') {
+            navigation.navigate('SellerSignUp');
+        } else {
+            setError('*Please select a role');
         }
-    }
+    };
 
-
+    
     return (
         <View style={styles.homeBackgroud}>
             <Text style={styles.subHeading}>Let's Personalize Your Experience: Select Your Role!</Text>

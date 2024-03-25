@@ -38,6 +38,13 @@ import SellerNotification from "../../screens/ProductSeller/SellerNotification";
 import SellerProfile from "../../screens/ProductSeller/SellerProfile";
 import SellerEditProfile from "../../screens/ProductSeller/SellerEditProfile";
 import SellerSecurity from "../../screens/ProductSeller/SellerSecurity";
+import navigationService from "./navigationService";
+import SellerSignIn from "../../screens/ProductSeller/SellerSignIn";
+import SellerSignUp from "../../screens/ProductSeller/SellerSignUp";
+import SellerResetPassword from "../../screens/ProductSeller/SellerResetPassword";
+import SellerForgotPassword from "../../screens/ProductSeller/SellerForgotPassword";
+import SellerProfilePicture from "../../screens/ProductSeller/SellerProfilePicture";
+import SellerOTP from "../../screens/ProductSeller/SellerOTP";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -46,10 +53,10 @@ const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
     return (
-        <NavigationContainer>
+        <NavigationContainer
+        ref={ref => navigationService.setTopLevelNavigator(ref)}>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="ProductSellerStack" component={ProductSellerStack} />
-                {/* <Stack.Screen name="UserStack" component={UserStack} /> */}
+                <Stack.Screen name="UserStack" component={UserStack} />
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -58,13 +65,20 @@ export default function Navigation() {
 const UserStack = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="MyTabs" component={MyTabs} />
+            <Stack.Screen name="SelectRole" component={SelectRole} />
+            <Stack.Screen name="SellerProfilePicture" component={SellerProfilePicture} />
+            <Stack.Screen name="SellerSignUp" component={SellerSignUp} />
+            <Stack.Screen name="SellerSignIn" component={SellerSignIn} />
+            <Stack.Screen name="SellerOTP" component={SellerOTP} />
+            <Stack.Screen name="SellerForgotPassword" component={SellerForgotPassword} />
+            <Stack.Screen name="SellerResetPassword" component={SellerResetPassword} />
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="SignUp" component={SignUp} />
             <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
             <Stack.Screen name="OTPPassword" component={OTPPassword} />
             <Stack.Screen name="ResetPassword" component={ResetPassword} />
             <Stack.Screen name="ProfilePicture" component={ProfilePicture} />
+            <Stack.Screen name="MyTabs" component={MyTabs} />
             <Stack.Screen name="UserHome" component={UserHome} />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="ProductDetails" component={ProductDetails} />
@@ -74,7 +88,6 @@ const UserStack = () => {
             <Stack.Screen name="Shipping" component={Shipping} />
             <Stack.Screen name="UserProfile" component={UserProfile} />
             <Stack.Screen name="Rewards" component={Rewards} />
-            <Stack.Screen name="SelectRole" component={SelectRole} />
             <Stack.Screen name="AllServices" component={AllServices} />
             <Stack.Screen name="Ratings" component={Ratings}/>
             <Stack.Screen name="SalonDetails" component={SalonDetails}/>
@@ -84,13 +97,6 @@ const UserStack = () => {
             <Stack.Screen name="UserSecurity" component={UserSecurity}/>
             <Stack.Screen name="UserNotification" component={UserNotification}/>
             <Stack.Screen name="UserHistory" component={UserHistory}/>
-        </Stack.Navigator>
-    )
-}
-
-const ProductSellerStack = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="SellerHome" component={SellerHome} />
             <Stack.Screen name="UploadProducts" component={UploadProducts} />
             <Stack.Screen name="SellerProducts" component={SellerProducts} />
@@ -98,10 +104,10 @@ const ProductSellerStack = () => {
             <Stack.Screen name="SellerProfile" component={SellerProfile} />
             <Stack.Screen name="SellerEditProfile" component={SellerEditProfile} />
             <Stack.Screen name="SellerSecurity" component={SellerSecurity} />
-        
         </Stack.Navigator>
     )
 }
+
 
 const MyTabs = () => {
     // const [keyboardOpen, setKeyboardOpen] = useState(false);

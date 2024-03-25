@@ -18,6 +18,9 @@ export default function SellerProfile({ navigation }) {
         navigation.navigate('SellerSecurity')
     }
     
+    const handleSignout = () => {
+        navigation.navigate('SellerSignUp')
+    }
     
     
     
@@ -35,7 +38,7 @@ export default function SellerProfile({ navigation }) {
                     </View>
                 </View>
                 <TouchableOpacity 
-                // onPress={handleSignout}
+                onPress={handleSignout}
                 >
                     <Image
                         style={styles.signOutContianer}

@@ -8,7 +8,9 @@ import { BarChart } from "react-native-gifted-charts";
 import { images } from "../../../services/utilities/images";
 import StarRating from "react-native-star-rating-widget";
 
-export default function SellerHome({ navigation }) {
+export default function SellerHome({ navigation,route}) {
+    console.log("Route params:", route.params);
+    const {profileImageUri} = route.params;
     const [userName, setUseName] = useState('Sana Malik')
     const [selectedOption, setSelectedOption] = useState('')
     const [orderedModal, setOrderModal] = useState(false)
@@ -130,8 +132,8 @@ export default function SellerHome({ navigation }) {
                 onPress={handleProfile}>
                     <Image
                         style={styles.profileImg}
-                        // source={{ uri: profileImageUri }}
-                        source={images.profileTop}
+                        source={{ uri: profileImageUri }}
+                        // source={images.profileTop}
                     />
                 </TouchableOpacity>
                 <Text style={styles.heading}>{userName}</Text>

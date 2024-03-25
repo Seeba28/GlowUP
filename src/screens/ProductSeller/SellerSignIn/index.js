@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
-import BackArrow from '../../components/BackArrow';
-import { images } from '../../services/utilities/images';
-import { colors } from '../../services/utilities/colors';
-import Button from '../../components/Button';
-export default function SignIn({navigation}) {
+import { styles } from './style';
+import BackArrow from '../../../components/BackArrow';
+import Button from '../../../components/Button';
+import { images } from '../../../services/utilities/images';
+import { colors } from '../../../services/utilities/colors';
+export default function SellerSignIn({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
@@ -29,7 +29,7 @@ export default function SignIn({navigation}) {
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
 
         if (emailValid && passwordValid) {
-            navigation.navigate("UserHome")
+            navigation.navigate("SellerHome")
             
             // Proceed with login
             // Example: call an API to authenticate the user
@@ -37,13 +37,13 @@ export default function SignIn({navigation}) {
     };
     
     const handlePress = () =>{
-        navigation.navigate("SignUp")
+        navigation.navigate("SellerSignUp")
     }
     const handleGoBack = () =>{
         navigation.goBack()
     }
     const handleForgotPass = () => {
-        navigation.navigate("ForgotPassword")
+        navigation.navigate("SellerForgotPassword")
     }
     return (
         <View style={styles.homeBackgroud}>
@@ -74,18 +74,21 @@ export default function SignIn({navigation}) {
                         onChangeText={setPassword}
                         value={password}
                         secureTextEntry={!showPassword}></TextInput>
-                    <TouchableOpacity onPress={feildShowPassword}>
+                    <TouchableOpacity 
+                    onPress={feildShowPassword}
+                    >
                         <Image source={showPassword ? images.eyeOpen : images.eyeClosed} />
                     </TouchableOpacity>
                 </View>
                 {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
             </View>
             <TouchableOpacity
-            onPress={handleForgotPass}>
+            onPress={handleForgotPass}
+            >
                 <Text style={styles.forgotPassTxt}>Forgot Password?</Text>
             </TouchableOpacity>
             <View style={styles.containerThree}>
-                <Button 
+                <Button
                 onPress={handleLogin}
                 title={'Sign In'} />
                 <Text style={styles.continueTxt}>or continue with</Text>
@@ -95,7 +98,8 @@ export default function SignIn({navigation}) {
                 </TouchableOpacity>
                 <Text style={styles.continueTxt}>Don’t have an account?</Text>
                 <TouchableOpacity style={styles.otherButton}
-                onPress={handlePress}>
+                onPress={handlePress}
+                >
                     <Text style={styles.signUpBtnText}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
