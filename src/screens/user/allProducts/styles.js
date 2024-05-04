@@ -38,11 +38,23 @@ export const styles = StyleSheet.create({
     flex: 1,
     marginStart: sizes.screenWidth * 0.02,
   },
+  //   containerTwo: {
+  //     marginTop: sizes.screenHeight * 0.02,
+  //     paddingHorizontal: sizes.screenWidth * 0.05,
+  //     height: sizes.screenHeight,
+  //     width: sizes.screenWidth,
+  //     flexDirection:'row',
+  //     flexWrap:'wrap',
+  //     justifyContent:'space-between'
+  // },
   containerTwo: {
     // marginTop: sizes.screenHeight * 0.02,
     paddingHorizontal: sizes.screenWidth * 0.05,
     height: sizes.screenHeight,
     width: sizes.screenWidth,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between'
   },
   allProduts: {
     justifyContent: 'space-between',

@@ -73,7 +73,34 @@ export default function AllProducts({ navigation }) {
       </View>
       <ScrollView style={styles.scrollContainer}>
         <View style={styles.containerTwo}>
-          <FlatList
+          {allProducts.map((item,index) => (
+          <View style={styles.productRow} key={index}>
+          <View style={styles.productContainer}>
+            <TouchableOpacity onPress={handleProductDescription}>
+              <View style={styles.productImageContainer}>
+                <ImageBackground
+                  style={styles.productImage}
+                  source={item.image}>
+                  <TouchableOpacity style={styles.likeContainer}>
+                    <Like />
+                  </TouchableOpacity>
+                </ImageBackground>
+              </View>
+            </TouchableOpacity>
+            <View style={styles.productsDetailRow}>
+              <View>
+                <Text style={styles.productsNameText}>{item.name}</Text>
+                <Text style={styles.productPriceText}>{item.price}</Text>
+              </View>
+              <TouchableOpacity>
+                <AddToCartSmall onPress={handleCart} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+          ))}
+
+          {/* <FlatList
             data={allProducts}
             numColumns={2}
             columnWrapperStyle={{ justifyContent: 'space-between' }}
@@ -104,7 +131,7 @@ export default function AllProducts({ navigation }) {
               </View>
             )}
             keyExtractor={(item, index) => index.toString()}
-          />
+          /> */}
 
 
         </View>

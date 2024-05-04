@@ -62,7 +62,7 @@ export default function ProfilePicture({ navigation }) {
     };
 
     const handlePress = () => {
-        navigation.navigate("UserHome",
+        navigation.navigate("MyTabs",
         {profileImageUri: profileImage.uri})
 
     }

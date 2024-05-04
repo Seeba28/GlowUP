@@ -29,7 +29,7 @@ export default function SignIn({navigation}) {
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
 
         if (emailValid && passwordValid) {
-            navigation.navigate("UserHome")
+            navigation.navigate("MyTabs")
             
             // Proceed with login
             // Example: call an API to authenticate the user
