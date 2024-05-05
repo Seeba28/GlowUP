@@ -45,6 +45,7 @@ import SellerResetPassword from "../../screens/ProductSeller/SellerResetPassword
 import SellerForgotPassword from "../../screens/ProductSeller/SellerForgotPassword";
 import SellerProfilePicture from "../../screens/ProductSeller/SellerProfilePicture";
 import SellerOTP from "../../screens/ProductSeller/SellerOTP";
+import AppointmentBookingDetail from "../../screens/user/AppointmentBookingDetail";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -104,6 +105,8 @@ const UserStack = () => {
             <Stack.Screen name="SellerProfile" component={SellerProfile} />
             <Stack.Screen name="SellerEditProfile" component={SellerEditProfile} />
             <Stack.Screen name="SellerSecurity" component={SellerSecurity} />
+            <Stack.Screen name="AppointmentBookingDetail" component={AppointmentBookingDetail} />
+
         </Stack.Navigator>
     )
 }

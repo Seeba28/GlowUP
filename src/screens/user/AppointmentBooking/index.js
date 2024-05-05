@@ -5,8 +5,22 @@ import { images } from '../../../services/utilities/images';
 import Button from '../../../components/Button';
 import { styles } from './style';
 import { colors } from '../../../services/utilities/colors';
+import { Calendar } from 'react-native-calendars';
+import { sizes } from '../../../services/utilities/sizes';
 
 export default function AppointmentBooking({ navigation }) {
+    const [selectTime, setSelectTime] = useState('')
+    const handleTimePress = (time) => {
+        setSelectTime(time)
+    }
+    const [selectedDate, setSelectedDate] = useState('')
+    const handleDayPress = (day) => {
+        setSelectedDate(day.dateString);
+    };
+
+    const markedDates = {};
+    markedDates[selectedDate] = { selected: true, selectedColor: colors.selectedPurple };
+
     const [itemCart, setItemCart] = useState([
         {
             name: 'Acne Facial',
@@ -27,16 +41,29 @@ export default function AppointmentBooking({ navigation }) {
         }
     }
 
-    const subtotal = itemCart.reduce((total, item) => total + (item.price * quantity), 0);
-
-
-    const shipping = 100
-    const total = subtotal + shipping
-
     const handleBack = () => {
         navigation.goBack()
     }
+    const handleAppointmentBookingDetial = () => {
+        navigation.navigate("AppointmentBookingDetail")
+    }
 
+
+    const [availbleTime, setAvailableTime] = useState([
+        { time: '10:00 AM' },
+        { time: '11:00 AM' },
+        { time: '12:00 PM' },
+        { time: '01:00 PM' },
+        { time: '02:00 PM' },
+        { time: '03:00 PM' },
+        { time: '04:00 PM' },
+        { time: '05:00 PM' },
+        { time: '06:00 PM' },
+        { time: '07:00 PM' },
+        { time: '08:00 PM' },
+        { time: '09:00 PM' },
+
+    ])
 
     return (
         <View style={styles.productBakcground}>
@@ -55,9 +82,13 @@ export default function AppointmentBooking({ navigation }) {
                                 key={index}>
                                 <View
                                     style={styles.textFeildContainer}>
-                                    <Image style={styles.productImage}
-                                        source={item.image}
-                                    />
+                                    <View style={styles.productImageContainer}>
+                                        <Image
+                                            style={styles.productImage}
+                                            source={item.image}
+                                        />
+                                    </View>
+
                                     <View style={styles.flexColumn}>
                                         <Text style={styles.itemName}>{item.name}</Text>
                                         <Text style={styles.itemPrice}>Rs. {item.price}</Text>
@@ -76,27 +107,44 @@ export default function AppointmentBooking({ navigation }) {
                         )
                     })}
                 </View>
+                <Text style={styles.grayHeading1}>Select Date and Time for your appointment </Text>
+                <Calendar
+                    onDayPress={handleDayPress}
+                    markedDates={markedDates}
+                    style={{
+                        marginHorizontal: sizes.screenWidth * 0.05,
+                        marginTop: sizes.screenHeight * 0.01
+                    }}
+                    theme={{
+                        calendarBackground: colors.calenderBg,
+                        selectedDayBackgroundColor: colors.selectedPurple,
+                        todayTextColor: colors.darkPurple,
+                        selectedDayTextColor: colors.black,
+                        arrowColor: colors.darkPurple
+                    }}
 
+                />
+                <Text style={styles.availableTimeHeading}>Available Time</Text>
+                <View style={styles.timingView}>
+                    {availbleTime.map((item, index) => (
+                        <View style={styles.timingViewRow} key={index}>
+                            <TouchableOpacity style={[styles.timingNotSelected, selectTime === item.time && styles.timingSelected]}
+                            onPress={() => handleTimePress(item.time)}>
+                                <Text style={styles.timingTextColor}>{item.time}</Text>
+                            </TouchableOpacity>
+                        </View>
+                    ))}
+
+                </View>
+
+                <View style={styles.buttonTop}>
+                    <Button title={'Proceed To Payment'}
+                        onPress={handleAppointmentBookingDetial}
+
+                    />
+                </View>
             </ScrollView>
 
-            <View style={styles.feildContainer}>
-                <View style={styles.feildRow1}>
-                    <Text style={styles.fieldTxt}>SUBTOTAL</Text>
-                    <Text style={styles.fieldTxt}>Rs. {subtotal}</Text>
-                </View>
-                <View style={styles.feildRow1}>
-                    <Text style={styles.fieldTxt}>SHIPPING</Text>
-                    <Text style={styles.fieldTxt}>Rs. {shipping}</Text>
-                </View>
-                <View style={styles.feildRow2}>
-                    <Text style={styles.fieldTxt}>TOTAL</Text>
-                    <Text style={styles.fieldTxt}>Rs. {total}</Text>
-                </View>
-            </View>
-            <View style={styles.buttonTop}>
-                <Button title={'Proceed To Checkout'}
-                    />
-            </View>
 
         </View>
     )

@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
         paddingStart: sizes.screenWidth * 0.05,
     },
     heading: {
-        marginStart:sizes.screenWidth* 0.13,
+        marginStart: sizes.screenWidth * 0.13,
         color: colors.black,
         fontSize: fontSize.large,
         fontWeight: '500',
@@ -52,12 +52,18 @@ export const styles = StyleSheet.create({
         marginEnd: sizes.screenWidth * 0.01,
         marginTop: sizes.screenHeight * 0.05
     },
-    productImage: {
+    productImageContainer: {
         width: sizes.screenWidth * 0.3,
         height: sizes.screenHeight * 0.11,
         backgroundColor: colors.puprleOpacity,
         borderRadius: sizes.screenWidth * 0.03,
-        resizeMode:'contain'
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    productImage: {
+        width: sizes.screenWidth * 0.2,
+        height: sizes.screenHeight * 0.07,
+        resizeMode: 'contain',
     },
     itemName: {
         fontSize: fontSize.large,
@@ -69,52 +75,59 @@ export const styles = StyleSheet.create({
         color: colors.textColor,
         fontWeight: '500'
     },
-    feildContainer: {
-        paddingHorizontal: sizes.screenWidth * 0.02,
-        height: sizes.screenHeight * 0.215,
-        width: sizes.screenWidth * 0.91,
-        backgroundColor: colors.textFeildBg,
-        alignSelf: 'center',
-        borderRadius: sizes.screenWidth * 0.04,
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginBottom:sizes.screenHeight* 0.02
-        
+
+
+    buttonTop: {
+        marginBottom: sizes.screenHeight * 0.03
     },
-    feildRow1: {
-        height: sizes.screenHeight * 0.07,
-        width: sizes.screenWidth * 0.91,
-        paddingHorizontal: sizes.screenWidth * 0.04,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderBottomWidth: sizes.screenWidth * 0.001,
-        borderBottomColor: colors.lineOpacity,
-    },
-    feildRow2: {
-        height: sizes.screenHeight * 0.07,
-        width: sizes.screenWidth * 0.91,
-        paddingHorizontal: sizes.screenWidth * 0.04,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        
-    },
-    fieldTxt: {
-        fontSize: fontSize.large,
-        color: colors.text,
-        fontWeight: '500'
-    },
-    buttonTop:{
-        marginBottom:sizes.screenHeight* 0.03
-    },
-    scrollContainer:{
-        marginTop:sizes.screenHeight* 0.02,
-        marginBottom:sizes.screenHeight* 0.02,
+    scrollContainer: {
+        marginTop: sizes.screenHeight * 0.02,
+        marginBottom: sizes.screenHeight * 0.02,
     },
     body: {
         paddingVertical: sizes.screenHeight * 0.01,
     },
+    grayHeading1: {
+        color: colors.gray,
+        fontWeight: '500',
+        marginHorizontal: sizes.screenWidth * 0.05,
+        marginTop: sizes.screenHeight * 0.02,
+    },
+    timingView: {
+        marginHorizontal: sizes.screenWidth * 0.05,
+        marginTop: sizes.screenHeight * 0.01,
+        marginBottom: sizes.screenHeight * 0.03,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between'
+    },
+    availableTimeHeading: {
+        color: colors.gray,
+        fontWeight: '500',
+        paddingHorizontal: sizes.screenWidth * 0.05,
+        marginTop:sizes.screenHeight* 0.02
+    },
+    timingViewRow: {
+        flexDirection: 'row',
+        marginTop: sizes.screenHeight * 0.01,
+        justifyContent: 'space-between',
 
+    },
+    timingNotSelected: {
+        backgroundColor:colors.textFeildBG3,
+        paddingHorizontal: sizes.screenWidth * 0.055,
+        paddingVertical: sizes.screenHeight * 0.015,
+        borderRadius: sizes.screenWidth * 0.06
+    },
+    timingSelected: {
+        backgroundColor: colors.selectedPurple,
+        paddingHorizontal: sizes.screenWidth * 0.055,
+        paddingVertical: sizes.screenHeight * 0.015,
+        borderRadius: sizes.screenWidth * 0.06
+
+    },
+    timingTextColor: {
+        color: colors.black
+    }
 
 })

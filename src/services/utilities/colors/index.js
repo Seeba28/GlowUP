@@ -25,6 +25,8 @@ export const colors = {
     outlinePurple:'#674783',
     grayThree:'#ECECEC',
     barGray:'#C6C6C6',
-    puprleOpacity:'rgba(157,138,174,0.2)'
+    puprleOpacity:'rgba(157,138,174,0.2)',
+    calenderBg:'#EDE8F1',
+    selectedPurple:'rgba(200,174,222,0.5)',
   };
   

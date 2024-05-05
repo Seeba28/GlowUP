@@ -99,41 +99,6 @@ export default function AllProducts({ navigation }) {
           </View>
         </View>
           ))}
-
-          {/* <FlatList
-            data={allProducts}
-            numColumns={2}
-            columnWrapperStyle={{ justifyContent: 'space-between' }}
-            renderItem={({ item }) => (
-              <View style={styles.productRow}>
-                <View style={styles.productContainer}>
-                  <TouchableOpacity onPress={handleProductDescription}>
-                    <View style={styles.productImageContainer}>
-                      <ImageBackground
-                        style={styles.productImage}
-                        source={item.image}>
-                        <TouchableOpacity style={styles.likeContainer}>
-                          <Like />
-                        </TouchableOpacity>
-                      </ImageBackground>
-                    </View>
-                  </TouchableOpacity>
-                  <View style={styles.productsDetailRow}>
-                    <View>
-                      <Text style={styles.productsNameText}>{item.name}</Text>
-                      <Text style={styles.productPriceText}>{item.price}</Text>
-                    </View>
-                    <TouchableOpacity>
-                      <AddToCartSmall onPress={handleCart}/>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </View>
-            )}
-            keyExtractor={(item, index) => index.toString()}
-          /> */}
-
-
         </View>
       </ScrollView>
 
