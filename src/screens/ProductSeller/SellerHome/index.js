@@ -17,20 +17,20 @@ export default function SellerHome({ navigation,route}) {
     const [packedModal, setPackedModal] = useState(false)
 
 
-    const data = [
-        { label: 'Jan', value: 60 },
-        { label: 'Feb', value: 30 },
-        { label: 'Mar', value: 40 },
-        { label: 'Apr', value: 70 },
-        { label: 'May', value: 20 },
-        { label: 'Jun', value: 50 },
-        { label: 'Jul', value: 60 },
-        { label: 'Aug', value: 60 },
-        { label: 'Sep', value: 40 },
-        { label: 'Oct', value: 20 },
-        { label: 'Nov', value: 50 },
-        { label: 'Dec', value: 30 }
-    ];
+    // const data = [
+    //     { label: 'Jan', value: 60 },
+    //     { label: 'Feb', value: 30 },
+    //     { label: 'Mar', value: 40 },
+    //     { label: 'Apr', value: 70 },
+    //     { label: 'May', value: 20 },
+    //     { label: 'Jun', value: 50 },
+    //     { label: 'Jul', value: 60 },
+    //     { label: 'Aug', value: 60 },
+    //     { label: 'Sep', value: 40 },
+    //     { label: 'Oct', value: 20 },
+    //     { label: 'Nov', value: 50 },
+    //     { label: 'Dec', value: 30 }
+    // ];
 
     const [recentOrder, setRecentOrder] = useState([
         {
@@ -142,7 +142,7 @@ export default function SellerHome({ navigation,route}) {
                 </View>
             </View>
             <Text style={styles.subHeadingTwo}>Business Analysis</Text>
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+            {/* <ScrollView showsHorizontalScrollIndicator={false} horizontal>
                 <BarChart data={data}
                     barBorderRadius={sizes.screenWidth * 0.02}
                     frontColor={colors.barGray}
@@ -152,7 +152,7 @@ export default function SellerHome({ navigation,route}) {
                     hideAxesAndRules
                     xAxisLabelTextStyle={{ color: colors.black }}
                 />
-            </ScrollView>
+            </ScrollView> */}
             <View style={styles.optionView}>
                 <TouchableOpacity style={styles.optionSquare}
                     onPress={() => handleOptionSelect('Ordered')}>

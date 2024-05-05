@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     },
     optionView: {
         marginBottom: sizes.screenHeight * 0.02,
-        marginTop: sizes.screenHeight * 0.01,
+        marginTop: sizes.screenHeight * 0.03,
         height: sizes.screenHeight * 0.1,
         width: sizes.screenWidth * 0.9,
         alignSelf: 'center',
@@ -78,8 +78,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
     },
     navigateContainer: {
-        marginTop: sizes.screenHeight * 0.03,
-        height: sizes.screenHeight * 0.32,
+        marginTop: sizes.screenHeight * 0.01,
     },
     roleContainer: {
         marginTop: sizes.screenHeight * 0.01,
