@@ -72,6 +72,10 @@ export default function AllServices({ navigation }) {
         setSelectedOption(option);
     };
 
+    const handleSalonDetails = () => {
+        navigation.navigate('SalonDetails')
+      }
+
     return (
         <View>
             <View style={styles.topContainer}>
@@ -110,7 +114,7 @@ export default function AllServices({ navigation }) {
                             <View style={styles.serviceRow}
                                 key={index}>
                                 <View style={styles.serviceContainer}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity  onPress={handleSalonDetails}>
                                         <View style={styles.serviceImageContainer}>
                                             <Image source={salons.image}
                                                 style={styles.serviceImage} />
@@ -137,7 +141,7 @@ export default function AllServices({ navigation }) {
                             <View style={styles.serviceRow}
                                 key={index}>
                                 <View style={styles.serviceContainer}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity  onPress={handleSalonDetails}>
                                         <View style={styles.serviceImageContainer}>
                                             <Image source={service.image}
                                                 style={styles.serviceImage} />
