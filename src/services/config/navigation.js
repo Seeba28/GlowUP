@@ -73,6 +73,13 @@ import SalonAddServiceInfo from "../../screens/Salon/SalonAddServiceInfo";
 import SalonServiceDetail from "../../screens/Salon/SalonServiceDetail";
 import SalonEditService from "../../screens/Salon/SalonEditService";
 import ServiceProviderHome from "../../screens/ServiceProvider/ServiceProviderHome";
+import ServiceProviderNotification from "../../screens/ServiceProvider/ServiceProviderNotification";
+import ServiceProviderAllReviews from "../../screens/ServiceProvider/ServiceProviderAllReviews";
+import ServiceProviderCatalogue from "../../screens/ServiceProvider/ServiceProviderCatalogue";
+import ServiceProviderAddService from "../../screens/ServiceProvider/ServiceProviderAddService";
+import ServiceProviderAddServiceInfo from "../../screens/ServiceProvider/ServiceProviderServiceInfo";
+import ServiceProviderServiceDetail from "../../screens/ServiceProvider/ServiceProviderServiceDetail";
+import ServiceProviderEditService from "../../screens/ServiceProvider/ServiceProviderEditService";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -163,6 +170,20 @@ const UserStack = () => {
             <Stack.Screen name="SalonServiceDetail" component={SalonServiceDetail} />
             <Stack.Screen name="SalonEditService" component={SalonEditService} />
             <Stack.Screen name="ServiceProviderHome" component={ServiceProviderHome} />
+            <Stack.Screen name="ServiceProviderNotification" component={ServiceProviderNotification} />
+            <Stack.Screen name="ServiceProviderAllReviews" component={ServiceProviderAllReviews} />
+            <Stack.Screen name="ServiceProviderCatalogue" component={ServiceProviderCatalogue} />
+            <Stack.Screen name="ServiceProviderAddService" component={ServiceProviderAddService} />
+            <Stack.Screen name="ServiceProviderAddServiceInfo" component={ServiceProviderAddServiceInfo} />
+            <Stack.Screen name="ServiceProviderServiceDetail" component={ServiceProviderServiceDetail} />
+            <Stack.Screen name="ServiceProviderEditService" component={ServiceProviderEditService} />
+
+
+
+
+
+
+
 
 
 
@@ -282,8 +303,8 @@ const BeauticianTabs = () => {
                 }} />
 
             <Tab.Screen
-                name="Services"
-                component={Services}
+                name="ServiceProviderCatalogue"
+                component={ServiceProviderCatalogue}
                 options={{
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>

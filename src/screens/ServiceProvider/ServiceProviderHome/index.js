@@ -16,12 +16,12 @@ export default function ServiceProviderHome({ navigation }) {
 
 
     const handleSellerNotifcation = () => {
-        navigation.navigate("SalonNotification")
+        navigation.navigate("ServiceProviderNotification")
     }
 
 
     const handleProfile = () => {
-        navigation.navigate('SalonProfile')
+        navigation.navigate('ServiceProviderProfile')
     }
     const [lastServices, setLastServices] = useState([
         {
@@ -121,7 +121,7 @@ export default function ServiceProviderHome({ navigation }) {
                         <Text style={styles.reviewHeading}>Reviews</Text>
                         <TouchableOpacity
                             style={styles.viewAllBtn}
-                            onPress={() => navigation.navigate('SalonAllReviews')}>
+                            onPress={() => navigation.navigate('ServiceProviderAllReviews')}>
                             <Text style={styles.viewAllText}>View All</Text>
                             <Image
                                 style={styles.arrowImage}
