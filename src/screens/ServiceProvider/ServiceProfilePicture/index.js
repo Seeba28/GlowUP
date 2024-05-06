@@ -62,7 +62,7 @@ export default function ServiceProfilePicture({ navigation }) {
     };
 
     const handlePress = () => {
-        navigation.navigate("MyTabs",
+        navigation.navigate("BeauticianTabs",
         {profileImageUri: profileImage.uri})
 
     }

@@ -35,7 +35,7 @@ export default function ServiceResetPassword({ navigation }) {
         setPasswordMatchError(passwordMatch ? '' : "*Password doesn't match");
 
         if (confirmPassword && passwordValid && passwordMatch) {
-            navigation.navigate("MyTabs")
+            navigation.navigate("BeauticianTabs")
             // Proceed with login
             // Example: call an API to authenticate the user
         }

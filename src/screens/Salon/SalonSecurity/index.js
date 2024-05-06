@@ -1,13 +1,13 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
-import { styles } from "./style";
-import BackArrow from "../../../components/BackArrow";
-import { images } from "../../../services/utilities/images";
-import { colors } from "../../../services/utilities/colors";
-import Button from "../../../components/Button";
+import { View,Text, Image,TextInput,TouchableOpacity } from 'react-native';
+import { styles } from './style';
+import BackArrow from '../../../components/BackArrow';
+import { images } from '../../../services/utilities/images';
+import { colors } from '../../../services/utilities/colors';
+import Button from '../../../components/Button';
 
-export default function SalonResetPassword({ navigation }) {
 
+export default function SalonSecurity({ navigation }) {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
@@ -35,26 +35,24 @@ export default function SalonResetPassword({ navigation }) {
         setPasswordMatchError(passwordMatch ? '' : "*Password doesn't match");
 
         if (confirmPassword && passwordValid && passwordMatch) {
-            navigation.navigate("SalonTabs")
-            // Proceed with login
-            // Example: call an API to authenticate the user
+            navigation.navigate("SalonProfile")
         }
     };
 
-    const handleGoBack = () => {
+
+    const handleBack = () => {
         navigation.goBack()
     }
-
-    return (
-        <View style={styles.homeBackgroud}>
-            <View style={styles.backArrow}>
-                <BackArrow
-                    onPress={handleGoBack}
-                />
+return(
+    <View>
+        <View style={styles.topContainer}>
+                <View style={styles.backArrow}>
+                    <BackArrow
+                        onPress={handleBack} />
+                </View>
+                <Text style={styles.heading}>Secuirty</Text>
             </View>
-            <Text style={styles.headText}>Reset Password</Text>
-            <Text style={styles.subHeading}>Enter a new password to reset the
-                password on your account.</Text>
+
             <View style={styles.contianerTwo}>
                 <View style={styles.textFeildContainer}>
                     <Image source={images.password} />
@@ -86,11 +84,11 @@ export default function SalonResetPassword({ navigation }) {
                 {confrimPasswordError ? <Text style={styles.errorText}>{confrimPasswordError}</Text> : null}
             {passwordMatchError?<Text style={styles.errorText}>{passwordMatchError}</Text>: null}
             </View>
-            <View style={styles.buttonContainer}>
-            <Button 
-                onPress={handleResetPassword}
-                title={'Reset Password'} />
+
+            <View style={styles.buttonView}>
+            <Button title={'Save Changes'}
+                onPress={handleResetPassword} />
             </View>
-        </View>
-    )
+    </View>
+)
 }

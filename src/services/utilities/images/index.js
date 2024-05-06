@@ -110,6 +110,18 @@ import hairColoringIcon from '../../../asset/hairColoringIcon.png'
 import nailTreatmentIcon from '../../../asset/nailTreatmentIcon.png'
 import makeoverIcon from '../../../asset/makeoverIcon.png'
 import userProfile2 from '../../../asset/userProfile2.png'
+import serviceProfileTabBefore from '../../../asset/serviceProfileTabBefore.png'
+import serviceCatlogTabAfter from '../../../asset/serviceCatlogTabAfter.png'
+import serviceCatlogTabBefore from '../../../asset/serviceCatlogTabBefore.png'
+import serviceDashboardTabAfter from '../../../asset/serviceDashboardTabAfter.png'
+import serviceDashboardTabBefore from '../../../asset/serviceDashboardTabBefore.png'
+import serviceProfileTabAfter from '../../../asset/serviceProfileTabAfter.png'
+
+
+
+
+
+
 
 
 
@@ -229,7 +241,13 @@ export const images = {
     hairColoringIcon,
     hairCuttingIcon,
     makeoverIcon,
-    userProfile2
+    userProfile2,
+    serviceCatlogTabAfter,
+    serviceCatlogTabBefore,
+    serviceDashboardTabAfter,
+    serviceDashboardTabBefore,
+    serviceProfileTabAfter,
+    serviceProfileTabBefore
 
 
 

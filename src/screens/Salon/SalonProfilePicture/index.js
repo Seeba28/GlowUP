@@ -62,7 +62,7 @@ export default function SalonProfilePicture({ navigation }) {
     };
 
     const handlePress = () => {
-        navigation.navigate("MyTabs",
+        navigation.navigate("SalonTabs",
         {profileImageUri: profileImage.uri})
 
     }

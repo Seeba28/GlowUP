@@ -39,7 +39,7 @@ export default function ServiceSignUp({navigation}) {
 
 
         if (emailValid && passwordValid && phoneValidate && userNameValidate) {
-            navigation.navigate("ProfilePicture",{userName: userName})
+            navigation.navigate("ServiceProfilePicture",{userName: userName})
 
             // Proceed with login
             // Example: call an API to authenticate the user

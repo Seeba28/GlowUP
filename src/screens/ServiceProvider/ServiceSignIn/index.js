@@ -29,7 +29,7 @@ export default function ServiceSignIn({navigation}) {
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
 
         if (emailValid && passwordValid) {
-            navigation.navigate("MyTabs")
+            navigation.navigate("BeauticianTabs")
             
             // Proceed with login
             // Example: call an API to authenticate the user

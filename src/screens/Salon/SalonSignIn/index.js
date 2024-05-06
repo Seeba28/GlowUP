@@ -29,7 +29,7 @@ export default function SalonSignIn({navigation}) {
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
 
         if (emailValid && passwordValid) {
-            navigation.navigate("MyTabs")
+            navigation.navigate("SalonTabs")
             
             // Proceed with login
             // Example: call an API to authenticate the user

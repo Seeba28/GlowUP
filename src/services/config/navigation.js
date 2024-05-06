@@ -12,7 +12,6 @@ import Cart from "../../screens/user/Cart";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { colors } from "../utilities/colors";
 import { sizes } from "../utilities/sizes";
-import { Screen } from "react-native-screens";
 import { Image } from "react-native";
 import { images } from "../utilities/images";
 import Services from "../../screens/user/services";
@@ -58,6 +57,12 @@ import ServiceProfilePicture from "../../screens/ServiceProvider/ServiceProfileP
 import SalonProfilePicture from "../../screens/Salon/SalonProfilePicture";
 import ServiceResetPassword from "../../screens/ServiceProvider/ServiceResetPassword";
 import SalonResetPassword from "../../screens/Salon/SalonResetPassword";
+import ServiceProviderProfile from "../../screens/ServiceProvider/ServiceProviderProfile";
+import ServiceProviderEditProfile from "../../screens/ServiceProvider/ServiceProviderEditProfile";
+import ServiceProviderSecurity from "../../screens/ServiceProvider/ServiceProviderSecurity";
+import SalonProfile from "../../screens/Salon/SalonProfile";
+import SalonEditProfile from "../../screens/Salon/SalonEditProfile";
+import SalonSecurity from "../../screens/Salon/SalonSecurity";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -130,6 +135,22 @@ const UserStack = () => {
             <Stack.Screen name="SalonProfilePicture" component={SalonProfilePicture} />
             <Stack.Screen name="ServiceResetPassword" component={ServiceResetPassword} />
             <Stack.Screen name="SalonResetPassword" component={SalonResetPassword} />
+            <Stack.Screen name="ServiceProviderProfile" component={ServiceProviderProfile} />
+            <Stack.Screen name="ServiceProviderEditProfile" component={ServiceProviderEditProfile} />
+            <Stack.Screen name="ServiceProviderSecurity" component={ServiceProviderSecurity} />
+            <Stack.Screen name="BeauticianTabs" component={BeauticianTabs} />
+            <Stack.Screen name="SalonTabs" component={SalonTabs} />
+            <Stack.Screen name="SalonProfile" component={SalonProfile} />
+            <Stack.Screen name="SalonEditProfile" component={SalonEditProfile} />
+            <Stack.Screen name="SalonSecurity" component={SalonSecurity} />
+
+
+
+
+
+
+
+
 
 
 
@@ -139,24 +160,7 @@ const UserStack = () => {
 
 
 const MyTabs = () => {
-    // const [keyboardOpen, setKeyboardOpen] = useState(false);
-    // useEffect(() => {
-    //     const keyboardDidShowListener = Keyboard.addListener(
-    //         'keyboardDidShow',
-    //         () => {
-    //             console.log('Keyboard is open');
-    //             setKeyboardOpen(true);
-    //         },
-    //     );
-
-    //     const keyboardDidHideListener = Keyboard.addListener(
-    //         'keyboardDidHide',
-    //         () => {
-    //             console.log('Keyboard is closed');
-    //             setKeyboardOpen(false);
-    //         },
-    //     );
-    // }, []);
+    
     return (
         <Tab.Navigator
             screenOptions={{
@@ -229,4 +233,128 @@ const MyTabs = () => {
         </Tab.Navigator>
     )
 }
+
+const BeauticianTabs = () => {
+
+    return (
+        <Tab.Navigator
+            screenOptions={{
+                tabBarHideOnKeyboard: true,
+                headerShown: false,
+                tabBarStyle: {
+                    backgroundColor: colors.background,
+                    height: sizes.screenHeight * 0.09,
+                    borderTopLeftRadius: sizes.screenWidth * 0.09,
+                    borderTopRightRadius: sizes.screenWidth * 0.09,
+                    position: 'absolute',
+
+                },
+            }}>
+            <Tab.Screen
+                name="UserHome"
+                component={UserHome}
+                options={{
+                    tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) =>
+                        focused ? (
+                            <Image source={images.serviceDashboardTabAfter}
+                            />
+                        ) : (
+                            <Image source={images.serviceDashboardTabBefore} />
+                        )
+                }} />
+
+            <Tab.Screen
+                name="Services"
+                component={Services}
+                options={{
+                    tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) =>
+                        focused ? (
+                            <Image source={images.serviceCatlogTabAfter}
+                            />
+                        ) : (
+                            <Image source={images.serviceCatlogTabBefore} />
+                        )
+                }} />
+
+            <Tab.Screen
+                name="ServiceProviderProfile"
+                component={ServiceProviderProfile}
+                options={{
+                    tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) =>
+                        focused ? (
+                            <Image source={images.serviceProfileTabAfter}
+                            />
+                        ) : (
+                            <Image source={images.serviceProfileTabBefore} />
+                        )
+                }} />
+        </Tab.Navigator>
+    )
+}
+
+const SalonTabs = () => {
+    
+    return (
+        <Tab.Navigator
+            screenOptions={{
+                tabBarHideOnKeyboard: true,
+                headerShown: false,
+                tabBarStyle: {
+                    backgroundColor: colors.background,
+                    height: sizes.screenHeight * 0.09,
+                    borderTopLeftRadius: sizes.screenWidth * 0.09,
+                    borderTopRightRadius: sizes.screenWidth * 0.09,
+                    position: 'absolute',
+
+                },
+            }}>
+            <Tab.Screen
+                name="UserHome"
+                component={UserHome}
+                options={{
+                    tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) =>
+                        focused ? (
+                            <Image source={images.serviceDashboardTabAfter}
+                            />
+                        ) : (
+                            <Image source={images.serviceDashboardTabBefore} />
+                        )
+                }} />
+
+            <Tab.Screen
+                name="Services"
+                component={Services}
+                options={{
+                    tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) =>
+                        focused ? (
+                            <Image source={images.serviceCatlogTabAfter}
+                            />
+                        ) : (
+                            <Image source={images.serviceCatlogTabBefore} />
+                        )
+                }} />
+
+            
+            <Tab.Screen
+                name="SalonProfile"
+                component={SalonProfile}
+                options={{
+                    tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) =>
+                        focused ? (
+                            <Image source={images.serviceProfileTabAfter}
+                            />
+                        ) : (
+                            <Image source={images.serviceProfileTabBefore} />
+                        )
+                }} />
+        </Tab.Navigator>
+    )
+}
+
 
