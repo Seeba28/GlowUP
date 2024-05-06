@@ -72,6 +72,7 @@ import SalonAddService from "../../screens/Salon/SalonAddServices";
 import SalonAddServiceInfo from "../../screens/Salon/SalonAddServiceInfo";
 import SalonServiceDetail from "../../screens/Salon/SalonServiceDetail";
 import SalonEditService from "../../screens/Salon/SalonEditService";
+import ServiceProviderHome from "../../screens/ServiceProvider/ServiceProviderHome";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -161,6 +162,8 @@ const UserStack = () => {
             <Stack.Screen name="SalonAddServiceInfo" component={SalonAddServiceInfo} />
             <Stack.Screen name="SalonServiceDetail" component={SalonServiceDetail} />
             <Stack.Screen name="SalonEditService" component={SalonEditService} />
+            <Stack.Screen name="ServiceProviderHome" component={ServiceProviderHome} />
+
 
 
 
@@ -265,8 +268,8 @@ const BeauticianTabs = () => {
                 },
             }}>
             <Tab.Screen
-                name="UserHome"
-                component={UserHome}
+                name="ServiceProviderHome"
+                component={ServiceProviderHome}
                 options={{
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>

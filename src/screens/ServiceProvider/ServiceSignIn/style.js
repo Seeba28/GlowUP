@@ -4,39 +4,26 @@ import { sizes } from "../../../services/utilities/sizes";
 import { fontSize } from "../../../services/utilities/fonts";
 
 export const styles = StyleSheet.create({
-    productBakcground: {
+    homeBackgroud: {
         backgroundColor: colors.background,
         height: sizes.screenHeight
     },
-    topContainer: {
-        marginTop: sizes.screenHeight * 0.03,
-        flexDirection: 'row',
-        width: sizes.screenWidth * 0.61,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
     backArrow: {
+        marginTop: sizes.screenHeight * 0.04,
         paddingStart: sizes.screenWidth * 0.05,
     },
-    heading: {
+    headText: {
+        marginTop:sizes.screenHeight* 0.03,
         color: colors.black,
-        fontSize: fontSize.large,
+        fontSize: fontSize.h4,
         fontWeight: '500',
         textAlign: 'center',
-    },
-    profile: {
-        marginTop:sizes.screenHeight* 0.04,
-        height: sizes.screenHeight * 0.13,
-        width: sizes.screenWidth * 0.27,
-        borderRadius: sizes.screenWidth * 0.3,
-        resizeMode: 'contain',
-        alignSelf:'center'
+        alignSelf: 'center'
     },
     contianerTwo: {
         justifyContent: 'space-evenly',
         marginTop: sizes.screenHeight * 0.05,
-        height: sizes.screenHeight * 0.32,
-
+        height: sizes.screenHeight * 0.16,
     },
     textFeildContainer: {
         paddingHorizontal: sizes.screenWidth * 0.04,
@@ -57,8 +44,15 @@ export const styles = StyleSheet.create({
     passwordContainer: {
         flexDirection: 'row'
     },
+    forgotPassTxt: {
+        alignSelf: 'flex-end',
+        marginTop: sizes.screenHeight * 0.01,
+        color: colors.black,
+        marginEnd: sizes.screenWidth * 0.05,
+        fontWeight: '500'
+    },
     containerThree: {
-        marginTop: sizes.screenHeight * 0.1,
+        marginTop: sizes.screenHeight * 0.25,
         height:sizes.screenHeight* 0.3,
         justifyContent:'space-between',
         // backgroundColor:'red'
@@ -107,9 +101,5 @@ export const styles = StyleSheet.create({
       errorText:{
         color:colors.error,
         marginStart:sizes.screenWidth*0.05
-      },
-      buttonView:{
-        marginTop:sizes.screenHeight* 0.26
       }
-
 })
