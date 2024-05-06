@@ -1,12 +1,12 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
-import BackArrow from "../../components/BackArrow";
-import { styles } from "./styles";
-import { images } from "../../services/utilities/images";
-import { colors } from "../../services/utilities/colors";
-import Button from "../../components/Button";
+import { styles } from "./style";
+import BackArrow from "../../../components/BackArrow";
+import { images } from "../../../services/utilities/images";
+import { colors } from "../../../services/utilities/colors";
+import Button from "../../../components/Button";
 
-export default function ResetPassword({ navigation }) {
+export default function ServiceResetPassword({ navigation }) {
 
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')

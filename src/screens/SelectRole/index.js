@@ -18,7 +18,14 @@ export default function SelectRole({ navigation }) {
             navigation.navigate('SignUp');
         } else if (selectedRole === 'ProductSeller') {
             navigation.navigate('SellerSignUp');
-        } else {
+        }
+        else if (selectedRole === 'Beautician') {
+            navigation.navigate('ServiceSignIn');
+        }
+        else if (selectedRole === 'Salon') {
+            navigation.navigate('SalonSignIn');
+        }
+         else {
             setError('*Please select a role');
         }
     };

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
-import BackArrow from '../../components/BackArrow';
-import { images } from '../../services/utilities/images';
-import { colors } from '../../services/utilities/colors';
-import Button from '../../components/Button';
-export default function SignUp({navigation}) {
+import BackArrow from '../../../components/BackArrow';
+import { styles } from './style';
+import { images } from '../../../services/utilities/images';
+import { colors } from '../../../services/utilities/colors';
+import Button from '../../../components/Button';
+export default function ServiceSignUp({navigation}) {
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -39,7 +39,7 @@ export default function SignUp({navigation}) {
 
 
         if (emailValid && passwordValid && phoneValidate && userNameValidate) {
-            navigation.navigate("UserHome",{userName: userName})
+            navigation.navigate("ProfilePicture",{userName: userName})
 
             // Proceed with login
             // Example: call an API to authenticate the user
@@ -50,10 +50,10 @@ export default function SignUp({navigation}) {
     }
 
     const handlePress = () =>{
-        navigation.navigate("SignIn")
+        navigation.navigate("ServiceSignIn")
     }
     const handleProfilePic = () =>{
-        navigation.navigate("ProfilePicture")
+        navigation.navigate("ServiceProfilePicture")
     }
     const handleGoBack = () => {
         navigation.goBack()
@@ -117,7 +117,7 @@ export default function SignUp({navigation}) {
 
             <View style={styles.containerThree}>
                 <Button title={'Sign Up'}
-                onPress={handleProfilePic} />
+                onPress={handleLogin} />
                 <Text style={styles.continueTxt}>or continue with</Text>
                 <TouchableOpacity style={styles.otherButton}>
                     <Image source={images.google} />

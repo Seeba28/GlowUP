@@ -46,6 +46,18 @@ import SellerForgotPassword from "../../screens/ProductSeller/SellerForgotPasswo
 import SellerProfilePicture from "../../screens/ProductSeller/SellerProfilePicture";
 import SellerOTP from "../../screens/ProductSeller/SellerOTP";
 import AppointmentBookingDetail from "../../screens/user/AppointmentBookingDetail";
+import SalonSignIn from "../../screens/Salon/SalonSignIn";
+import ServiceSignIn from "../../screens/ServiceProvider/ServiceSignIn";
+import ServiceSignUp from "../../screens/ServiceProvider/ServiceSignUp";
+import SalonSignUp from "../../screens/Salon/SalonSignUp";
+import SalonForgotPassword from "../../screens/Salon/SalonForgotPassword";
+import ServiceForgotPassword from "../../screens/ServiceProvider/ServiceForgotPassword";
+import SalonOTP from "../../screens/Salon/SalonOTP";
+import ServiceOTP from "../../screens/ServiceProvider/ServiceOTP";
+import ServiceProfilePicture from "../../screens/ServiceProvider/ServiceProfilePicture";
+import SalonProfilePicture from "../../screens/Salon/SalonProfilePicture";
+import ServiceResetPassword from "../../screens/ServiceProvider/ServiceResetPassword";
+import SalonResetPassword from "../../screens/Salon/SalonResetPassword";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -106,6 +118,20 @@ const UserStack = () => {
             <Stack.Screen name="SellerEditProfile" component={SellerEditProfile} />
             <Stack.Screen name="SellerSecurity" component={SellerSecurity} />
             <Stack.Screen name="AppointmentBookingDetail" component={AppointmentBookingDetail} />
+            <Stack.Screen name="SalonSignIn" component={SalonSignIn} />
+            <Stack.Screen name="ServiceSignIn" component={ServiceSignIn} />
+            <Stack.Screen name="ServiceSignUp" component={ServiceSignUp} />
+            <Stack.Screen name="SalonSignUp" component={SalonSignUp} />
+            <Stack.Screen name="SalonForgotPassword" component={SalonForgotPassword} />
+            <Stack.Screen name="ServiceForgotPassword" component={ServiceForgotPassword} />
+            <Stack.Screen name="SalonOTP" component={SalonOTP} />
+            <Stack.Screen name="ServiceOTP" component={ServiceOTP} />
+            <Stack.Screen name="ServiceProfilePicture" component={ServiceProfilePicture} />
+            <Stack.Screen name="SalonProfilePicture" component={SalonProfilePicture} />
+            <Stack.Screen name="ServiceResetPassword" component={ServiceResetPassword} />
+            <Stack.Screen name="SalonResetPassword" component={SalonResetPassword} />
+
+
 
         </Stack.Navigator>
     )
