@@ -63,6 +63,15 @@ import ServiceProviderSecurity from "../../screens/ServiceProvider/ServiceProvid
 import SalonProfile from "../../screens/Salon/SalonProfile";
 import SalonEditProfile from "../../screens/Salon/SalonEditProfile";
 import SalonSecurity from "../../screens/Salon/SalonSecurity";
+import SalonSetup from "../../screens/Salon/SalonSetup";
+import SalonHome from "../../screens/Salon/SalonHome";
+import SalonNotification from "../../screens/Salon/SalonNotification";
+import SalonAllReviews from "../../screens/Salon/SalonAllReviews";
+import SalonCatalogue from "../../screens/Salon/SalonCatalogue";
+import SalonAddService from "../../screens/Salon/SalonAddServices";
+import SalonAddServiceInfo from "../../screens/Salon/SalonAddServiceInfo";
+import SalonServiceDetail from "../../screens/Salon/SalonServiceDetail";
+import SalonEditService from "../../screens/Salon/SalonEditService";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -143,10 +152,15 @@ const UserStack = () => {
             <Stack.Screen name="SalonProfile" component={SalonProfile} />
             <Stack.Screen name="SalonEditProfile" component={SalonEditProfile} />
             <Stack.Screen name="SalonSecurity" component={SalonSecurity} />
-
-
-
-
+            <Stack.Screen name="SalonSetup" component={SalonSetup} />
+            <Stack.Screen name="SalonHome" component={SalonHome} />
+            <Stack.Screen name="SalonNotification" component={SalonNotification}/>
+            <Stack.Screen name="SalonAllReviews" component={SalonAllReviews}/>
+            <Stack.Screen name="SalonCatalogue" component={SalonCatalogue} />
+            <Stack.Screen name="SalonAddService" component={SalonAddService} />
+            <Stack.Screen name="SalonAddServiceInfo" component={SalonAddServiceInfo} />
+            <Stack.Screen name="SalonServiceDetail" component={SalonServiceDetail} />
+            <Stack.Screen name="SalonEditService" component={SalonEditService} />
 
 
 
@@ -312,8 +326,8 @@ const SalonTabs = () => {
                 },
             }}>
             <Tab.Screen
-                name="UserHome"
-                component={UserHome}
+                name="SalonHome"
+                component={SalonHome}
                 options={{
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>
@@ -326,8 +340,8 @@ const SalonTabs = () => {
                 }} />
 
             <Tab.Screen
-                name="Services"
-                component={Services}
+                name="SalonCatalogue"
+                component={SalonCatalogue}
                 options={{
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>

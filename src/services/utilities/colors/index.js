@@ -28,5 +28,6 @@ export const colors = {
     puprleOpacity:'rgba(157,138,174,0.2)',
     calenderBg:'#EDE8F1',
     selectedPurple:'rgba(200,174,222,0.5)',
+    red: '#ee1c2f',
   };
   

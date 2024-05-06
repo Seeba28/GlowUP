@@ -116,6 +116,29 @@ import serviceCatlogTabBefore from '../../../asset/serviceCatlogTabBefore.png'
 import serviceDashboardTabAfter from '../../../asset/serviceDashboardTabAfter.png'
 import serviceDashboardTabBefore from '../../../asset/serviceDashboardTabBefore.png'
 import serviceProfileTabAfter from '../../../asset/serviceProfileTabAfter.png'
+import uploadOutlet from '../../../asset/uploadOutlet.png'
+import rightArrowRed from '../../../asset/rightArrowRed.png'
+import NailService from '../../../asset/NailService.png'
+import FacialService from '../../../asset/FacialService.png'
+import HairCutService from '../../../asset/HairCutService.png'
+import HeenaService from '../../../asset/HeenaService.png'
+import purplePlus from '../../../asset/purplePlus.png'
+import minusPurple from '../../../asset/minusPurple.png'
+import smallPlus from '../../../asset/smallPlus.png'
+import threeDots from '../../../asset/threeDots.png'
+import galleryIcon from '../../../asset/galleryIcon.png'
+import crossCircle from '../../../asset/crossCircle.png'
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -247,7 +270,19 @@ export const images = {
     serviceDashboardTabAfter,
     serviceDashboardTabBefore,
     serviceProfileTabAfter,
-    serviceProfileTabBefore
+    serviceProfileTabBefore,
+    uploadOutlet,
+    rightArrowRed,
+    HeenaService,
+    NailService,
+    HairCutService,
+    FacialService,
+    purplePlus,
+    smallPlus,
+    minusPurple,
+    threeDots,
+    galleryIcon,
+    crossCircle
 
 
 

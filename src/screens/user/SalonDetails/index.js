@@ -4,7 +4,7 @@ import { styles } from "./style";
 import BackArrow from "../../../components/BackArrow";
 import { images } from "../../../services/utilities/images";
 import Button from "../../../components/Button";
-import StarRating from "react-native-star-rating-widget";
+import StarRating, { StarRatingDisplay } from "react-native-star-rating-widget";
 import { sizes } from "../../../services/utilities/sizes";
 export default function SalonDetails({ navigation }) {
 
@@ -224,7 +224,7 @@ export default function SalonDetails({ navigation }) {
                         </View>
                         <View style={styles.reviewCOlumn}>
                             <Text style={styles.reviewName}>{review.name}</Text>
-                            <StarRating rating={review.ratings}
+                            <StarRatingDisplay rating={review.ratings}
                             starSize={sizes.screenHeight* 0.03}
                             />
                             <Text style={styles.reviewTxt}>{review.reviewText}</Text>
