@@ -6,7 +6,7 @@ import { images } from "../../services/utilities/images";
 import { colors } from "../../services/utilities/colors";
 import Button from "../../components/Button";
 
-export default function ResetPassword({ navigation }) {
+export default function UserResetPassword({ navigation }) {
 
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')

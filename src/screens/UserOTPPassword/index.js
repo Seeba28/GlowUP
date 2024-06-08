@@ -10,7 +10,7 @@ import {
 } from 'react-native-confirmation-code-field';
 import Button from "../../components/Button";
 
-export default function OTPPassword({ navigation }) {
+export default function UserOTPPassword({ navigation }) {
     const [value, setValue] = useState('');
     const [otpError, setOtpError] = useState('');
     const ref = useRef();
@@ -24,7 +24,7 @@ export default function OTPPassword({ navigation }) {
             setOtpError('*Plesse Enter OTP')
         }
         else{
-            navigation.navigate("ResetPassword")
+            navigation.navigate("UserResetPassword")
         }
     }
 

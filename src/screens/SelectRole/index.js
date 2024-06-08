@@ -12,10 +12,10 @@ export default function SelectRole({ navigation }) {
         setSelectedRole(role)
         setError('')
     }
-
+ 
     const handleNext = () => {
         if (selectedRole === 'customer') {
-            navigation.navigate('SignUp');
+            navigation.navigate('UserSignUp');
         } else if (selectedRole === 'ProductSeller') {
             navigation.navigate('SellerSignUp');
         }

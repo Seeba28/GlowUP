@@ -6,7 +6,7 @@ import { images } from '../../services/utilities/images';
 import { colors } from '../../services/utilities/colors';
 import Button from '../../components/Button';
 
-export default function ForgotPassword({ navigation }) {
+export default function UserForgotPassword({ navigation }) {
     const [email, setEmail] = useState('')
     const [emailError, setEmailError] = useState('');
 
@@ -21,7 +21,7 @@ export default function ForgotPassword({ navigation }) {
         setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
 
         if (emailValid) {
-        navigation.navigate("OTPPassword")
+        navigation.navigate("UserOTPPassword")
             // Proceed with login
             // Example: call an API to authenticate the user
         }

@@ -6,7 +6,7 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import Button from "../../components/Button";
 
 
-export default function ProfilePicture({ navigation }) {
+export default function UserProfilePicture({ navigation }) {
 
     const [profileImage, setProfileImage] = useState(
         images.profilePic

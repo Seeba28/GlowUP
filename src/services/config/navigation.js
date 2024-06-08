@@ -2,12 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import UserHome from "../../screens/user/userHome";
 import ProductDetails from "../../screens/user/productDetails";
 import Products from "../../screens/user/products";
-import SignIn from "../../screens/SignIn";
-import SignUp from "../../screens/SignUp";
-import ForgotPassword from "../../screens/ForgotPassword";
-import OTPPassword from "../../screens/OTPPassword";
-import ResetPassword from "../../screens/ResetPassword";
-import ProfilePicture from "../../screens/ProfilePicture";
 import Cart from "../../screens/user/Cart";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { colors } from "../utilities/colors";
@@ -80,6 +74,12 @@ import ServiceProviderAddService from "../../screens/ServiceProvider/ServiceProv
 import ServiceProviderAddServiceInfo from "../../screens/ServiceProvider/ServiceProviderServiceInfo";
 import ServiceProviderServiceDetail from "../../screens/ServiceProvider/ServiceProviderServiceDetail";
 import ServiceProviderEditService from "../../screens/ServiceProvider/ServiceProviderEditService";
+import UserSignIn from "../../screens/UserSignIn";
+import UserSignUp from "../../screens/UserSignUp";
+import UserForgotPassword from "../../screens/UserForgotPassword";
+import UserOTPPassword from "../../screens/UserOTPPassword";
+import UserResetPassword from "../../screens/UserResetPassword";
+import UserProfilePicture from "../../screens/UserProfilePicture";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -107,12 +107,12 @@ const UserStack = () => {
             <Stack.Screen name="SellerOTP" component={SellerOTP} />
             <Stack.Screen name="SellerForgotPassword" component={SellerForgotPassword} />
             <Stack.Screen name="SellerResetPassword" component={SellerResetPassword} />
-            <Stack.Screen name="SignIn" component={SignIn} />
-            <Stack.Screen name="SignUp" component={SignUp} />
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-            <Stack.Screen name="OTPPassword" component={OTPPassword} />
-            <Stack.Screen name="ResetPassword" component={ResetPassword} />
-            <Stack.Screen name="ProfilePicture" component={ProfilePicture} />
+            <Stack.Screen name="UserSignIn" component={UserSignIn} />
+            <Stack.Screen name="UserSignUp" component={UserSignUp} />
+            <Stack.Screen name="UserForgotPassword" component={UserForgotPassword} />
+            <Stack.Screen name="UserOTPPassword" component={UserOTPPassword} />
+            <Stack.Screen name="UserResetPassword" component={UserResetPassword} />
+            <Stack.Screen name="UserProfilePicture" component={UserProfilePicture} />
             <Stack.Screen name="MyTabs" component={MyTabs} />
             <Stack.Screen name="UserHome" component={UserHome} />
             <Stack.Screen name="Cart" component={Cart} />
