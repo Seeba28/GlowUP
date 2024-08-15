@@ -9,7 +9,7 @@ import { sizes } from "../../../services/utilities/sizes";
 import { StarRatingDisplay } from 'react-native-star-rating-widget';
 import { colors } from "../../../services/utilities/colors";
 export default function SalonHome({ navigation }) {
-    const [userProfile, setUserProfile] = useState(images.profileTop)
+    const [userProfile, setUserProfile] = useState(images.profile)
     const [userName, setUseName] = useState('Sana Malik')
 
 
@@ -67,9 +67,9 @@ export default function SalonHome({ navigation }) {
         },
         {
             image: images.profileTop,
-            name: 'Victoria',
+            name: 'Amna',
             ratings: 4,
-            reviewText: 'Great service'
+            reviewText: 'Great Work'
         }
     ])
 
@@ -77,17 +77,17 @@ export default function SalonHome({ navigation }) {
     return (
         <View style={styles.productBakcground}>
             <View style={styles.topRowContainer}>
-                <TouchableOpacity style={styles.profileContainer}
+                {/* <TouchableOpacity style={styles.profileContainer}
                     onPress={handleProfile}>
                     <Image
                         style={styles.profileImg}
                         source={userProfile}
                     />
-                </TouchableOpacity>
-                <Text style={styles.heading}>{userName}</Text>
-                <View style={styles.margin}>
+                </TouchableOpacity> */}
+                <Text style={styles.heading}>Welcome</Text>
+                {/* <View style={styles.margin}>
                     <NotificationIcon onPress={handleSellerNotifcation} />
-                </View>
+                </View> */}
             </View>
             <ScrollView style={styles.ScrollViewContainer}>
                 <View style={styles.containerBody}>

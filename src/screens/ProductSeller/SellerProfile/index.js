@@ -2,9 +2,10 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
 import { images } from "../../../services/utilities/images";
 import { styles } from "./style";
+import Button from "../../../components/Button";
 
 export default function SellerProfile({ navigation }) {
-    const [profileImage, setProfileImage] = useState(images.profileTop);
+    const [profileImage, setProfileImage] = useState(images.profile);
     const [userName, setUserName] = useState('Seeba')
     const [userEmail, setUserEmail] = useState('seeba.mubarak.gmail')
 
@@ -19,18 +20,17 @@ export default function SellerProfile({ navigation }) {
     }
     
     const handleSignout = () => {
-        navigation.navigate('SellerSignUp')
+        navigation.navigate('SelectRole')
     }
     
-    
-    
+
     return (
         <View style={styles.serviceBackgroud}>
             <View style={styles.topContainer}>
                 <Text style={styles.serviceText}>Profile</Text>
             </View>
             <View style={styles.contianerTwo}>
-                <View style={styles.profileDetailRow}>
+                {/* <View style={styles.profileDetailRow}>
                     <Image source={profileImage} />
                     <View style={styles.marginStart}>
                         <Text style={styles.nameTxt}>{userName}</Text>
@@ -43,7 +43,7 @@ export default function SellerProfile({ navigation }) {
                     <Image
                         style={styles.signOutContianer}
                         source={images.signout} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
             <View style={styles.containerThree}>
                 <TouchableOpacity style={styles.feildsContianer}
@@ -68,7 +68,11 @@ export default function SellerProfile({ navigation }) {
                         style={styles.next}
                         source={images.nextArrow} />
                 </TouchableOpacity>
-                
+                <View style={styles.marignTop}>
+                <Button
+                title={'Logout'}
+                onPress={handleSignout}/>
+                </View>
             </View>
         </View>
     )

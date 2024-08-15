@@ -8,14 +8,14 @@ import {
   ImageBackground,
   FlatList,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styles } from './styles';
 import { images } from '../../../services/utilities/images';
 import { colors } from '../../../services/utilities/colors';
 import Like from '../../../components/Like';
 import AddToCartSmall from '../../../components/AddToCartSmall';
 
-export default function AllProducts({ navigation }) {
+export default function AllProducts({route, navigation }) {
   const [search, setSearch] = useState('');
 
   const feildSearch = text => {
@@ -25,41 +25,70 @@ export default function AllProducts({ navigation }) {
   const [allProducts, setAllProducts] = useState([
     {
       image: images.lipstick,
-      name: 'Lipstick',
-      price: 'Rs. 850',
+      name: 'Lipstick/Lipgloss',
+      price: '850',
+      category: 'Lips',
+      details: 'Indulge in the ultimate lip-enhancing experience with our Lip Gloss. Formulated with a nourishing blend of hydrating oils and vitamin E, this lip gloss delivers a luscious, high-shine finish.',
+      rating: '3.5/5'
     },
     {
       image: images.foundation,
       name: 'Foundation',
-      price: 'Rs. 2000',
+      price: '2000',
+      category: 'Face',
+      details: 'Our foundation provides flawless coverage with a lightweight feel, perfect for everyday wear.',
+      rating: '4/5'
     },
     {
       image: images.blush,
       name: 'Blush',
-      price: 'Rs. 1500',
+      price: '1500',
+      category: 'Face',
+      details: 'Add a pop of color to your cheeks with our Blush. Formulated to blend effortlessly for a natural, radiant finish.',
+      rating: '4.5/5'
     },
     {
       image: images.mascara,
       name: 'Mascara',
-      price: 'Rs. 800',
+      price: '800',
+      category: 'Eyes',
+      details: 'Achieve voluminous and defined lashes with our Mascara. Its unique brush delivers intense color and lasting curl.',
+      rating: '3.5/5'
+
     },
 
   ]);
+
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const { category } = route.params || {};
+
+  useEffect(() => {
+    // Filter based on category and search text
+    const filtered = allProducts
+      .filter(product => 
+        (!category || product.category === category) &&
+        (search === '' || product.name.toLowerCase().includes(search.toLowerCase()))
+      );
+    setFilteredProducts(filtered);
+  }, [category, search, allProducts]);
 
   const handleCart = () => {
     navigation.navigate("Cart")
   }
 
-  const handleProductDescription = () => {
-    navigation.navigate("ProductDetails")
+  const handleProductDescription = (product) => {
+    navigation.navigate("ProductDetailsTwo", { product })
   }
+
+
 
   return (
     <View style={styles.productBakcground}>
       <View style={styles.topContainer}>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Image source={images.profileTop} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text style={styles.productText}>Products</Text>
       </View>
       <View style={styles.searchContainer}>
@@ -73,10 +102,10 @@ export default function AllProducts({ navigation }) {
       </View>
       <ScrollView style={styles.scrollContainer}>
         <View style={styles.containerTwo}>
-          {allProducts.map((item,index) => (
+          {filteredProducts.map((item,index) => (
           <View style={styles.productRow} key={index}>
           <View style={styles.productContainer}>
-            <TouchableOpacity onPress={handleProductDescription}>
+            <TouchableOpacity onPress={() => handleProductDescription(item)}>
               <View style={styles.productImageContainer}>
                 <ImageBackground
                   style={styles.productImage}
@@ -90,11 +119,11 @@ export default function AllProducts({ navigation }) {
             <View style={styles.productsDetailRow}>
               <View>
                 <Text style={styles.productsNameText}>{item.name}</Text>
-                <Text style={styles.productPriceText}>{item.price}</Text>
+                <Text style={styles.productPriceText}>Rs. {item.price}</Text>
               </View>
-              <TouchableOpacity>
+              {/* <TouchableOpacity>
                 <AddToCartSmall onPress={handleCart} />
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </View>
           </View>
         </View>

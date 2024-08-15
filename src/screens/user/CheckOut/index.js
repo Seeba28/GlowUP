@@ -4,31 +4,36 @@ import BackArrow from "../../../components/BackArrow";
 import { colors } from "../../../services/utilities/colors";
 import { useState } from "react";
 import { images } from "../../../services/utilities/images";
+import { useRoute } from "@react-navigation/native";
 
 export default function CheckOut({ navigation }) {
+    const route = useRoute();
+    const { itemCart = [], totalAmount = '0', quantity } = route.params || {};
+
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
-    const [quantity, setQuantity] = useState(1)
-    const [totalAmount, setTotalAmount] = useState('900')
-    const [itemCart, setItemCart] = useState([
-        {
-            name: 'Lipstick',
-            price: 800,
-            image: images.lipstick
-        },
-    ])
 
     const handleBack = () => {
         navigation.goBack()
     }
     
+    // const handleShipping = () => {
+    //     navigation.navigate("Shipping")
+    // }
     const handleShipping = () => {
-        navigation.navigate("Shipping")
-    }
-
+        navigation.navigate("Shipping", {
+            name,
+            phone,
+            email,
+            address,
+            city,
+            totalAmount
+        });
+    };
+    
 
     return (
         <View style={styles.productBakcground}>

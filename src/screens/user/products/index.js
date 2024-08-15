@@ -15,21 +15,25 @@ import { styles } from './styles';
 
 export default function Products({ navigation }) {
 
-  const handleProducts = () => {
-    navigation.navigate("AllProducts")
+  const handleCategorySelect = (category) => {
+    navigation.navigate("AllProducts", { category });
   }
+
 
   return (
     <View style={styles.productBakcground}>
       <View style={styles.topContainer}>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Image source={images.profileTop} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text style={styles.productText}>Products</Text>
       </View>
 
       <View style={styles.body}>
-        <TouchableOpacity onPress={handleProducts}>
+        {/* <TouchableOpacity 
+        onPress={handleProducts}
+        >
+        </TouchableOpacity> */}
           <ImageBackground
             style={styles.contianerOne}
             source={images.TopMakeup}
@@ -38,19 +42,22 @@ export default function Products({ navigation }) {
             <Text style={styles.headingOne}>Top Makeups</Text>
             <Text style={styles.detailTxt}>Elevate Your Beauty Routine with Our Exclusive Collection</Text>
           </ImageBackground>
-        </TouchableOpacity>
 
         <View style={styles.productCategory}>
           <View>
             <TouchableOpacity style={styles.productContainerOne}
-            onPress={handleProducts}>
+            onPress={() => handleCategorySelect('Eyes')}
+            // onPress={handleProducts}
+            >
               <Text style={styles.headingTwo}>Eyes Product</Text>
               <Image
                 style={styles.picOne}
                 source={images.eyeProduct} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.productContainerTwo}
-            onPress={handleProducts}>
+            onPress={() => handleCategorySelect('Face')}
+            // onPress={handleProducts}
+            >
               <Text style={styles.headingTwo}>Face Product</Text>
               <Image
                 style={styles.picOne}
@@ -58,7 +65,9 @@ export default function Products({ navigation }) {
             </TouchableOpacity>
           </View>
           <TouchableOpacity style={styles.productContainerThree}
-          onPress={handleProducts}>
+          onPress={() => handleCategorySelect('Lips')}
+          // onPress={handleProducts}
+          >
             <Image
               style={styles.picTwo}
               source={images.lipProduct} />

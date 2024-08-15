@@ -3,22 +3,23 @@ import React, { useState } from 'react';
 import { styles } from "./styles";
 import BackArrow from "../../../components/BackArrow";
 import Button from "../../../components/Button";
+import { useRoute } from "@react-navigation/native";
 
 export default function AppointmentBookingDetail({ navigation }) {
-    const [appoitmentDate, setAppointmentDate] = useState('April 9, 2024')
-    const [appoitmentTime, setAppointmentTime] = useState('2:00 PM')
-    const [serviceName, setServiceName] = useState('Facials')
-    const [serviceTypeName, setServiceTypeName] = useState('Acne Facials')
-    const [servicePrice, setServicePrice] = useState('2,000')
-    const [quantity, setQuantity] = useState('2')
-    const [totalAmount, setTotalAmount] = useState('4,000')
+    const route = useRoute();
 
+    const { selectedService, appointmentDate, appointmentTime, quantity, totalAmount } = route.params;
+    
     const handleBack = () => {
         navigation.goBack()
     }
     const handleSalonDetails = () => {
-        navigation.navigate("SalonDetails")
+        navigation.navigate("MyTabs")
     }
+    const formatNumber = (number) => {
+        return number.toLocaleString(); 
+    };
+    
     
     return (
         <View style={styles.productBakcground}>
@@ -31,12 +32,12 @@ export default function AppointmentBookingDetail({ navigation }) {
             </View>
             <View style={styles.bodyContainer}>
                 <Text style={styles.bodyHeading}>Date & Time</Text>
-                <Text style={styles.subHeading}>{appoitmentDate}    |   {appoitmentTime}</Text>
+                <Text style={styles.subHeading}>{appointmentDate}    |   {appointmentTime}</Text>
                 <Text style={styles.bodyHeading}>Services Details</Text>
-                <Text style={styles.subHeading2}>{serviceName}</Text>
+                <Text style={styles.subHeading2}>{selectedService?.name}</Text>
                 <View style={styles.row}>
-                    <Text style={styles.bodyHeading2}>{serviceTypeName}</Text>
-                    <Text style={styles.subHeading3}>Rs. {servicePrice}</Text>
+                    <Text style={styles.bodyHeading2}>{selectedService?.name}</Text>
+                    <Text style={styles.subHeading3}>Rs. {selectedService?.price}</Text>
                 </View>
                 <View style={styles.row}>
                     <Text style={styles.bodyHeading2}>Quantity</Text>
@@ -45,7 +46,7 @@ export default function AppointmentBookingDetail({ navigation }) {
                 <View style={styles.line} />
                 <View style={styles.row}>
                     <Text style={styles.bodyHeading2}>Total Amount</Text>
-                    <Text style={styles.subHeading3}> Rs. {totalAmount}</Text>
+                    <Text style={styles.subHeading3}> Rs. {formatNumber(totalAmount)}</Text>
                 </View>
                 <View style={styles.buttonTop}>
                     <Button title={'Proceed To Checkout'}

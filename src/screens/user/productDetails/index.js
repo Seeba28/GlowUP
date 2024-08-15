@@ -14,24 +14,20 @@ import AddToCart from '../../../components/AddToCartSmall';
 import AddToCartBig from '../../../components/AddToCartBig';
 import Button from '../../../components/Button';
 
-export default function ProductDetails({navigation}) {
-  const [productName, setProductName] = useState('Lipstick / Lipgloss');
-  const [productPrice, setProductPrice] = useState('Rs. 850');
-  const [productDetails, setProductDetail] = useState(
-    'Indulge in the ultimate lip-enhancing experience with our Lip Gloss. Formulated with a nourishing blend of hydrating oils and vitamin E, this lip gloss delivers a luscious, high-shine finish.',
-  );
-  const [rating, setRating] = useState('3.5/5');
-  const [imageSwipe, setImageSwipe] = useState([
+export default function ProductDetails({navigation, route}) {
 
-    {image: images.lipstick},
-    {image: images.lipstick},
-    {image: images.lipstick},
-  ]);
-  const [colorSelection, setColorSelection] = useState([
-    {image: images.color1Before},
-    {image: images.color2Before},
-    {image: images.color3Before},
-  ]);
+  const {product} = route.params;
+  const [productName, setProductName] = useState(product.name);
+  const [productPrice, setProductPrice] = useState(product.price);
+  const [productDetails, setProductDetail] = useState(product.details);
+  const [rating, setRating] = useState(product.rating);
+  const [imageSwipe, setImageSwipe] = useState([{ image: product.image }]);
+
+  // const [colorSelection, setColorSelection] = useState([
+  //   {image: images.color1Before},
+  //   {image: images.color2Before},
+  //   {image: images.color3Before},
+  // ]);
 
   
   const handleColorSelection = index => {
@@ -79,9 +75,30 @@ export default function ProductDetails({navigation}) {
     navigation.navigate("Ratings")
   }
 
+  // const handleCart = () => {
+  //   navigation.navigate("Cart")
+  // }
+
   const handleCart = () => {
-    navigation.navigate("Cart")
-  }
+    navigation.navigate("Cart", {
+      product: {
+        name: productName,
+        price: productPrice,
+        image: product.image,
+      },
+    });
+  };
+  
+  // const handleBuyNow = () => {
+  //   navigation.navigate("Cart", {
+  //     product: {
+  //       name: productName,
+  //       price: productPrice,
+  //       image: product.image,
+  //     },
+  //   });
+  // };
+  
 
   return (
     <View style={styles.productBakcground}>
@@ -118,9 +135,9 @@ export default function ProductDetails({navigation}) {
             <Text style={styles.ratingTxt}>{rating}</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.productPrice}>{productPrice}</Text>
+        <Text style={styles.productPrice}>Rs. {productPrice}</Text>
         <Text style={styles.productDetailsTxt}>{productDetails}</Text>
-        <Text style={styles.colorTxt}>Color</Text>
+        {/* <Text style={styles.colorTxt}>Color</Text>
         <View style={styles.colorRow}>
           {colorSelection.map((color, index) => (
             <TouchableOpacity 
@@ -130,7 +147,7 @@ export default function ProductDetails({navigation}) {
               <Image source={color.image} />
             </TouchableOpacity>
           ))}
-        </View>
+        </View> */}
       </View>
 
       <View style={styles.button}>

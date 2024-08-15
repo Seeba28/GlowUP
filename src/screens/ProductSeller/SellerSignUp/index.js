@@ -119,11 +119,11 @@ export default function SellerSignUp({navigation}) {
                 <Button title={'Sign Up'}
                 onPress={handleLogin} 
                 />
-                <Text style={styles.continueTxt}>or continue with</Text>
+                {/* <Text style={styles.continueTxt}>or continue with</Text>
                 <TouchableOpacity style={styles.otherButton}>
                     <Image source={images.google} />
                     <Text style={styles.googleBtnText}>+ Google</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <Text style={styles.continueTxt}>Already have an account?</Text>
                 <TouchableOpacity style={styles.otherButton}
                 onPress={handlePress}

@@ -39,9 +39,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   topIconsContainer: {
-    width: sizes.screenWidth * 0.27,
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
   },
   searchContainer: {

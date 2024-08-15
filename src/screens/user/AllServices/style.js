@@ -10,16 +10,16 @@ export const styles = StyleSheet.create({
     },
     topContainer: {
         marginTop: sizes.screenHeight * 0.03,
-        paddingHorizontal: sizes.screenWidth * 0.05,
-        flexDirection: 'row',
-        alignItems: 'center',
+        // paddingHorizontal: sizes.screenWidth * 0.05,
+        // flexDirection: 'row',
+        // alignItems: 'center',
     },
     serviceText: {
         color: colors.black,
         fontSize: fontSize.large,
         fontWeight: '500',
         textAlign: 'center',
-        marginStart: sizes.screenWidth * 0.25
+        // marginStart: sizes.screenWidth * 0.25
     },
     searchContainer: {
         paddingHorizontal: sizes.screenWidth * 0.04,

@@ -78,6 +78,9 @@ export const styles = StyleSheet.create({
         height: sizes.screenHeight * 0.015,
         width: sizes.screenWidth * 0.03,
         resizeMode: 'contain',
+    },
+    marginTop:{
+        marginTop:sizes.screenHeight*0.43
     }
 
 

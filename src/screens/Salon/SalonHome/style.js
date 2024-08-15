@@ -36,16 +36,13 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
-    ScrollViewContainer: {
-        marginTop: sizes.screenHeight * 0.05,
-        marginBottom: sizes.screenHeight * 0.085,
-      },
+
       containerBody: {
         // marginTop: sizes.screenHeight * 0.05,
         paddingHorizontal: sizes.screenWidth * 0.06,
       },
       headingSummary: {
-        marginTop: sizes.screenHeight * 0.02,
+        marginTop: sizes.screenHeight * 0.01,
         color: colors.black,
         fontSize: fontSize.medium,
         fontWeight: '500',
@@ -262,7 +259,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
       },
       ScrollViewContainer: {
-        marginTop: sizes.screenHeight * 0.05,
+        marginTop: sizes.screenHeight * 0.03,
         marginBottom: sizes.screenHeight * 0.085,
       },
       reviewRow:{

@@ -43,7 +43,7 @@ export default function SalonSignIn({navigation}) {
         navigation.goBack()
     }
     const handleForgotPass = () => {
-        navigation.navigate("SalonForgotPassword")
+        navigation.navigate("SalonResetPassword")
     }
     return (
         <View style={styles.homeBackgroud}>
@@ -88,11 +88,11 @@ export default function SalonSignIn({navigation}) {
                 <Button 
                 onPress={handleLogin}
                 title={'Sign In'} />
-                <Text style={styles.continueTxt}>or continue with</Text>
+                {/* <Text style={styles.continueTxt}>or continue with</Text>
                 <TouchableOpacity style={styles.otherButton}>
                     <Image source={images.google} />
                     <Text style={styles.googleBtnText}>+ Google</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <Text style={styles.continueTxt}>Don’t have an account?</Text>
                 <TouchableOpacity style={styles.otherButton}
                 onPress={handlePress}>

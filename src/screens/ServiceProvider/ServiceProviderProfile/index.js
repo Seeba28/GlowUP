@@ -2,6 +2,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
 import { images } from "../../../services/utilities/images";
 import { styles } from "./style";
+import Button from "../../../components/Button";
 
 export default function ServiceProviderProfile({ navigation }) {
     const [profileImage, setProfileImage] = useState(images.profileTop);
@@ -19,7 +20,7 @@ export default function ServiceProviderProfile({ navigation }) {
     }
     
     const handleSignout = () => {
-        navigation.navigate('ServiceSignUp')
+        navigation.navigate('SelectRole')
     }
     
     
@@ -30,7 +31,7 @@ export default function ServiceProviderProfile({ navigation }) {
                 <Text style={styles.serviceText}>Profile</Text>
             </View>
             <View style={styles.contianerTwo}>
-                <View style={styles.profileDetailRow}>
+                {/* <View style={styles.profileDetailRow}>
                     <Image source={profileImage} />
                     <View style={styles.marginStart}>
                         <Text style={styles.nameTxt}>{userName}</Text>
@@ -43,7 +44,7 @@ export default function ServiceProviderProfile({ navigation }) {
                     <Image
                         style={styles.signOutContianer}
                         source={images.signout} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
             <View style={styles.containerThree}>
                 <TouchableOpacity style={styles.feildsContianer}
@@ -68,7 +69,11 @@ export default function ServiceProviderProfile({ navigation }) {
                         style={styles.next}
                         source={images.nextArrow} />
                 </TouchableOpacity>
-                
+                <View style={styles.marignTop}>
+                <Button
+                title={'Logout'}
+                onPress={handleSignout}/>
+                </View>
             </View>
         </View>
     )

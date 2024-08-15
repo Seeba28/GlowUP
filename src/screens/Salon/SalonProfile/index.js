@@ -2,6 +2,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
 import { images } from "../../../services/utilities/images";
 import { styles } from "./style";
+import Button from "../../../components/Button";
 
 export default function SalonProfile({ navigation }) {
     const [profileImage, setProfileImage] = useState(images.profileTop);
@@ -19,10 +20,8 @@ export default function SalonProfile({ navigation }) {
     }
     
     const handleSignout = () => {
-        navigation.navigate('SalonSignUp')
+        navigation.navigate('SelectRole')
     }
-    
-    
     
     return (
         <View style={styles.serviceBackgroud}>
@@ -30,20 +29,20 @@ export default function SalonProfile({ navigation }) {
                 <Text style={styles.serviceText}>Profile</Text>
             </View>
             <View style={styles.contianerTwo}>
-                <View style={styles.profileDetailRow}>
+                {/* <View style={styles.profileDetailRow}>
                     <Image source={profileImage} />
                     <View style={styles.marginStart}>
                         <Text style={styles.nameTxt}>{userName}</Text>
                         <Text style={styles.emailTxt}>{userEmail}</Text>
                     </View>
-                </View>
-                <TouchableOpacity 
+                </View> */}
+                {/* <TouchableOpacity 
                 onPress={handleSignout}
                 >
                     <Image
                         style={styles.signOutContianer}
                         source={images.signout} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
             <View style={styles.containerThree}>
                 <TouchableOpacity style={styles.feildsContianer}
@@ -68,7 +67,11 @@ export default function SalonProfile({ navigation }) {
                         style={styles.next}
                         source={images.nextArrow} />
                 </TouchableOpacity>
-                
+                <View style={styles.marignTop}>
+                <Button
+                title={'Logout'}
+                onPress={handleSignout}/>
+                </View>
             </View>
         </View>
     )

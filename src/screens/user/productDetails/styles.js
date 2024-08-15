@@ -88,7 +88,7 @@ export const styles = StyleSheet.create({
     alignItems:'center',
   },
   button:{
-    marginTop:sizes.screenHeight* 0.06
+    marginTop:sizes.screenHeight* 0.18
   },
   star:{
     height:sizes.screenHeight* 0.025,

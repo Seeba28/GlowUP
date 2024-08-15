@@ -7,7 +7,7 @@ import { colors } from '../../../services/utilities/colors';
 import Button from '../../../components/Button';
 
 export default function SellerEditProfile({ navigation }) {
-    const [profileImage, setProfileImage] = useState(images.profileLarge)
+    const [profileImage, setProfileImage] = useState(images.profile)
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -52,8 +52,9 @@ export default function SellerEditProfile({ navigation }) {
                 </View>
                 <Text style={styles.heading}>Edit Profile</Text>
             </View>
-            <Image style={styles.profile}
-                source={profileImage} />
+            <View  style={styles.profile}/>
+            {/* <Image style={styles.profile}
+                source={profileImage} /> */}
 
             <View style={styles.contianerTwo}>
                 <View style={styles.textFeildContainer}>

@@ -121,5 +121,8 @@ export const styles = StyleSheet.create({
         marginTop: sizes.screenHeight * 0.01,
         textAlign:'center',
         lineHeight:sizes.screenHeight* 0.03
+    },
+    marginTop:{
+        marginTop:sizes.screenHeight*0.1
     }
 })

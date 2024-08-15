@@ -42,12 +42,16 @@ export default function Services({ navigation }) {
     navigation.navigate("AllServices")
   }
 
+  const filteredServices = allServices.filter(service =>
+    service.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <View style={styles.serviceBackgroud}>
       <View style={styles.topContainer}>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Image source={images.profileTop} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text style={styles.serviceText}>Services</Text>
       </View>
       <View style={styles.searchContainer}>
@@ -63,7 +67,7 @@ export default function Services({ navigation }) {
       <ScrollView style={styles.scrollContainer}>
       <View style={styles.containerTwo}>
           <View style={styles.allServices}>
-            {allServices.map((service, index) => {
+            {filteredServices.map((service, index) => {
               return (
                 <TouchableOpacity key={index}
                 onPress={handleAllService}>

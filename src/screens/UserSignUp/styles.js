@@ -49,7 +49,6 @@ export const styles = StyleSheet.create({
     containerThree: {
         marginTop: sizes.screenHeight * 0.1,
         height:sizes.screenHeight* 0.3,
-        justifyContent:'space-between',
         // backgroundColor:'red'
     },
     continueContainer: {
@@ -60,7 +59,8 @@ export const styles = StyleSheet.create({
     continueTxt: {
         color: colors.black,
         alignSelf:'center',
-        fontWeight:'500'
+        fontWeight:'500',
+        marginTop:sizes.screenHeight*0.04
     },
     line:{
         color:colors.darkPurple,
@@ -77,7 +77,8 @@ export const styles = StyleSheet.create({
         borderRadius:sizes.screenWidth * 0.035,
         borderColor:colors.black,
         borderWidth:sizes.screenWidth*0.003,
-        flexDirection:'row'
+        flexDirection:'row',
+        marginTop:sizes.screenHeight*0.02
     },
       signUpBtnText:{
         color:colors.black,

@@ -80,6 +80,13 @@ import UserForgotPassword from "../../screens/UserForgotPassword";
 import UserOTPPassword from "../../screens/UserOTPPassword";
 import UserResetPassword from "../../screens/UserResetPassword";
 import UserProfilePicture from "../../screens/UserProfilePicture";
+import ProductDetailsTwo from "../../screens/user/ProductDetailTwo";
+import CartTwo from "../../screens/user/CartTwo";
+import CheckOutTwo from "../../screens/user/CheckoutTwo";
+import ShippingTwo from "../../screens/user/ShippingTwo";
+import SalonDetailsTwo from "../../screens/user/SalonDetailsTwo";
+import AppointmentBookingTwo from "../../screens/user/AppointmentBookingTwo";
+import AppointmentBookingDetailTwo from "../../screens/user/AppointmentBookingDetailTwo";
 
 const { createNativeStackNavigator } = require("@react-navigation/native-stack");
 
@@ -177,20 +184,13 @@ const UserStack = () => {
             <Stack.Screen name="ServiceProviderAddServiceInfo" component={ServiceProviderAddServiceInfo} />
             <Stack.Screen name="ServiceProviderServiceDetail" component={ServiceProviderServiceDetail} />
             <Stack.Screen name="ServiceProviderEditService" component={ServiceProviderEditService} />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <Stack.Screen name="ProductDetailsTwo" component={ProductDetailsTwo} />
+            <Stack.Screen name="CartTwo" component={CartTwo} />
+            <Stack.Screen name="CheckOutTwo" component={CheckOutTwo} />
+            <Stack.Screen name="ShippingTwo" component={ShippingTwo} />
+            <Stack.Screen name="SalonDetailsTwo" component={SalonDetailsTwo} />
+            <Stack.Screen name="AppointmentBookingTwo" component={AppointmentBookingTwo} />
+            <Stack.Screen name="AppointmentBookingDetailTwo" component={AppointmentBookingDetailTwo} />
 
         </Stack.Navigator>
     )
@@ -262,10 +262,10 @@ const MyTabs = () => {
                     tabBarShowLabel: false,
                     tabBarIcon: ({ focused }) =>
                         focused ? (
-                            <Image source={images.profileTabAfter}
+                            <Image source={images.profile}
                             />
                         ) : (
-                            <Image source={images.profileTab} />
+                            <Image source={images.profile} />
                         )
                 }} />
         </Tab.Navigator>

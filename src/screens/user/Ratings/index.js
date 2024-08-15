@@ -26,7 +26,7 @@ export default function Ratings({ navigation }) {
     }
 
     const handleProductDetails = () => {
-        navigation.navigate('ProductDetails')
+        navigation.navigate('MyTabs')
         setModalVisible(false)
     }
 
@@ -48,14 +48,14 @@ export default function Ratings({ navigation }) {
                 <Text style={styles.heading}>Ratings</Text>
             </View>
             <View style={styles.body}>
-                <View>
-                    <Image
+                <View style={styles.marginTop}>
+                    {/* <Image
                         style={styles.profile}
                         source={userImage} />
                     <Text
-                        style={styles.userName}>{userName}</Text>
+                        style={styles.userName}>{userName}</Text> */}
                 </View>
-                <Text style={styles.heading2}>Ratings</Text>
+                {/* <Text style={styles.heading2}>Ratings</Text> */}
                 <StarRating
                     rating={starCount}
                     onChange={setStarCount}

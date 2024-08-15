@@ -13,41 +13,106 @@ import { styles } from './style';
 import { colors } from '../../../services/utilities/colors';
 
 export default function ServiceProviderCatalogue({ navigation }) {
+    // const [search, setSearch] = useState('');
+    // const feildSearch = text => {
+    //     setSearch(text);
+    // };
+    // const [servicesData, setserviceData] = useState([
+    //     {
+    //         serviceImage: images.HairCutService,
+    //         serviceName: 'Haircuts',
+    //         serviceStyles: '5',
+    //     },
+    //     {
+    //         serviceImage: images.FacialService,
+    //         serviceName: 'Facial',
+    //         serviceStyles: '5',
+    //     },
+    //     {
+    //         serviceImage: images.HeenaService,
+    //         serviceName: 'Heena',
+    //         serviceStyles: '5',
+    //     },
+    //     {
+    //         serviceImage: images.NailService,
+    //         serviceName: 'Nails',
+    //         serviceStyles: '5', 
+    //     },
+        
+    // ]);
     const [search, setSearch] = useState('');
-    const feildSearch = text => {
+    const feildSearch = (text) => {
         setSearch(text);
-    };
-    const [servicesData, setserviceData] = useState([
+    }; 
+
+    const [servicesData] = useState([
         {
             serviceImage: images.HairCutService,
             serviceName: 'Haircuts',
-            serviceStyles: '5',
+            serviceAbout: 'Haircuts that suit your style and personality.',
+            serviceDetail: [
+                { name: 'Feather Cut', price: '1000' },
+                { name: 'Bangs', price: '1000' },
+                { name: 'Crew Cut', price: '1200' },
+                { name: 'Traditional Cut', price: '850' },
+            ],
+            serviceImages: [
+                { image: images.haircutPic },
+                { image: images.hairCut1 },
+                { image: images.HairService},
+            ],
         },
         {
             serviceImage: images.FacialService,
             serviceName: 'Facial',
-            serviceStyles: '5',
+            serviceAbout: 'Facials that rejuvenate your skin.',
+            serviceDetail: [
+                { name: 'Basic Facial', price: '1200' },
+                { name: 'Advanced Facial', price: '1800' },
+            ],
+            serviceImages: [
+                { image: images.face1 },
+                { image: images.FacialPic },
+                { image: images.facials },
+            ],
         },
         {
             serviceImage: images.HeenaService,
             serviceName: 'Heena',
-            serviceStyles: '5',
+            serviceAbout: 'Traditional Heena designs for your special occasions.',
+            serviceDetail: [
+                { name: 'Simple Heena', price: '500' },
+                { name: 'Designer Heena', price: '1500' },
+            ],
+            serviceImages: [
+                { image: images.hennaPic },
+            ],
         },
         {
             serviceImage: images.NailService,
             serviceName: 'Nails',
-            serviceStyles: '5',
+            serviceAbout: 'Nail art and care services.',
+            serviceDetail: [
+                { name: 'Basic Nail Art', price: '800' },
+                { name: 'Advanced Nail Art', price: '1500' },
+            ],
+            serviceImages: [
+                { image: images.nailPaint1 },
+                { image: images.nailPaintPic },
+                { image: images.nailTreatment },
+
+
+            ],
         },
-        
     ]);
 
+    const filteredServices = servicesData.filter((item) =>
+        item.serviceName.toLowerCase().includes(search.toLowerCase())
+    );
 
     return (
         <View style={styles.productBakcground}>
             <View style={styles.topContainer}>
-                <TouchableOpacity>
-                    <Image source={images.profileTop} />
-                </TouchableOpacity>
                 <Text style={styles.productText}>Services</Text>
             </View>
             <View style={styles.searchContainer}>
@@ -57,43 +122,87 @@ export default function ServiceProviderCatalogue({ navigation }) {
                     placeholder="Search..."
                     placeholderTextColor={colors.darkPurple}
                     onChangeText={feildSearch}
-                    value={search}></TextInput>
+                    value={search}
+                />
             </View>
 
             <View style={styles.containerBody}>
-                
                 <ScrollView style={styles.scrollContainer}>
                     <View>
                         <View style={styles.serviceContainer}>
-                            {servicesData.map((item, index) => (
+                            {filteredServices.map((item, index) => (
                                 <TouchableOpacity
                                     style={styles.serviceBox}
                                     key={index}
-                                    onPress={() => navigation.navigate('ServiceProviderServiceDetail', { serviceNameHeading: item.serviceName, serviceName: item.serviceName })}
-                                    >
+                                    onPress={() =>
+                                        navigation.navigate('ServiceProviderServiceDetail', {
+                                            serviceNameHeading: item.serviceName,
+                                            serviceName: item.serviceName,
+                                            serviceAbout: item.serviceAbout,
+                                            serviceDetail: item.serviceDetail,
+                                            serviceImages: item.serviceImages,
+                                        })
+                                    }
+                                >
                                     <Image
                                         source={item.serviceImage}
                                         style={styles.serviceImage}
                                     />
                                     <Text style={styles.serviceName}>{item.serviceName}</Text>
-                                    <Text style={styles.serviceStyle}>
-                                        {item.serviceStyles} Styles
-                                    </Text>
                                 </TouchableOpacity>
                             ))}
                         </View>
                     </View>
                 </ScrollView>
-                <TouchableOpacity
-                 onPress={() => navigation.navigate('ServiceProviderAddService')}
-                 >
-
-                    <Image style={styles.addService} source={images.purplePlus} />
-                </TouchableOpacity>
-
             </View>
-
-
         </View>
     );
+    // return (
+    //     <View style={styles.productBakcground}>
+    //         <View style={styles.topContainer}>
+    //             <TouchableOpacity>
+    //                 <Image source={images.profileTop} />
+    //             </TouchableOpacity>
+    //             <Text style={styles.productText}>Services</Text>
+    //         </View>
+    //         <View style={styles.searchContainer}>
+    //             <Image source={images.search} />
+    //             <TextInput
+    //                 style={styles.searchTextInput}
+    //                 placeholder="Search..."
+    //                 placeholderTextColor={colors.darkPurple}
+    //                 onChangeText={feildSearch}
+    //                 value={search}></TextInput>
+    //         </View>
+
+    //         <View style={styles.containerBody}>
+                
+    //             <ScrollView style={styles.scrollContainer}>
+    //                 <View>
+    //                     <View style={styles.serviceContainer}>
+    //                         {servicesData.map((item, index) => (
+    //                             <TouchableOpacity
+    //                                 style={styles.serviceBox}
+    //                                 key={index}
+    //                                 onPress={() => navigation.navigate('ServiceProviderServiceDetail', { serviceNameHeading: item.serviceName, serviceName: item.serviceName })}
+    //                                 >
+    //                                 <Image
+    //                                     source={item.serviceImage}
+    //                                     style={styles.serviceImage}
+    //                                 />
+    //                                 <Text style={styles.serviceName}>{item.serviceName}</Text>
+    //                                 <Text style={styles.serviceStyle}>
+    //                                     {item.serviceStyles} Styles
+    //                                 </Text>
+    //                             </TouchableOpacity>
+    //                         ))}
+    //                     </View>
+    //                 </View>
+    //             </ScrollView>
+
+    //         </View>
+
+
+    //     </View>
+    // );
 }

@@ -6,15 +6,22 @@ import { images } from "../../../services/utilities/images";
 import Button from "../../../components/Button";
 import StarRating, { StarRatingDisplay } from "react-native-star-rating-widget";
 import { sizes } from "../../../services/utilities/sizes";
+import { useRoute } from "@react-navigation/native";
+
 export default function SalonDetails({ navigation }) {
-
-    const [salonName, setSalonName] = useState('Glow Haven')
-    const [salonLocation, setSalonLocation] = useState('Karachi')
-    const [salonRatings, setSalonRatings] = useState('3.5/5')
-    const [salonTiming, setSalonTiming] = useState('~ Open Monday - Thursday')
+    const route = useRoute();
+    const { serviceDetails } = route.params;
+    const [salonName, setSalonName] = useState(serviceDetails.name);
+    const [salonLocation, setSalonLocation] = useState(serviceDetails.location);
+    const [salonRatings, setSalonRatings] = useState(serviceDetails.ratings);
+    const [salonImage, setSalonImage] = useState([{ image: serviceDetails.image }]);
+    const [salonTiming, setSalonTiming] = useState(serviceDetails.timing);
+    const [salonAbout, setSalonAbout] = useState(serviceDetails.about);
+    const [portfolioImage, setPortfolioImage] = useState(serviceDetails.portfolio);
+    const [salonService, setSalonService] = useState(serviceDetails.services);
+    const [salonRating, setSalonRating] = useState(serviceDetails.reviews);
+  
     const [selectOption, setSelectOption] = useState('About')
-    const [salonAbout, setSalonAbout] = useState('Glow Haven is your go-to beauty salon brand on our convenient beauty service app. Experience luxury treatments from skilled professionals in the comfort of your own space. Book effortlessly, indulge in pampering, and emerge glowing with confidence.')
-
     const [selectedServiceIndex, setSelectedServiceIndex] = useState(-1);
 
     const handleServiceSelect = (index) => {
@@ -37,81 +44,10 @@ export default function SalonDetails({ navigation }) {
     }
 
     const handleAppointmentBook = () => {
-        navigation.navigate("AppointmentBooking")
-    }
-
-    const [salonImage, setSalonImage] = useState([
-        { image: images.salonImage },
-        { image: images.haircutPic },
-        { image: images.hennaPic },
-        { image: images.FacialPic },
-        { image: images.nailPaintPic }
-    ])
-
-    const [portfolioImage, setPortfolioImage] = useState([
-        { image: images.face1 },
-        { image: images.hairCut1 },
-        { image: images.nailPaint1 },
-        { image: images.hennaPic },
-    ])
-
-    const [salonService, setSalonService] = useState([
-        {
-            image: images.acneIcon,
-            name: 'Acne Cleansing',
-            type: 'Facial',
-            price: 'Rs. 2,000'
-        },
-        {
-            image: images.hairCuttingIcon,
-            name: 'Hair Cutting',
-            type: 'Hair Service',
-            price: 'Rs. 850'
-
-        },
-        {
-            image: images.hairColoringIcon,
-            name: 'Hair Coloting',
-            type: 'Hair Service',
-            price: 'Rs. 1,000'
-
-        },
-        {
-            image: images.nailTreatmentIcon,
-            name: 'Nail Treatment',
-            type: 'Nails',
-            price: 'Rs. 1,500'
-
-        },
-        {
-            image: images.makeoverIcon,
-            name: 'Makeover',
-            type: 'Faical',
-            price: 'Rs. 3,000'
-        },
-
-    ])
-
-    const [salonRating, setSalonRating] = useState([
-        {
-            image: images.profileTop,
-            name: 'Victoria',
-            ratings: 4,
-            reviewText: 'Great service'
-        },
-        {
-            image: images.profileTop,
-            name: 'Sarah',
-            ratings: 4.5,
-            reviewText: 'Great service'
-        },
-        {
-            image: images.profileTop,
-            name: 'Victoria',
-            ratings: 4,
-            reviewText: 'Great service'
-        }
-    ])
+        navigation.navigate("AppointmentBooking", { selectedService: salonService[selectedServiceIndex] });
+    };
+    
+    
 
     return (
         <View style={styles.productBakcground}>
@@ -199,7 +135,7 @@ export default function SalonDetails({ navigation }) {
                                         </View>
                                     </View>
 
-                                    <Text style={styles.priceTxt}>{service.price}</Text>
+                                    <Text style={styles.priceTxt}>Rs. {service.price}</Text>
                                 </TouchableOpacity>
                             ))}
                         </ScrollView>
@@ -232,10 +168,10 @@ export default function SalonDetails({ navigation }) {
                         </View>
                     </View>
                     ))}
-                    <TouchableOpacity onPress={handleViewReview}>
+                    {/* <TouchableOpacity onPress={handleViewReview}>
                         <Text style={styles.seeAllBtn}>See All</Text>
                     </TouchableOpacity>
-                    
+                     */}
                 </View>
             )}
 

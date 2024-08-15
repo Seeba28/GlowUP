@@ -30,9 +30,6 @@ export default function SellerSignIn({navigation}) {
 
         if (emailValid && passwordValid) {
             navigation.navigate("SellerHome")
-            
-            // Proceed with login
-            // Example: call an API to authenticate the user
         }
     };
     
@@ -43,7 +40,7 @@ export default function SellerSignIn({navigation}) {
         navigation.goBack()
     }
     const handleForgotPass = () => {
-        navigation.navigate("SellerForgotPassword")
+        navigation.navigate("SellerResetPassword")
     }
     return (
         <View style={styles.homeBackgroud}>
@@ -91,11 +88,11 @@ export default function SellerSignIn({navigation}) {
                 <Button
                 onPress={handleLogin}
                 title={'Sign In'} />
-                <Text style={styles.continueTxt}>or continue with</Text>
+                {/* <Text style={styles.continueTxt}>or continue with</Text>
                 <TouchableOpacity style={styles.otherButton}>
                     <Image source={images.google} />
                     <Text style={styles.googleBtnText}>+ Google</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <Text style={styles.continueTxt}>Don’t have an account?</Text>
                 <TouchableOpacity style={styles.otherButton}
                 onPress={handlePress}

@@ -1,19 +1,29 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { images } from "../../../services/utilities/images";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
+import { useRoute } from "@react-navigation/native";
 
 export default function Shipping({ navigation }) {
-    const [shippingDate, setShippingDate] = useState(' March 24')
-    const [orderId, setOrderId] = useState('1532')
-    const [name, setName] = useState('Victoria Bennet')
-    const [phone, setPhone] = useState('+92 32013208932')
-    const [email, setEmail] = useState('victoria12@email.com')
-    const [address, setAddress] = useState('79 Streets,ABC Area')
-    const [city, setCity] = useState('Karachi')
-    const [totalAmount, setTotalAmount] = useState('900')
+    const route = useRoute();
+    const { name = '', phone = '', email = '', address = '', city = '', totalAmount = '0' } = route.params || {};
+
+    const [shippingDate, setShippingDate] = useState('')
+    const [orderId, setOrderId] = useState('')
     const [productImage, setProductImage] = useState(images.shipping)
+
+    useEffect(() => {
+        const randomOrderId = Math.floor(Math.random() * 10000) + 1000;
+        setOrderId(randomOrderId);
+
+        const today = new Date();
+        today.setDate(today.getDate() + 5);
+        const options = { month: 'short', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString('en-US', options); 
+        setShippingDate(formattedDate);
+    }, []);
+
 
     const handleShopping = () => {
         navigation.navigate("MyTabs")
@@ -27,7 +37,7 @@ export default function Shipping({ navigation }) {
             <Text style={styles.thankuTxt}>Thank you for shopping with us</Text>
             <Text style={styles.textDesciptionOne}>
                 We got your order and happily preparing it. Estimated delivery date is
-                <Text style={styles.textDesciptionTwo}>{shippingDate}</Text>
+                <Text style={styles.textDesciptionTwo}> {shippingDate}</Text>
             </Text>
             <View style={styles.textFeildContainer}>
                 <View style={styles.detailsCoulmn}>
@@ -68,9 +78,9 @@ export default function Shipping({ navigation }) {
             <View style={styles.buttonView}>
                 <Button title={'Continue Shopping'}
                 onPress={handleShopping}/>
-                <TouchableOpacity>
+                {/* <TouchableOpacity>
                     <Text style={styles.viewOrderText}>View order history</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
 
         </View>

@@ -131,12 +131,13 @@ export const styles = StyleSheet.create({
         borderWidth: sizes.screenWidth * 0.002
     },
     profileImg: {
-        width: sizes.screenWidth * 0.145,
-        height: sizes.screenHeight * 0.07,
+        width: sizes.screenWidth * 0.05,
+        height: sizes.screenHeight * 0.04,
         borderRadius: sizes.screenWidth * 0.7,
+        resizeMode:'cover'
     },
     margin: {
-        marginStart: sizes.screenWidth * 0.34
+        marginStart: sizes.screenWidth * 0.39
     },
     modalOverlay: {
         flex: 1,

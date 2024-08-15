@@ -16,38 +16,11 @@ import { images } from '../../../services/utilities/images';
 import Button from '../../../components/Button';
 
 export default function SalonEditService({ route, navigation }) {
-  const { serviceNameHeading, serviceName } = route.params
+  const { serviceNameHeading, serviceName, serviceAbout: initialServiceAbout, serviceDetail: initialServiceDetail, serviceImages: initialServiceImages } = route.params;
 
-  // const [serviceNameHeading, setserviceNameHeading] = useState('Hair Cuts');
-  // const [serviceName, setServiceName] = useState('Haircut');
-  const [serviceAbout, setServiceAbout] = useState(
-    'Timeless styles rooted in tradition, offering a clean and polished appearance. These cuts, such as crew cuts and taper cuts, emphasize neatness and simplicity, making them versatile and suitable for various occasions.',
-  );
-  const [serviceDetail, setServiceDetail] = useState([
-    {
-      name: 'Feather Cut',
-      price: '1000',
-    },
-    {
-      name: 'Bangs',
-      price: '1000',
-    },
-    {
-      name: 'Crew Cut',
-      price: '1200',
-    },
-    {
-      name: 'Traditional Cut',
-      price: '850',
-    },
-  ]);
-  const [serviceImage, setServiceImage] = useState([
-    { image: images.face1 },
-    { image: images.haircutPic },
-    { image: images.hennaPic },
-    { image: images.hairCut1 },
-    { image: images.nailPaint1 },
-  ]);
+  const [serviceAbout, setServiceAbout] = useState(initialServiceAbout);
+  const [serviceDetail, setServiceDetail] = useState(initialServiceDetail);
+  const [serviceImage, setServiceImage] = useState(initialServiceImages);
 
   const requestCameraPermission = async () => {
     const granted = await PermissionsAndroid.request(
@@ -119,10 +92,14 @@ export default function SalonEditService({ route, navigation }) {
   const deleteServiceDetails = index => {
     setServiceDetail(prevState => prevState.filter((_, i) => i !== index));
   };
-
   const addMoreService = () => {
-    setServiceDetail(prevState => [...prevState, { name: '', price: '' }]);
+    setServiceDetail(prevState => [
+      ...prevState,
+      { name: '', price: '' } // Default values for new service
+    ]);
   };
+
+
 
   return (
     <SafeAreaView>
@@ -174,20 +151,22 @@ export default function SalonEditService({ route, navigation }) {
                   </TouchableOpacity>
                   <TextInput
                     onChangeText={text => setServiceDetail(prevState => {
-                      const updateServiceDetail = [...prevState]
-                      updateServiceDetail[index].name = text.replace('')
-                      return updateServiceDetail
+                      const updatedDetail = [...prevState];
+                      updatedDetail[index].name = text;
+                      return updatedDetail;
                     })}
-                    value={item.name}
-                    style={styles.serviceInputContainer}></TextInput>
+                    value={item.name || ''} 
+                    style={styles.serviceInputContainer}
+                  />
                   <TextInput
                     onChangeText={text => setServiceDetail(prevState => {
-                      const updateServiceDetail = [...prevState]
-                      updateServiceDetail[index].price = text.replace('Rs.', '')
-                      return updateServiceDetail
+                      const updatedDetail = [...prevState];
+                      updatedDetail[index].price = text.replace('Rs.', ''); 
+                      return updatedDetail;
                     })}
-                    value={`Rs. ${item.price}`}
-                    style={styles.priceInputContainer}></TextInput>
+                    value={`Rs. ${item.price || ''}`} 
+                    style={styles.priceInputContainer}
+                  />
                 </View>
               ))}
               <TouchableOpacity
@@ -212,7 +191,13 @@ export default function SalonEditService({ route, navigation }) {
             <Button
               title={'Save Changes'}
               onPress={() => {
-                navigation.navigate('SalonTabs');
+                navigation.navigate('SalonServiceDetail', {
+                  serviceNameHeading,
+                  serviceName,
+                  serviceAbout,
+                  serviceDetail,
+                  serviceImages: serviceImage,
+                });
               }}
             />
           </View>

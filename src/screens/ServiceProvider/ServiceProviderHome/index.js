@@ -57,39 +57,39 @@ export default function ServiceProviderHome({ navigation }) {
     [salonRating, setSalonRating] = useState([
         {
             image: images.profileTop,
-            name: 'Victoria',
+            name: 'Amna',
             ratings: 4,
             reviewText: 'Great service'
         },
         {
             image: images.profileTop,
             name: 'Sarah',
-            ratings: 4.5,
-            reviewText: 'Great service'
+            ratings: 3.5,
+            reviewText: 'Nice'
         },
         {
             image: images.profileTop,
-            name: 'Victoria',
+            name: 'Umaima',
             ratings: 4,
-            reviewText: 'Great service'
+            reviewText: 'Great '
         }
     ])
-
+ 
 
     return (
         <View style={styles.productBakcground}>
             <View style={styles.topRowContainer}>
-                <TouchableOpacity style={styles.profileContainer}
+                {/* <TouchableOpacity style={styles.profileContainer}
                     onPress={handleProfile}>
                     <Image
                         style={styles.profileImg}
                         source={userProfile}
                     />
-                </TouchableOpacity>
-                <Text style={styles.heading}>{userName}</Text>
-                <View style={styles.margin}>
+                </TouchableOpacity> */}
+                <Text style={styles.heading}>Welcome</Text>
+                {/* <View style={styles.margin}>
                     <NotificationIcon onPress={handleSellerNotifcation} />
-                </View>
+                </View> */}
             </View>
             <ScrollView style={styles.ScrollViewContainer}>
                 <View style={styles.containerBody}>

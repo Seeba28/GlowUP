@@ -36,7 +36,7 @@ export default function SellerResetPassword({ navigation }) {
         setPasswordMatchError(passwordMatch ? '' : "*Password doesn't match");
 
         if (confirmPassword && passwordValid && passwordMatch) {
-            navigation.navigate("UserHome")
+            navigation.navigate("SellerHome")
             // Proceed with login
             // Example: call an API to authenticate the user
         }

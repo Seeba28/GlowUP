@@ -7,8 +7,12 @@ import { styles } from './style';
 import { colors } from '../../../services/utilities/colors';
 import { Calendar } from 'react-native-calendars';
 import { sizes } from '../../../services/utilities/sizes';
+import { useRoute } from '@react-navigation/native';
 
 export default function AppointmentBooking({ navigation }) {
+    const route = useRoute();
+    const { selectedService } = route.params;
+
     const [selectTime, setSelectTime] = useState('')
     const handleTimePress = (time) => {
         setSelectTime(time)
@@ -44,10 +48,20 @@ export default function AppointmentBooking({ navigation }) {
     const handleBack = () => {
         navigation.goBack()
     }
-    const handleAppointmentBookingDetial = () => {
-        navigation.navigate("AppointmentBookingDetail")
-    }
 
+    const handleAppointmentBookingDetial = () => {
+        const priceString = selectedService?.price; 
+        const price = parseFloat(priceString.replace(/,/g, '')); 
+        const totalAmount = price * quantity;
+
+        navigation.navigate("AppointmentBookingDetail", {
+            selectedService: selectedService,
+            appointmentDate: selectedDate,
+            appointmentTime: selectTime,
+            quantity: quantity,
+            totalAmount: totalAmount
+        });
+    };
 
     const [availbleTime, setAvailableTime] = useState([
         { time: '10:00 AM' },
@@ -76,36 +90,26 @@ export default function AppointmentBooking({ navigation }) {
             </View>
             <ScrollView style={styles.scrollContainer}>
                 <View>
-                    {itemCart.map((item, index) => {
-                        return (
-                            <View style={styles.body}
-                                key={index}>
-                                <View
-                                    style={styles.textFeildContainer}>
-                                    <View style={styles.productImageContainer}>
-                                        <Image
-                                            style={styles.productImage}
-                                            source={item.image}
-                                        />
-                                    </View>
-
-                                    <View style={styles.flexColumn}>
-                                        <Text style={styles.itemName}>{item.name}</Text>
-                                        <Text style={styles.itemPrice}>Rs. {item.price}</Text>
-                                    </View>
-                                    <View style={styles.flexRow}>
-                                        <TouchableOpacity onPress={handleSubtract}>
-                                            <Image source={images.subtract} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.itemName}>{quantity}</Text>
-                                        <TouchableOpacity onPress={handleAdd}>
-                                            <Image source={images.add} />
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
+                    <View style={styles.body}>
+                        <View style={styles.textFeildContainer}>
+                            <View style={styles.productImageContainer}>
+                                <Image style={styles.productImage} source={selectedService?.image || images.defaultImage} />
                             </View>
-                        )
-                    })}
+                            <View style={styles.flexColumn}>
+                                <Text style={styles.itemName}>{selectedService?.name || 'Service Name'}</Text>
+                                <Text style={styles.itemPrice}>Rs. {selectedService?.price || '0'}</Text>
+                            </View>
+                            <View style={styles.flexRow}>
+                                <TouchableOpacity onPress={handleSubtract}>
+                                    <Image source={images.subtract} />
+                                </TouchableOpacity>
+                                <Text style={styles.itemName}>{quantity}</Text>
+                                <TouchableOpacity onPress={handleAdd}>
+                                    <Image source={images.add} />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
                 </View>
                 <Text style={styles.grayHeading1}>Select Date and Time for your appointment </Text>
                 <Calendar
@@ -129,7 +133,7 @@ export default function AppointmentBooking({ navigation }) {
                     {availbleTime.map((item, index) => (
                         <View style={styles.timingViewRow} key={index}>
                             <TouchableOpacity style={[styles.timingNotSelected, selectTime === item.time && styles.timingSelected]}
-                            onPress={() => handleTimePress(item.time)}>
+                                onPress={() => handleTimePress(item.time)}>
                                 <Text style={styles.timingTextColor}>{item.time}</Text>
                             </TouchableOpacity>
                         </View>

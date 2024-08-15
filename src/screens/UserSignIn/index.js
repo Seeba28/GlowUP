@@ -30,9 +30,6 @@ export default function UserSignIn({navigation}) {
 
         if (emailValid && passwordValid) {
             navigation.navigate("MyTabs")
-            
-            // Proceed with login
-            // Example: call an API to authenticate the user
         }
     };
     
@@ -43,7 +40,7 @@ export default function UserSignIn({navigation}) {
         navigation.goBack()
     }
     const handleForgotPass = () => {
-        navigation.navigate("UserForgotPassword")
+        navigation.navigate("UserResetPassword")
     }
     return (
         <View style={styles.homeBackgroud}>
@@ -88,11 +85,11 @@ export default function UserSignIn({navigation}) {
                 <Button 
                 onPress={handleLogin}
                 title={'Sign In'} />
-                <Text style={styles.continueTxt}>or continue with</Text>
+                {/* <Text style={styles.continueTxt}>or continue with</Text>
                 <TouchableOpacity style={styles.otherButton}>
                     <Image source={images.google} />
                     <Text style={styles.googleBtnText}>+ Google</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <Text style={styles.continueTxt}>Don’t have an account?</Text>
                 <TouchableOpacity style={styles.otherButton}
                 onPress={handlePress}>

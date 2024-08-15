@@ -2,6 +2,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from 'react';
 import { styles } from "./style";
 import { images } from "../../../services/utilities/images";
+import Button from "../../../components/Button";
 
 export default function UserProfile({ navigation }) {
     const [profileImage, setProfileImage] = useState(images.profileTop);
@@ -21,7 +22,7 @@ export default function UserProfile({ navigation }) {
     }
     
     const handleSignout = () => {
-        navigation.navigate('SignIn')
+        navigation.navigate('SelectRole')
     }
     
     const handleHistory = () =>{
@@ -33,7 +34,7 @@ export default function UserProfile({ navigation }) {
                 <Text style={styles.serviceText}>Profile</Text>
             </View>
             <View style={styles.contianerTwo}>
-                <View style={styles.profileDetailRow}>
+                {/* <View style={styles.profileDetailRow}>
                     <Image source={profileImage} />
                     <View style={styles.marginStart}>
                         <Text style={styles.nameTxt}>{userName}</Text>
@@ -44,7 +45,7 @@ export default function UserProfile({ navigation }) {
                     <Image
                         style={styles.signOutContianer}
                         source={images.signout} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
             <View style={styles.containerThree}>
                 <TouchableOpacity style={styles.feildsContianer}
@@ -78,7 +79,7 @@ export default function UserProfile({ navigation }) {
                         style={styles.next}
                         source={images.nextArrow} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.feildsContianer}
+                {/* <TouchableOpacity style={styles.feildsContianer}
                 onPress={handleHistory}>
                     <View style={styles.feilds}>
                         <Image source={images.history} />
@@ -87,7 +88,12 @@ export default function UserProfile({ navigation }) {
                     <Image
                         style={styles.next}
                         source={images.nextArrow} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+                <View style={styles.marginTop}
+                 onPress={handleSignout}>
+                    <Button title={'Logout'}
+                    onPress={handleSignout}/>
+                </View>
             </View>
         </View>
     )
