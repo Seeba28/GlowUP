@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, Alert } from 'react-native';
 import { styles } from './styles';
 import BackArrow from '../../components/BackArrow';
 import { images } from '../../services/utilities/images';
 import { colors } from '../../services/utilities/colors';
 import Button from '../../components/Button';
+import axios from 'axios';
 export default function UserSignIn({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -21,17 +22,59 @@ export default function UserSignIn({navigation}) {
         setShowPassword(!showPassword)
     }
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         const emailValid = email.trim() !== '' && validateEmail(email);
         const passwordValid = password.trim() !== '';
-
-        setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
+    
+        setEmailError(
+          emailValid
+            ? ''
+            : email.trim() === ''
+            ? "*Email can't be empty"
+            : '*Invalid email format',
+        );
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
-
+    
         if (emailValid && passwordValid) {
-            navigation.navigate("MyTabs")
+          try {
+            const response = await axios.post(
+              'http://172.16.175.193:5000/api/auth/signin',
+              {
+                email: email,
+                password: password,
+              },
+            );
+    
+            console.log('Response:', response);
+    
+            if (response.data.success && response.data.data) {
+              // const {fullName} = response.data.data;
+              // console.log('Full name:', fullName);
+              navigation.navigate('MyTabs');
+            } else {
+              Alert.alert(
+                'Error',
+                response.data.message || 'Login failed. Please try again.',
+              );
+            }
+          } catch (error) {
+            console.error('Error during sign-in:', error);
+            Alert.alert('Error', 'An error occurred during sign-in');
+          }
         }
-    };
+      };
+    
+    // const handleLogin = () => {
+    //     const emailValid = email.trim() !== '' && validateEmail(email);
+    //     const passwordValid = password.trim() !== '';
+
+    //     setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
+    //     setPasswordError(passwordValid ? '' : "*Password can't be empty");
+
+    //     if (emailValid && passwordValid) {
+    //         navigation.navigate("MyTabs")
+    //     }
+    // };
     
     const handlePress = () =>{
         navigation.navigate("UserSignUp")
@@ -85,11 +128,6 @@ export default function UserSignIn({navigation}) {
                 <Button 
                 onPress={handleLogin}
                 title={'Sign In'} />
-                {/* <Text style={styles.continueTxt}>or continue with</Text>
-                <TouchableOpacity style={styles.otherButton}>
-                    <Image source={images.google} />
-                    <Text style={styles.googleBtnText}>+ Google</Text>
-                </TouchableOpacity> */}
                 <Text style={styles.continueTxt}>Don’t have an account?</Text>
                 <TouchableOpacity style={styles.otherButton}
                 onPress={handlePress}>

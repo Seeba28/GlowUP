@@ -35,21 +35,62 @@ export default function UserSignUp({navigation}) {
       return phoneRegex.test(phone);
   };
 
-  const handleLogin = () => {
-      const emailValid = email.trim() !== '' && validateEmail(email);
-      const passwordValid = password.trim() !== '';
-      const phoneValid = phone.trim() !== '' && validatePhone(phone);
-      const userNameValid = userName.trim() !== '';
+  const handleLogin = async () => {
+    const emailValid = email.trim() !== '' && validateEmail(email);
+    const passwordValid = password.trim() !== '';
+    const phoneNumberValid =
+      phone.trim() !== '' && validatePhone(phone);
+    const fullNameValid = userName.trim() !== '';
 
-      setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
-      setPasswordError(passwordValid ? '' : "*Password can't be empty");
-      setPhoneError(phoneValid ? '' : (phone.trim() === '' ? "*Phone No. can't be empty" : "*Invalid phone format"));
-      setUserNameError(userNameValid ? '' : "*User Name can't be empty");
+    setEmailError(emailValid ? '' : "*Email can't be empty or is invalid");
+    setPasswordError(passwordValid ? '' : "*Password can't be empty");
+    setPhoneError(
+      phoneNumberValid ? '' : "*Phone number can't be empty or is invalid",
+    );
+    setUserNameError(fullNameValid ? '' : "*Full Name can't be empty");
 
-      if (emailValid && passwordValid && phoneValid && userNameValid) {
-          navigation.navigate("UserProfilePicture", { userName: userName });
+    if (emailValid && passwordValid && phoneNumberValid && fullNameValid) {
+      try {
+        const response = await axios.post(
+          'http://172.16.175.193:5000/api/auth/signup',
+          {
+            fullName: userName,
+            email: email,
+            phoneNumber: phone,
+            password: password,
+          },
+        );
+
+        if (response.data && response.data.success) {
+          if (response.data.data && response.data.data._id) {
+            navigation.navigate('UserProfilePicture');
+          } else {
+            console.error('User ID not found in response data');
+          }
+        } else {
+          console.error('Account creation failed:', response.data.message);
+        }
+      } catch (error) {
+        console.error('Error occurred during sign up:', error);
       }
+    }
   };
+
+//   const handleLogin = () => {
+//       const emailValid = email.trim() !== '' && validateEmail(email);
+//       const passwordValid = password.trim() !== '';
+//       const phoneValid = phone.trim() !== '' && validatePhone(phone);
+//       const userNameValid = userName.trim() !== '';
+
+//       setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
+//       setPasswordError(passwordValid ? '' : "*Password can't be empty");
+//       setPhoneError(phoneValid ? '' : (phone.trim() === '' ? "*Phone No. can't be empty" : "*Invalid phone format"));
+//       setUserNameError(userNameValid ? '' : "*User Name can't be empty");
+
+//       if (emailValid && passwordValid && phoneValid && userNameValid) {
+//           navigation.navigate("UserProfilePicture", { userName: userName });
+//       }
+//   };
 
   const feildShowPassword = () => {
       setShowPassword(!showPassword);

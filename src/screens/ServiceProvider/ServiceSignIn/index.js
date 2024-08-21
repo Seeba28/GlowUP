@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity, Alert } from 'react-native';
 import BackArrow from '../../../components/BackArrow';
 import Button from '../../../components/Button';
 import { styles } from './style';
 import { images } from '../../../services/utilities/images';
 import { colors } from '../../../services/utilities/colors';
+import axios from 'axios';
 export default function ServiceSignIn({navigation}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -21,20 +22,62 @@ export default function ServiceSignIn({navigation}) {
         setShowPassword(!showPassword)
     }
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         const emailValid = email.trim() !== '' && validateEmail(email);
         const passwordValid = password.trim() !== '';
-
-        setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
+    
+        setEmailError(
+          emailValid
+            ? ''
+            : email.trim() === ''
+            ? "*Email can't be empty"
+            : '*Invalid email format',
+        );
         setPasswordError(passwordValid ? '' : "*Password can't be empty");
-
+    
         if (emailValid && passwordValid) {
-            navigation.navigate("BeauticianTabs")
-            
-            // Proceed with login
-            // Example: call an API to authenticate the user
+          try {
+            const response = await axios.post(
+              'http://172.16.175.193:5000/api/auth/signin',
+              {
+                email: email,
+                password: password,
+              },
+            );
+    
+            console.log('Response:', response);
+    
+            if (response.data.success && response.data.data) {
+              // const {fullName} = response.data.data;
+              // console.log('Full name:', fullName);
+              navigation.navigate('BeauticianTabs');
+            } else {
+              Alert.alert(
+                'Error',
+                response.data.message || 'Login failed. Please try again.',
+              );
+            }
+          } catch (error) {
+            console.error('Error during sign-in:', error);
+            Alert.alert('Error', 'An error occurred during sign-in');
+          }
         }
-    };
+      };
+
+    // const handleLogin = () => {
+    //     const emailValid = email.trim() !== '' && validateEmail(email);
+    //     const passwordValid = password.trim() !== '';
+
+    //     setEmailError(emailValid ? '' : (email.trim() === '' ? "*Email can't be empty" : '*Invalid email format'));
+    //     setPasswordError(passwordValid ? '' : "*Password can't be empty");
+
+    //     if (emailValid && passwordValid) {
+    //         navigation.navigate("BeauticianTabs")
+            
+    //         // Proceed with login
+    //         // Example: call an API to authenticate the user
+    //     }
+    // };
     
     const handlePress = () =>{
         navigation.navigate("ServiceSignUp")
